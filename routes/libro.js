@@ -182,14 +182,16 @@ router.post('/u/dashboardpost/', function(req, res, next){
 	}).success(function(doc){
 		res.json({
 					userData: {
-						name: doc.usuarioName,
-						photo: doc.usuarioFoto,
+						name: req.user.name,
+						photo: req.user.photo,
 						iduser: doc.usuarioId
 					},
 					userPost: mensaje,
 		            date: doc.date,
 					state: true
 		});
+
+		console.log(doc);
 
 		
 	}).error(function(err){
