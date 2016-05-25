@@ -128,7 +128,7 @@ router.post('/u/postprofile/', function(req, res, next){
 		 new: true
 
 	}).success(function(doc){
-		res.json({
+		/*res.json({
 					userData: {
 						name: doc.userName,
 						photo: doc.userPhoto
@@ -136,7 +136,7 @@ router.post('/u/postprofile/', function(req, res, next){
 					userPost: doc.userComment,
 		            date: doc.userTime,
 					state: true
-		});
+		});*/
 		
 	}).error(function(err){
 		if(err){

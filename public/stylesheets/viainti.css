@@ -2424,6 +2424,10 @@
   color: white;
 }
 
+.btn_Post:hover {
+  background: linear-gradient(#0BCAB9, #1EA79B);
+}
+
 .btn_Post--Hotel {
   background: linear-gradient(#2f3f4e, #1d2f3b);
   border: none;

@@ -1971,6 +1971,9 @@ $floatright: right;
 	margin: 0 0 0 .5em;
 	outline: medium none;
   color: $white;
+  &:hover {
+    background: linear-gradient(#0BCAB9, #1EA79B);
+  }
 }
 .btn_Post--Hotel {
 	background: linear-gradient($color_pickled_bluewood_approx,$color_big_stone_approx);

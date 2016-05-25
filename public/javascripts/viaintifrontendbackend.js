@@ -116,10 +116,9 @@ function showPosition(position) {
                                         '</article>'+
                                         '<article class="Post--User--Opt"><div class="Post--User--Cont">'+
                                         '<div class="Post--User--Like"><div class="User--Like">'+
-                                        '<div class="Like enLinea"><span class="Like--Num">10</span></div>'+
-                                        '<i class="fa fa-heart"></i></div></div><div class="Post--User--Coment">'+
-                                        '<div class="User--Coment"><div class="Comment enLinea"><span class="Comment--Num">8</span></div>'+
-                                        '<i class="fa fa-comments"></i></div></div><div class="Post--User-Shared"><div class="User--Shared">'+
+                                        '<i class="fa fa-heart"></i><div class="Like enLinea"><span class="Like--Num">0</span></div></div></div><div class="Post--User--Coment">'+
+                                        '<div class="User--Coment">'+
+                                        '<i class="fa fa-comments"></i><div class="Comment enLinea"><span class="Comment--Num">0</span></div></div></div><div class="Post--User-Shared"><div class="User--Shared">'+
                                         '<div class="Shared enLinea"><span class="Shared--Num">3</span></div>'+
                                         '<i class="fa fa-share"></i></div></div></div></article></article>')
         
