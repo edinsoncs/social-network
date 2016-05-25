@@ -137,12 +137,31 @@ router.post('/u/postprofile/', function(req, res, next){
 		            date: doc.userTime,
 					state: true
 		});*/
+
+		res.json({inserted: true});
 		
 	}).error(function(err){
 		if(err){
 			console.log(err);
 		}
 	});
+
+
+	
+
+
+
+});
+
+router.post('/u/dashboardpost/', function(req, res, next){
+
+	var idPost = req.body.id;
+	var mensaje = req.body.mensaje;
+	var idUsuarioFind = req.body.idUsuario;
+
+	var db = req.db;
+	var comentarios = db.get('users');
+	var dashboard = db.get('dashboard');
 
 
 	dashboard.findAndModify({
@@ -161,23 +180,23 @@ router.post('/u/postprofile/', function(req, res, next){
 		 new: true
 
 	}).success(function(doc){
-		/*res.json({
+		res.json({
 					userData: {
-						name: doc.userName,
-						photo: doc.userPhoto
+						name: doc.usuarioName,
+						photo: doc.usuarioFoto,
+						iduser: doc.usuarioId
 					},
-					userPost: doc.userComment,
-		            date: doc.userTime,
+					userPost: mensaje,
+		            date: doc.date,
 					state: true
-		});*/
+		});
+
 		
 	}).error(function(err){
 		if(err){
 			console.log(err);
 		}
 	});
-
-
 
 });
 

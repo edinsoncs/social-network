@@ -179,6 +179,10 @@ $(document).ready(function(){
 
 				var isID = $(this).find('.textareComments').attr('data-idpost');
 				
+				console.log('edinsonnn');
+
+				var isShowComments = $(this).parent().parent().parent();
+
 				function idUserDash(n) {
 					var id = $(n).attr('href');
 					var replace = id.replace('u/', '');
@@ -186,7 +190,55 @@ $(document).ready(function(){
 					return replace;
 				}	
 
-				$.ajax({
+
+				$.when(
+
+					$.ajax({
+						url: 'u/dashboardpost/',
+						type: 'POST',
+						dataType: 'JSON',
+						contentType: 'application/json',
+						data: JSON.stringify({
+							id: isID,
+							idUsuario: idUserDash($(".jsIDSocket")),
+							mensaje: $(post).val()
+						}),
+						success: function(data){
+							//Send Socket
+							sendSocketMensaje();
+
+							var sendComments = "<div class='CommentsViews--Show'>" +
+														"<figure class='CommentsViews--Show--Figure'>" + 
+															"<img src='"+data.userData.photo+"' alt=''>" + 
+														"</figure>" + 
+														"<aside class='CommentsViews--Show--Data'>" + 
+															"<a href='"+data.userData.iduser+"' class='Show--Name'>" + 
+																data.userData.name + 
+															"</a>"+
+															"<p class='Show--Comments'>" + 
+																data.userPost
+															"</p>" + 
+														"</aside>" +
+													"</div>";
+
+							console.log(data);
+
+							
+
+							function showComments(comment) {
+								$(comment).siblings('.Post--User--CommentsViews').fadeIn('slow');
+								$(comment).siblings('.Post--User--CommentsViews').append(sendComments);
+							}	
+							showComments(isShowComments);
+
+							//Send Append Dashboard
+						},
+						error: function(err){
+							alert('error' + err);
+						}
+					}),
+
+					$.ajax({
 						url: 'u/postprofile/',
 						type: 'POST',
 						dataType: 'JSON',
@@ -199,11 +251,19 @@ $(document).ready(function(){
 						success: function(data){
 							alert('se envio');
 							sendSocketMensaje();
+
+							console.log(data);
 						},
 						error: function(err){
 							alert('error' + err);
 						}
+					})
+
+				).then(function(){
+					//Done
 				});
+
+				
 
 			});
 		
