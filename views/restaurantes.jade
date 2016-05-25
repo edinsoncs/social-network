@@ -1,0 +1,98 @@
+doctype html
+html(lang='es', ng-app="viainti")
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='Viainti')
+    title #{web}
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+
+    <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+
+    script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
+
+    script(src='http://code.jquery.com/jquery-1.11.2.min.js')
+    
+    script(src='../javascripts/viaintifrontend.js')
+    script(src='../javascripts/viaintifrontendbackend.js')
+    script(src='../javascripts/restaurantes.js')
+  body.BodyListRestaurante
+    header.menuViainti.bgHeader(data-role='header')
+      include header-principal.jade
+      nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href='#') Inicio
+          li.liMenu
+            a.aLinkMenu(href='#') Hoteles
+          li.liMenu
+            a.aLinkMenu.aMenuHover.aColorHover(href='#') Restaurantes
+          li.liMenu
+            a.aLinkMenu(href='viajes.html') Viajes
+          li.liMenu
+            a.aLinkMenu(href='#') Musica
+          li.liMenu
+            a.aLinkMenu(href='#') Noticias
+          li.liMenu
+            a.aLinkMenu(href='#') Juegos
+    main
+      section.listMap
+        .listMap--Map#mapRest
+        //.listMap--restCity
+          figure.restCity--Figure.margen
+            .restCity--Figure--Img
+              img.friendRest(src='../images/avatar.png', alt='')
+            .restCity--Figure--Title
+              span.Title Amigos que estuvieron aqui
+            .restCity--Figure--Friends
+              a.friendsVisit(href='#')
+                | Roger SC y 11
+              span.friendTitle
+                | amigos más
+          .restCity--votStart
+            span.votStart--Title
+              | Calificación:
+            ul.votStart--Star
+              i.fa.fa-heart
+              i.fa.fa-heart
+              i.fa.fa-heart
+              i.fa.fa-heart-o
+              i.fa.fa-heart-o
+          fieldset.restCity--btnContact
+            button.restBtnContact
+              i.fa.fa-comment
+              span.restBtnContact--Title
+                | Disponible
+            button.restBtnContact
+              i.fa.fa-envelope
+              span.restBtnContact--Title
+                | Mensaje
+      section.listMapDetails
+        aside.listMapDetails--Aside
+          article.listMapDetails--Aside--Rest
+            figure.aside--Rest--Figure.margen
+              img.listRestImgAside(src='#{listRest[0].Imagen}', alt='')
+            figpcation.aside--Rest--FigureDetail
+              label.Title(for='') #{listRest[0].Nombre}
+              p.Title--subDescription.margen
+                | #{listRest[0].Descripccion}
+          ul.listMapDetails--Services--Rest
+            header.services--Rest--Header
+              h2.Title.margen
+                | Nuestros Servicios
+           
+            li.services--Rest--List
+              figure.services--Rest--List--Figure.margen
+                img.imgServicesRest(src='#{listRest[0].Imagen}', alt='')
+              .services--Rest--Description
+                span.services--Rest--Title
+                  | #{listRest[0].Descripccion}
+                a.services--Rest--Price(href="#{listRest[0].Nombre}?id=#{listRest[0]._id}")
+                  | Ver
+           
+        .listMapDetails--Locals
+          header.Locals--Header
+            h2.Title.margen
+              | Lista de restaurantes
+          section.Locals--Show
+    script(src="../javascripts/maparest.js")

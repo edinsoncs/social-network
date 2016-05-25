@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" href="../stylesheets/viaintihome.css">
+    <link rel="stylesheet" href="../stylesheets/animate.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Prefix free-->
+    <script src="../javascripts/prefixfree.min.js"></script>
+    <!-- animattion wowjs-->
+    <script src="../javascripts/wow.min.js"></script>
+    <script src="../javascripts/viaintifrontend.js"></script>
+    <!--if IEscript(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    -->
+  </head>
+  <body>
+    <section class="bgRegister">
+      <!--
+      <video class="videoRegisterPlaying" autoplay="" muted="" loop="">
+      <source src="https://s3.amazonaws.com/pushreel-videos/movie.webm" type="video/webm">
+      <source src="https://s3.amazonaws.com/pushreel-videos/movie.mp4" type="video/mp4">
+      <source src="https://s3.amazonaws.com/pushreel-videos/movie.ogv" type="video/ogg">
+      </video>
+      -->
+    </section>
+    <section class="viaRegistro wow fadeIn">
+      <form action="/loginDenegado" method="post" class="formRegistro">
+        <fieldset class="registroFB noBorder">
+          <div class="btnLinkFacebook"><i class="el-icon-facebook"></i><a href="../auth/facebook" class="titleFacebook linkBlanco">Regístrate con facebook</a></div>
+          <div class="btnLinkTwitter"><i class="el-icon-twitter"></i><a href="../auth/twitter" class="titleTwitter linkBlanco">Regístrate con twitter</a></div>
+        </fieldset>
+        <!--fieldset.dataRegister.noBorderinput.inputRegister(name='nick', type='text', placeholder='Nickname')
+        -->
+        <!--fieldset.dataRegister.noBorderinput.inputRegister(name='nombre', type='text', placeholder='Nombres')
+        -->
+        <!--fieldset.dataRegister.noBorderinput.inputRegister(name='apellidos', type='text', placeholder='Apellidos')
+        -->
+        <fieldset class="dataRegister noBorder">
+          <input name="miemail" type="email" placeholder="Email" class="inputRegister">
+        </fieldset>
+        <fieldset class="dataRegister noBorder">
+          <input name="mipassword" type="password" placeholder="Contraseña" class="inputRegister">
+        </fieldset>
+        <!--fieldset.dataRegister.noBorderinput.inputRegister(name='passwordr', type='password', placeholder='Repita Contraseña')
+        -->
+        <!--fieldset.dataRegisterDate.noBorder
+        select.dataMonth(name='selectMonth')
+          option(value='1') Enero
+          option(value='2') Febrero
+          option(value='3') Marzo
+          option(value='4') Abril
+          option(value='5') Mayo
+          option(value='6') Junio
+          option(value='7') Julio
+          option(value='8') Agosto
+          option(value='9') Septiembre
+          option(value='10') Octubre
+          option(value='11') Noviembre
+          option(value='12') Diciembre
+        input.dataNumb(name='day', type='number', min='1', max='31', placeholder='Día', maxlength='1')
+        input.dataNumb(name='year', type='number', min='1970', max='2000', placeholder='Año')
+        -->
+        <!--fieldset.dataRegisterGen.noBorder
+        input#dataRegistroMale.dataRegisterRadio(type='radio', name='generoSexM', value="Soy Hombre")
+        label(for='dataRegistroMale') Masculino
+        input#dataRegistroFemale.dataRegisterRadio(type='radio', name='generoSexM', value="Soy Mujer")
+        label(for='dataRegistroFemale') Femenino
+        -->
+        <fieldset class="dataRegisterInfo noBorder">
+          <p class="titleRegistroTerminos">Al hacer click en Registrarse, aceptas los <a href="#" class="linkRegistro">términos y condiciones</a> y la <a href="#" class="linkRegistro">política de privacidad de Viainti.</a></p>
+        </fieldset>
+        <fieldset class="dataRegistroSend noBorder">
+          <input name="registerGo" type="submit" value="Registrarme" class="btnRegisterSend">
+        </fieldset>
+      </form>
+      <div class="loginAcceso">
+        <p class="titleLoginAcceso colorBlanco">¿Ya tienes una cuenta? <a href="#" class="linkLogin">Iniciar sesion</a></p>
+      </div>
+    </section>
+    <section class="viaLogin">
+      <form action="/login" method="POST" class="formLogin">
+        <fieldset class="loginFB noBorder">
+          <div class="btnLinkFacebook"><i class="el-icon-facebook"></i><a href="#" class="titleFacebook linkBlanco">Ingresa con facebook</a></div>
+        </fieldset>
+        <fieldset class="dataLogin noBorder">
+          <input name="username" type="text" placeholder="Email" class="inputLogin">
+        </fieldset>
+        <fieldset class="dataLogin noBorder">
+          <input name="password" type="password" placeholder="Contraseña" class="inputLogin">
+        </fieldset>
+        <fieldset class="dataRegistroSend noBorder">
+          <input name="login" type="submit" value="Ingresar" class="btnRegisterSend">
+        </fieldset>
+      </form>
+      <div class="loginAcceso">
+        <p class="titleResetPass colorBlanco"><a href="#" class="linkRecovery">¿Has olvidado tu contraseña?</a></p>
+        <p class="titleLoginAcceso colorBlanco">¿No tienes cuenta? <a href="#" class="linkRegistro">Registrate</a></p>
+      </div>
+    </section>
+    <div class="resetPasswordBG"></div>
+    <section class="resetPassword">
+      <form action="" class="reset">
+        <figure class="logoResetPassword"><img src="../images/logo.png" class="opacityLogo"></figure>
+        <label class="titleResetPassword">Ingresa la <span class="titleBold">dirección de correo electrónico</span> que usaste para registrarte. Te enviaremos un mensaje con tu nombre de usuario y un enlace para restablecer tu contraseña.</label>
+        <fieldset class="recoveryPassword noBorder">
+          <input name="recoveryEmail" type="text" placeholder="Direccíon de correo electronico" class="recoveryInput">
+        </fieldset>
+        <fieldset class="sendRecoveryPassword noBorder">
+          <input name="sendRecovery" type="submit" value="RECUPERAR CONTRASEÑA" class="btnRecoverySend">
+        </fieldset>
+        <div class="soporteReset">
+          <p class="titleSoporte margen"><a href="#" class="linkSoporte">Soporte Viainti</a></p>
+        </div>
+      </form>
+    </section>
+    <footer data-role="footer" class="footer_DerechosHome">
+      <ul class="footer_DerechosHome_gen">
+        <div class="footer_DerechosHome_cont">
+          <div class="footer_DerechosHome_bloques linea float"><span class="footer_title blanco colorBlanco">Viainti 2015</span>
+            <select class="footer_pais noBorder">
+              <option value="0" class="select">Argentina</option>
+              <option value="1" class="select">Brasil</option>
+              <option value="2" class="select">Chile</option>
+              <option value="3" class="select">Colombia</option>
+              <option value="4" class="select">Costa Rica</option>
+              <option value="5" class="select">España</option>
+              <option value="6" class="select">Guatemala</option>
+              <option value="7" class="select">México</option>
+              <option value="8" class="select">Panamá</option>
+            </select>
+          </div>
+          <div class="footer_DerechosHome_bloques linea floatD">
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Ayuda</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Información</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Condiciones de uso</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Negocios</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Blog</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Desarrolladores<a></a></a></li>
+          </div>
+        </div>
+      </ul>
+    </footer>
+    <script>new WOW().init();</script>
+  </body>
+</html>

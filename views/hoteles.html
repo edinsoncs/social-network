@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Viainti">
+    <title>Viainti</title>
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" href="../stylesheets/viainti.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="../javascripts/viainti.js"></script>
+    <script src="../javascripts/viaintifrontend.js"></script>
+    <script src="../javascripts/app.js"></script>
+  </head>
+  <body class="BodyListHotel">
+    <header data-role="header" class="menuViainti bgHeader">
+      <div class="header">
+        <div class="menuViaintiLeft">
+          <figure class="menuViainti_Logo margen enLinea"><img src="../images/logo.png" alt="Viainti tu libro viajero" class="logoHeader"></figure>
+          <figure class="menuViainti_Alert vTopAlignIco enLinea colorBlue"><i class="fa fa-bell"></i></figure>
+          <figure class="menuViainti_Inbox vTopAlignIco enLinea"><i class="fa fa-envelope"></i></figure>
+        </div>
+        <div class="menuViaintiRight enLinea">
+          <form action="" class="menuViainti_Search enLinea vTopAlign">
+            <input type="search" placeholder="Busca viajeros, hoteles, restaurantes y musica" class="menuViainti_Search_Input">
+            <figure class="ico_Search margen"><i class="fa fa-search"></i></figure>
+          </form>
+          <figure class="menuViainti_Avatar enLinea"><img src="undefined" alt="undefined" class="avatarHeader"></figure>
+          <figure class="menuViainti_ArrowDown enLinea vTopAlignRow"><i class="fa fa-chevron-down jsUserDown"></i>
+            <ul class="menuViainti_ArrowDown--User">
+              <div class="arrowDown--Ico--Up"></div>
+              <li class="List"><a href="#" class="ArrowDown--Link">Editar perfil<i class="fa fa-user"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Libro Viajero<i class="fa fa-bar-chart"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Medios de pago<i class="fa fa-credit-card"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Privacidad<i class="fa fa-unlock-alt"></i></a></li>
+              <li class="List"><a href="../logout/" class="ArrowDown--Link">Desconectarse<i class="fa fa-power-off"></i></a></li>
+            </ul>
+          </figure>
+        </div>
+      </div>
+      <nav class="linkMenu">
+        <ul class="contMenu">
+          <li class="liMenu"><a href="#" class="aLinkMenu">Inicio</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Hoteles</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Restaurantes</a></li>
+          <li class="liMenu"><a href="viajes.html" class="aLinkMenu">Viajes</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Musica</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Noticias</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Juegos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="listMap">
+        <div class="listMap--Map">
+          <iframe width="100%" height="312px" frameborder="0" src="https://a.tiles.mapbox.com/v4/ockang.n4k3n98g/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoib2NrYW5nIiwiYSI6IkVpVFRfalEifQ.Lfzy-jAItxumw9Pu_E-cIQ"></iframe>
+        </div>
+        <div class="listMap--hotelCity">
+          <figure class="hotelCity--Figure margen">
+            <div class="hotelCity--Figure--Img"><img src="../images/avatar.png" alt="" class="friendHotel"></div>
+            <div class="hotelCity--Figure--Title"><span class="Title">Amigos que estuvieron aqui</span></div>
+            <div class="hotelCity--Figure--Friends"><a href="#" class="friendsVisit">Roger SC y 11</a><span class="friendTitle">amigos m&#225;s</span></div>
+          </figure>
+          <div class="hotelCity--votStart"><span class="votStart--Title">Calificaci&#243;n:</span>
+            <ul class="votStart--Star"><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart-o"></i><i class="fa fa-heart-o"></i></ul>
+          </div>
+          <fieldset class="hotelCity--btnContact">
+            <button class="hotelBtnContact"><i class="fa fa-comment"></i><span class="hotelBtnContact--Title">Disponible</span></button>
+            <button class="hotelBtnContact"><i class="fa fa-envelope"></i><span class="hotelBtnContact--Title">Mensaje</span></button>
+          </fieldset>
+        </div>
+      </section>
+      <section class="listMapDetails">
+        <aside class="listMapDetails--Aside">
+          <article class="listMapDetails--Aside--Hotel">
+            <figure class="aside--Hotel--Figure margen"><img src="../images/hotelList.jpg" alt="" class="listHotelImgAside"></figure>
+            <figpcation class="aside--Hotel--FigureDetail">
+              <label for="" class="Title">Nombre del hotel</label>
+              <p class="Title--subDescription margen">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </figpcation>
+          </article>
+          <ul class="listMapDetails--Services--Hotel">
+            <header class="services--Hotel--Header">
+              <h2 class="Title margen">Nuestros Servicios</h2>
+            </header>
+            <li class="services--Hotel--List">
+              <figure class="services--Hotel--List--Figure margen"><img src="../images/servicesHotel.jpg" alt="" class="imgServicesHotel"></figure>
+              <div class="services--Hotel--Description"><span class="services--Hotel--Title">Nombre servicio hotelario descrip</span><span class="services--Hotel--Price">{{120 | currency}}</span></div>
+            </li>
+            <li class="services--Hotel--List">
+              <figure class="services--Hotel--List--Figure margen"><img src="../images/servicesHotel.jpg" alt="" class="imgServicesHotel"></figure>
+              <div class="services--Hotel--Description"><span class="services--Hotel--Title">Nombre servicio hotelario descrip</span><span class="services--Hotel--Price">{{120 | currency}}</span></div>
+            </li>
+            <li class="services--Hotel--List">
+              <figure class="services--Hotel--List--Figure margen"><img src="../images/servicesHotel.jpg" alt="" class="imgServicesHotel"></figure>
+              <div class="services--Hotel--Description"><span class="services--Hotel--Title">Nombre servicio hotelario descrip</span><span class="services--Hotel--Price">{{120 | currency}}</span></div>
+            </li>
+            <li class="services--Hotel--List">
+              <figure class="services--Hotel--List--Figure margen"><img src="../images/servicesHotel.jpg" alt="" class="imgServicesHotel"></figure>
+              <div class="services--Hotel--Description"><span class="services--Hotel--Title">Nombre servicio hotelario descrip</span><span class="services--Hotel--Price">{{120 | currency}}</span></div>
+            </li>
+          </ul>
+        </aside>
+        <div class="listMapDetails--Locals">
+          <header class="Locals--Header">
+            <h2 class="Title margen">Lista de hoteles</h2>
+          </header>
+          <article class="Locals--List">
+            <figure class="Locals--List--Figure margen"><img src="../images/imperial.jpg" alt="" class="imgListHotel"></figure>
+            <aside class="Locals--List--Aside">
+              <header class="List--Aside--Header">
+                <h2 class="Title margen">The imperial hotel</h2>
+              </header>
+              <div class="List--Aside--Description">
+                <p class="List--Description--Hotels margen">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="List--Aside--Data">
+                <ul class="List--Aside--Data--Iz">
+                  <label class="Data--Iz--TitleUb">Ubicaci&#243;n</label>
+                  <li class="Data--Iz--TitleUb--Detail"><span class="TitleUb--Detail--Adress">Calle los flamengos n&#176; 121</span><span class="TitleUb--Detail--City">Buenos Aires</span><span class="TitleUb--Detail--Time">Tiempo llegada: 2 horas</span></li>
+                </ul>
+                <ul class="List--Aside--Data--De">
+                  <label class="Title">Calificaci&#243;n:</label>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                </ul>
+              </div>
+              <div class="List--Aside--Btn">
+                <button class="Aside--BtnMap">
+                  <btn class="BtnMap--Ico"><i class="fa fa-map-marker"></i></btn><span class="BtnMap--Title">Ver Mapa</span>
+                </button>
+              </div>
+            </aside>
+          </article>
+          <article class="Locals--List">
+            <figure class="Locals--List--Figure margen"><img src="../images/imperial.jpg" alt="" class="imgListHotel"></figure>
+            <aside class="Locals--List--Aside">
+              <header class="List--Aside--Header">
+                <h2 class="Title margen">The imperial hotel</h2>
+              </header>
+              <div class="List--Aside--Description">
+                <p class="List--Description--Hotels margen">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="List--Aside--Data">
+                <ul class="List--Aside--Data--Iz">
+                  <label class="Data--Iz--TitleUb">Ubicaci&#243;n</label>
+                  <li class="Data--Iz--TitleUb--Detail"><span class="TitleUb--Detail--Adress">Calle los flamengos n&#176; 121</span><span class="TitleUb--Detail--City">Buenos Aires</span><span class="TitleUb--Detail--Time">Tiempo llegada: 2 horas</span></li>
+                </ul>
+                <ul class="List--Aside--Data--De">
+                  <label class="Title">Calificaci&#243;n:</label>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                </ul>
+              </div>
+              <div class="List--Aside--Btn">
+                <button class="Aside--BtnMap">
+                  <btn class="BtnMap--Ico"><i class="fa fa-map-marker"></i></btn><span class="BtnMap--Title">Ver Mapa</span>
+                </button>
+              </div>
+            </aside>
+          </article>
+          <article class="Locals--List">
+            <figure class="Locals--List--Figure margen"><img src="../images/imperial.jpg" alt="" class="imgListHotel"></figure>
+            <aside class="Locals--List--Aside">
+              <header class="List--Aside--Header">
+                <h2 class="Title margen">The imperial hotel</h2>
+              </header>
+              <div class="List--Aside--Description">
+                <p class="List--Description--Hotels margen">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="List--Aside--Data">
+                <ul class="List--Aside--Data--Iz">
+                  <label class="Data--Iz--TitleUb">Ubicaci&#243;n</label>
+                  <li class="Data--Iz--TitleUb--Detail"><span class="TitleUb--Detail--Adress">Calle los flamengos n&#176; 121</span><span class="TitleUb--Detail--City">Buenos Aires</span><span class="TitleUb--Detail--Time">Tiempo llegada: 2 horas</span></li>
+                </ul>
+                <ul class="List--Aside--Data--De">
+                  <label class="Title">Calificaci&#243;n:</label>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                </ul>
+              </div>
+              <div class="List--Aside--Btn">
+                <button class="Aside--BtnMap">
+                  <btn class="BtnMap--Ico"><i class="fa fa-map-marker"></i></btn><span class="BtnMap--Title">Ver Mapa</span>
+                </button>
+              </div>
+            </aside>
+          </article>
+          <article class="Locals--List">
+            <figure class="Locals--List--Figure margen"><img src="../images/imperial.jpg" alt="" class="imgListHotel"></figure>
+            <aside class="Locals--List--Aside">
+              <header class="List--Aside--Header">
+                <h2 class="Title margen">The imperial hotel</h2>
+              </header>
+              <div class="List--Aside--Description">
+                <p class="List--Description--Hotels margen">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="List--Aside--Data">
+                <ul class="List--Aside--Data--Iz">
+                  <label class="Data--Iz--TitleUb">Ubicaci&#243;n</label>
+                  <li class="Data--Iz--TitleUb--Detail"><span class="TitleUb--Detail--Adress">Calle los flamengos n&#176; 121</span><span class="TitleUb--Detail--City">Buenos Aires</span><span class="TitleUb--Detail--Time">Tiempo llegada: 2 horas</span></li>
+                </ul>
+                <ul class="List--Aside--Data--De">
+                  <label class="Title">Calificaci&#243;n:</label>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                  <li class="List--VotStart"><i class="fa fa-heart-o"></i></li>
+                </ul>
+              </div>
+              <div class="List--Aside--Btn">
+                <button class="Aside--BtnMap">
+                  <btn class="BtnMap--Ico"><i class="fa fa-map-marker"></i></btn><span class="BtnMap--Title">Ver Mapa</span>
+                </button>
+              </div>
+            </aside>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

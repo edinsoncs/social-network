@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/viaintihome.css">
+    <link rel="stylesheet" href="stylesheets/animate.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Prefix free-->
+    <script src="javascripts/prefixfree.min.js"></script>
+    <!-- animattion wowjs-->
+    <script src="javascripts/wow.min.js"></script>
+    <script src="javascripts/viaintifrontend.js"></script>
+    <script src="javascripts/apphome.js"></script>
+    <!--if IEscript(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    -->
+  </head>
+  <body>
+    <header data-role="header" class="menuHome bgPrimary">
+      <div class="menuHome_div">
+        <figure class="menuHome_logo margen linea float"><a href="index.html"><img src="images/logo.png"></a></figure>
+        <div class="menuHome_div_title linea">
+          <h1 class="menuHome_title margen colorPrimary">Tu libro viajero</h1>
+        </div>
+        <form class="menuHome_login linea floatD">
+          <fieldset class="menuHome_fieldset noBorder linea">
+            <input name="nameLogin" type="text" placeholder="edinson@hotmail.com" autofocus="" class="inputEmail">
+          </fieldset>
+          <fieldset class="menuHome_fieldset noBorder linea">
+            <input name="password" type="password" placeholder="Ingrese su clave" class="inputPass">
+          </fieldset>
+          <fieldset class="menuHome_fieldset noBorder linea">
+            <input type="submit" value="Ingresar" class="menuHome_inputSubmit bgLogin-btn noBorder"><a href="registro/" class="menuHome_buttonLogin linkBlanco">Registrar</a>
+          </fieldset>
+        </form>
+      </div>
+    </header>
+    <div class="slideHome">
+      <figure class="slideHome_cont margen"><img src="images/slide-libro.jpg" alt="">
+        <div class="slideHome_titleHome">
+          <h1 class="slideHome_viajero colorBlanco margen wow zoomIn">Viaja por el MUNDO sin limites, <br></h1>
+          <h2 class="slideHome_viajero colorBlanco margen">con información exacta,<br><span class="colorNegro">ESTES DONDE ESTES</span></h2>
+        </div>
+        <div class="slideHome_btnHome">
+          <button class="homeBTNTo btnLinkPrimary"><a href="#" class="linkBlanco">0 kmh
+              <div class="iconAnimateTo linea"><i class="el-icon-info-sign"></i></div>
+              <div class="iconAnimateTo--Hover"><span class="iconAnimateTo--Hover--Title">Argentina</span></div></a></button>
+          <button class="homeBTN btnLinkSecondary"><a href="#" class="linkBlanco">Empezar
+              <div class="iconAnimateOne linea"><i class="el-icon-chevron-right"></i></div></a></button>
+        </div>
+        <div class="slideHome_video">
+          <p class="slideHome_link"><a id="viaintivideo" href="#viaintivideo" class="aClass linkBlanco"><i class="el-icon-video"></i>          Ver como ayudamos a los viajeros</a></p>
+        </div>
+      </figure>
+      <div class="menuHome_lineabg"></div>
+    </div>
+    <article class="videoViainti">
+      <aside class="videoViaintiTo">
+        <iframe width="854" height="510" src="https://www.youtube.com/embed/4MFOW8dhPvE" frameborder="0" allowfullscreen=""></iframe>
+      </aside>
+    </article>
+    <main>
+      <section id="conosca-nuestros-paquetes" class="contenidoHome">
+        <header class="contenidoHome_header">
+          <h2 class="contenidoHome_title margen colorSemiNegro">Paquetes para nuestros viajeros</h2>
+        </header>
+        <div class="contenidoHome_Cont"><a href="#conosca-nuestros-paquetes" class="contenidoHome_Servicios_Link hotelTab linkNegro">
+            <article class="contenidoHome_servicios linea">
+              <figure class="contenidoHome_figure margen"><img src="images/home/hotel.png" alt="" class="imgServ"></figure>
+              <figcaption class="titleServ">Hoteles</figcaption>
+              <div class="contenidoHome_selected_hotel wow zoomIn"><i class="el-icon-chevron-up"></i></div>
+            </article></a><a href="#conosca-nuestros-paquetes" class="contenidoHome_Servicios_Link restauranteTab linkNegro">
+            <article class="contenidoHome_servicios linea">
+              <figure class="contenidoHome_figure margen"><img src="images/home/restaurante.png" alt="" class="imgServ"></figure>
+              <figcaption class="titleServ">Restaurantes</figcaption>
+              <div class="contenidoHome_selected_restaurante wow zoomIn"><i class="el-icon-chevron-up"></i></div>
+            </article></a><a href="#conosca-nuestros-paquetes" class="contenidoHome_Servicios_Link vuelosTab linkNegro">
+            <article class="contenidoHome_servicios linea">
+              <figure class="contenidoHome_figure margen"><img src="images/home/vuelos.png" alt="" class="imgServ"></figure>
+              <figcaption class="titleServ">Vuelos</figcaption>
+              <div class="contenidoHome_selected_vuelos wow zoomIn"><i class="el-icon-chevron-up"></i></div>
+            </article></a><a href="#conosca-nuestros-paquetes" class="contenidoHome_Servicios_Link musicaTab linkNegro">
+            <article class="contenidoHome_servicios linea">
+              <figure class="contenidoHome_figure margen"><img src="images/home/musica.png" alt="" class="imgServ"></figure>
+              <figcaption class="titleServ">Musica</figcaption>
+              <div class="contenidoHome_selected_musica wow zoomIn"><i class="el-icon-chevron-up"></i></div>
+            </article></a><a href="#conosca-nuestros-paquetes" class="contenidoHome_Servicios_Link noticiasTab linkNegro">
+            <article class="contenidoHome_servicios linea">
+              <figure class="contenidoHome_figure margen"><img src="images/home/noticia.png" alt="" class="imgServ"></figure>
+              <figpcation class="titleServ">Noticias</figpcation>
+              <div class="contenidoHome_selected_noticias wow zoomIn"><i class="el-icon-chevron-up"></i></div>
+            </article></a><a href="#conosca-nuestros-paquetes" class="contenidoHome_Servicios_Link juegosTab linkNegro">
+            <article class="contenidoHome_servicios linea">
+              <figure class="contenidoHome_figure margen"><img src="images/home/juego.png" alt="" class="imgServ"></figure>
+              <figcaption class="titleServ">Entrenimiento</figcaption>
+              <div class="contenidoHome_selected_juegos wow zoomIn"><i class="el-icon-chevron-up"></i></div>
+            </article></a></div>
+        <section class="contenidoHome_Tab">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">AHORRE DINERO Y<br> TIEMPO</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">OPTIMIZAR SU RUTA<br> Y GUÍA</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+        <section class="contenidoHome_Tab_Hotel">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">RESERVE SU HOTEL<br> CERCANO</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">OPTIMIZAR SU RUTA<br> Y GUÍA</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+        <section class="contenidoHome_Tab_Restaurante">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">RESTAURANTE<br> TIEMPO</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">OPTIMIZAR SU RUTA<br> Y GUÍA</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+        <section class="contenidoHome_Tab_Vuelos">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">VUELOS<br> TIEMPO</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">OPTIMIZAR SU RUTA<br> Y GUÍA</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+        <section class="contenidoHome_Tab_Musica">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">MUSICA EN<br>TIEMPO REAL</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">ARTISTAS<br> EN TU UBICACIÓN</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+        <section class="contenidoHome_Tab_Noticias">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">NOTICIAS<br> TIEMPO</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">OPTIMIZAR SU RUTA<br> Y GUÍA</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+        <section class="contenidoHome_Tab_Juegos">
+          <article class="contenidoHome_mejoras">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">JUEGOS<br> TIEMPO</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+          <article class="contenidoHome_mejoras_dos">
+            <article class="contenidoHome_info">
+              <header class="contenidoHome_title_info">
+                <h2 class="title_header">CINE SU RUTA<br> Y GUÍA</h2>
+              </header>
+              <p class="contenidoHome_title_informacion colorMarron">Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.</p>
+              <button class="btnUnete btnLinkHomeInfo"><a href="#" class="linkAzul">Únete Ahora</a></button>
+            </article>
+          </article>
+        </section>
+      </section>
+    </main>
+    <footer data-role="footer" class="footer_DerechosHome">
+      <ul class="footer_DerechosHome_gen">
+        <div class="footer_DerechosHome_cont">
+          <div class="footer_DerechosHome_bloques linea float"><span class="footer_title blanco colorBlanco">Viainti 2015</span>
+            <select class="footer_pais noBorder">
+              <option value="0" class="select">Argentina</option>
+              <option value="1" class="select">Brasil</option>
+              <option value="2" class="select">Chile</option>
+              <option value="3" class="select">Colombia</option>
+              <option value="4" class="select">Costa Rica</option>
+              <option value="5" class="select">España</option>
+              <option value="6" class="select">Guatemala</option>
+              <option value="7" class="select">México</option>
+              <option value="8" class="select">Panamá</option>
+            </select>
+          </div>
+          <div class="footer_DerechosHome_bloques linea floatD">
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Ayuda</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Información</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Condiciones de uso</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Negocios</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Blog</a></li>
+            <li class="footer_list linea"><a href="#" class="footer_list_link linkBlanco">Desarrolladores<a></a></a></li>
+          </div>
+        </div>
+      </ul>
+    </footer>
+    <script>new WOW().init();</script>
+    <script></script>
+  </body>
+</html>

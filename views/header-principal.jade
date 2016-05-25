@@ -1,0 +1,47 @@
+.header
+        .menuViaintiShow
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
+          figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
+            i.fa.fa-bell
+            div.Number--Notify--Cont
+              span.Number--Notify.jsNotify--Show
+                | 0
+          //figure.menuViainti_Inbox.vTopAlignIco.enLinea
+            i.fa.fa-envelope
+        .menuViaintiRight.enLinea
+          form.menuViainti_Search.enLinea.vTopAlign(action='')
+            input.menuViainti_Search_Input(type='search', placeholder='Busca viajeros, hoteles, restaurantes y musica')
+            figure.ico_Search.margen
+              i.fa.fa-search
+          figure.menuViainti_Avatar.enLinea
+              img.avatarHeader(src='#{avatar}', alt='#{nombre}')
+            figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
+              i.fa.fa-chevron-down.jsUserDown
+              ul.menuViainti_ArrowDown--User
+                .arrowDown--Ico--Up
+                li.List
+                  a.ArrowDown--Link.jsIDSocket(href='u/#{id}')
+                    | Mi Perfil
+                    i.fa.fa-user
+                //li.List
+                  a.ArrowDown--Link(href='#')
+                    | Editar perfil
+                    i.fa.fa-user
+                //li.List
+                  a.ArrowDown--Link(href='#')
+                    | Libro Viajero
+                    i.fa.fa-bar-chart
+                //li.List
+                  a.ArrowDown--Link(href='#')
+                    | Medios de pago
+                    i.fa.fa-credit-card
+                //li.List
+                  a.ArrowDown--Link(href='#')
+                    | Privacidad
+                    i.fa.fa-unlock-alt
+                li.List
+                  a.ArrowDown--Link(href='../logout/')
+                    | Desconectarse
+                    i.fa.fa-power-off

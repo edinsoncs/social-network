@@ -1,0 +1,70 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='robots', content='nofollow')
+    meta(name='description', content='Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea')
+    title #{title}
+    link(rel='stylesheet', href='../../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../../stylesheets/viainti.css')
+    script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+   
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+    script(src='../javascripts/viaintibackend.js')
+  body
+     header.menuViainti.bgHeader(data-role='header')
+      .header.headerVuelosAdmin
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src='../../images/logo.png', alt='Viainti tu libro viajero')
+        .menuViaintiRight
+          figure.menuViainti_UserAdmin
+          
+    main
+        section.contenidoPrincipal.backendVuelos
+        section.contenidoBackendAdmin
+            nav.menuBackend
+                ul.menuBackend--Ul
+                    li.menuBackend--List.selectLinkBackend
+                        a.menuBackend--Link.selectLinkWhite(href="#")
+                            i(class="fa fa-home")
+                            | Inicio
+                    li.menuBackend--List
+                        a.menuBackend--Link(href='../hoteles/')
+                            i(class="fa fa-suitcase")
+                            | Hoteles 
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="../restaurantes/")
+                            i(class="fa fa-cutlery")
+                            | Restaurantes 
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="../vuelos/")
+                            i(class="fa fa-suitcase")
+                            | Paquetes
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="../cruceros/")
+                            i(class="fa fa-suitcase")
+                            | Cruceros
+                    li.menuBackend--List
+                        a.menuBackend--Link(href='../a')
+
+        section.contenidoBackendABM
+            div.contents--ABM
+                header.header--ABM
+                    h2.title
+                        | ABM DASHBOARD
+                form.formABM--Dashboard(action="../abm-home", method="post", enctype="multipart/form-data")
+                    fieldset.formABM--Dashboard--Fieldset
+                        input(type="text" name="title", placeholder="Titulo")
+                    fieldset.formABM--Dashboard--Fieldset
+                        input(type="text" name="subtitle", placeholder="Descripcción")
+                    fieldset.formABM--Dashboard--Fieldset
+                        label(for="fileABM")
+                             span.fileABM--Select
+                                | Selecionar Archivo
+                        input(type="file", name="archivo", style="display:none", id="fileABM")
+
+                    fieldset.formABM--Dashboard--Fieldset
+                        input(type="submit")
+
+

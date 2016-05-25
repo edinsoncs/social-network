@@ -1,0 +1,104 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='robots', content='nofollow')
+    meta(name='description', content='Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea')
+    title #{title}
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+    script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+   
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+    script(src='../javascripts/viaintibackend.js')
+  body
+    include header-vuelosPaquetes.jade
+    main
+        section.contenidoPrincipal
+          header.subMenuViajes
+            ul.subMenuViajes--Cont
+              li.listSubMenuViajes
+                a.link(href="/") 
+                  | Inicio
+              li.listSubMenuViajes
+                a.link(href="/paquetes")
+                  | Paquetes Turisticos
+          section.contenidoVuelos
+            section.contenidosVuelos--Iz
+              section.contenidoPaquetes
+                form.searchPaquetes
+                  header.searchPaquetes--Header
+                    h2.title
+                      | Encuentra tu paquete
+                  fieldset.searchPaquetes--Fieldset
+                    label.fieldset--Title
+                      | Ciudad de origen
+                    input(class="inputPaquetes", type="text", placeholder="Donde se encuentra?")
+
+                  fieldset.searchPaquetes--Fieldset
+                    label.fieldset--Title
+                      | Ciudad de destino
+                    input(class="inputPaquetes", type="text", placeholder="Donde quiere ir?")
+                  fieldset.searchPaquetes--Fieldset
+                    label.fieldset--Title
+                      | Fechas disponibles
+                    select.optionsPaquetes.inputPaquetes
+                      option(value="Noviembre")
+                        | Noviembre
+                      option(value="Diciembre")
+                        | Diciembre
+                      option(value="Enero")
+                        | Enero
+                  fieldset.searchPaquetes--Fieldset
+                    input(class="enviarPaquetes" type="submit", value="Buscar")
+
+            aside.contenidosVuelos--De
+              div.contenidosVuelos--Separador
+              div.contenidosVuelos--Circle
+              section.contenidos--Vuelos--Cont
+              div.contenidosVuelos--Pagination
+               ul.contenidosVuelos--Pagination--Ul
+                li.List--Title.linea.toPaginatorPrevius
+                li.List--Title.linea.toPaginatorNext
+    footer.footer_DerechosHome(data-role='footer')
+      ul.footer_DerechosHome_gen
+        .footer_DerechosHome_cont
+          .footer_DerechosHome_bloques.linea.float
+            span.footer_title.cBlanco Viainti 2015
+            select.footer_pais.noBorder
+              option.select(value='0')
+                | Argentina
+              option.select(value='1') Brasil
+              option.select(value='2') Chile
+              option.select(value='3') Colombia
+              option.select(value='4') Costa Rica
+              option.select(value='5') España
+              option.select(value='6') Guatemala
+              option.select(value='7') México
+              option.select(value='8') Panamá
+          .footer_DerechosHome_bloques.linea.floatD
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Ayuda
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Información
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Condiciones de uso
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Negocios
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Blog
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#')
+                | Desarrolladores
+                a
+
+               
+                    
+                    
+               
+            
+
+               
+
+                
+                      

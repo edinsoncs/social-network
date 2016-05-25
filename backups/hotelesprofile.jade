@@ -1,0 +1,382 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='description', content='Viainti')
+  title #{web}
+  link(rel='stylesheet', href='../stylesheets/normalize.css')
+  link(rel='stylesheet', href='../stylesheets/viainti.css')
+  <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+
+  script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
+
+  script(src='http://code.jquery.com/jquery-1.11.2.min.js')
+  script(src='../javascripts/hotelesv1.js')
+
+  
+header.menuViainti.bgHeader(data-role='header')
+  .header
+    .menuViaintiLeft
+      figure.menuViainti_Logo.margen.enLinea
+        img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
+      figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
+            i.fa.fa-bell
+            div.Number--Notify--Cont
+              span.Number--Notify.jsNotify--Show
+                | 0
+      //figure.menuViainti_Inbox.vTopAlignIco.enLinea
+        i.fa.fa-envelope
+    .menuViaintiRight.enLinea
+      form.menuViainti_Search.enLinea.vTopAlign(action='')
+        input.menuViainti_Search_Input(type='search', placeholder='Busca viajeros, hoteles, restaurantes y musica')
+        figure.ico_Search.margen
+          i.fa.fa-search
+      figure.menuViainti_Avatar.enLinea
+        img.avatarHeader(src='#{avatar}', alt='#{nombre}')
+      figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
+        i.fa.fa-chevron-down.jsUserDown
+        ul.menuViainti_ArrowDown--User
+          .arrowDown--Ico--Up
+          li.List
+            a.ArrowDown--Link(href='#')
+              | Editar perfil
+              i.fa.fa-user
+          li.List
+            a.ArrowDown--Link(href='#')
+              | Libro Viajero
+              i.fa.fa-bar-chart
+          li.List
+            a.ArrowDown--Link(href='#')
+              | Medios de pago
+              i.fa.fa-credit-card
+          li.List
+            a.ArrowDown--Link(href='#')
+              | Privacidad
+              i.fa.fa-unlock-alt
+          li.List
+            a.ArrowDown--Link(href='#')
+              | Desconectarse
+              i.fa.fa-power-off
+  nav.linkMenu
+    ul.contMenu
+      li.liMenu
+        a.aLinkMenu(href='#') Inicio
+      li.liMenu
+        a.aLinkMenu(href='#') Hoteles
+      li.liMenu
+        a.aLinkMenu(href='#') Restaurantes
+      li.liMenu
+        a.aLinkMenu(href='viajes.html') Viajes
+      li.liMenu
+        a.aLinkMenu(href='#') Musica
+      li.liMenu
+        a.aLinkMenu(href='#') Noticias
+      li.liMenu
+        a.aLinkMenu(href='#') Juegos
+main
+  section.contenidoPrincipal
+    section.cont_Principal_Dashboard
+      article.Dashboard_Left--Hotel
+        .Dashboard_Left--Hotel--Cont--Top
+          figure.DashboardHotel.margen
+            img.imgHotel(src='#{fotoHotel}', alt='')
+          .DashboardHotel--Acerca
+            h4.Acerca--Title.margen #{nombreHotel}
+          figpcation.DashboardHotelDescription
+            | #{destHotel}
+          .DashboardHotel--Acerca--City
+            h4.Acerca--City--Title.margen Ubicación:
+            .Acerca--City--Title--Name
+              p.City--Name.margen #{ubiHotel}
+            h4.Acerca--City--Title.margen Dirección:
+            .Acerca--City--Title--Name
+              p.City--Name.margen.jsDireccion 
+                | #{direHotel}
+          .DashboardHotel--Acerca--Mapa
+            figure.Mapa.margen#map(data-latitud="#{latHotel}", data-longitud="#{lonHotel}")
+              //img(src='../images/hoteles/ubicacion.jpg', alt='')
+        .Dashboard_Left--Hotel--Cont--SubTop
+          article.Dashboard--Hotel--Habitaciones
+            header.Dashboard--Hotel--Title
+              h4.Title.margen Habitaciones
+            .Dashboard--Hotel--Listas
+              ul.Listas--Contenedor
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Matrimonial
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 29
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Bicameral
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Suites
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Estándar
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Premiun
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Matrimonial Superior
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Junior Suite
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Triple
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+                li.Dashboard--Hotel--Listas
+                  a.Dashboard--Hotel--Link(href='#')
+                    | Simple
+                  .Dashboard--Hotel--Listas--Cantidad.enLinea
+                    span.Title--Cantidad 10
+            .Dashboard--Hotel--VerMas
+              .VerMas--Cont
+                a.VerMas--Link(href='#')
+                  | Ver todos
+                i.fa.fa-plus
+        .Dashboard_Left--Hotel--Cont--Descuentos
+          article.Dashboard--Hotel--Descuentos
+            header.Dashboard--Hotel--Title
+              h4.Title.margen Descuentos
+            .Dashboard--Hotel--Descuentos--Listas
+              ul.Descuentos--Listas
+                li.Dashboard--Hotel--Descuentos
+                  span.Hotel--Descuentos
+                    | Con descuentos
+                  .Hotel--Descuentos--Cantidad
+                    span.Title--Cantidad
+                      | %20
+      article.Dashboard_Center
+        article.Dashboard_Welcome
+          form(class='sendHotel', id="formHotel")
+            figure.Dashboard_Map.fijo.margen
+              img(src='#{coverHotel}', alt='')
+            .Dashboard_Post
+              textarea.Post_Home.noBorder(name='', id='textData', cols='', rows='', placeholder='Escribelo a @#{nombreHotel}')
+          .Dashboard_Post_Send
+            .DashBoard_Send_Utils.flotaRight
+              //.Send_Ico.enLinea
+                .Send_Ico_Geo.enLinea
+                  i.fa.fa-map-marker
+                .Send_Ico_Movi.enLinea
+                  i.fa.fa-film
+                .Send_Ico_Photo.enLinea
+                  i.fa.fa-camera
+              .Send_btnSubmit.enLinea
+                button.btn_Post--Hotel(type="submit")
+                  a.linkBlanco.pubHotel(href='#')
+                    | Publicar
+      
+        if !posts
+          h2 hola escribe algo
+        else
+          each key in posts
+            article.Dashboard_Post--User
+              article.Post--User
+                .Post--User--Date
+                  .Post--Date
+                    span.name
+                      | #{key.name}
+                  .Post--Date
+                    span.date
+                      | Publicado hace 2 horas
+                figure.Post--User--Foto.margen
+                  img.User--Foto(src='#{key.foto}', alt='')
+              article.Post--User--Txt
+                p.Post--Txt.margen
+                  | #{key.content}
+              //article.Post--User--Opt
+                .Post--User--Cont
+                  .Post--User--Like
+                    .User--Like
+                      .Like.enLinea
+                        span.Like--Num
+                          | 10
+                      i.fa.fa-heart
+                  .Post--User--Coment
+                    .User--Coment
+                      .Comment.enLinea
+                        span.Comment--Num
+                          | 8
+                      i.fa.fa-comments
+                  .Post--User-Shared
+                    .User--Shared
+                      .Shared.enLinea
+                        span.Shared--Num
+                          | 3
+                      i.fa.fa-share
+        
+      aside.Dashboard_Right
+        .Activity_Friend
+          header.Dashboard_Right_Title
+            h4.titleRight.margen.cBlancoSidebarTitle
+              | Opciones
+          article.Dashboard_User
+            figure.userActividity.margen.flotaLeft
+              img.user_Img(src='../images/avatar.png', alt='Edinson Carranza')
+            article.user_Details.flotaLeft
+              figcaption.userName.cAzulClaroUser
+                | @edinson
+              p.userInfo.margen
+                | ceno en 
+                span.userInfo_Category
+                  | Rest
+                | 									joya
+            .user_Details_Check
+              input(type='checkbox')
+          article.Dashboard_User
+            figure.userActividity.margen.flotaLeft
+              img.user_Img(src='../images/avatar.png', alt='Edinson Carranza')
+            article.user_Details.flotaLeft
+              figcaption.userName.cAzulClaroUser
+                | @edinson
+              p.userInfo.margen
+                | ceno en 
+                span.userInfo_Category
+                  | Rest
+                | 									joya
+            .user_Details_Check
+              input(type='checkbox')
+          article.Dashboard_User
+            figure.userActividity.margen.flotaLeft
+              img.user_Img(src='../images/avatar.png', alt='Edinson Carranza')
+            article.user_Details.flotaLeft
+              figcaption.userName.cAzulClaroUser
+                | @edinson
+              p.userInfo.margen
+                | ceno en 
+                span.userInfo_Category
+                  | Rest
+                | 									joya
+            .user_Details_Check
+              input(type='checkbox')
+          article.Dashboard_User
+            figure.userActividity.margen.flotaLeft
+              img.user_Img(src='../images/avatar.png', alt='Edinson Carranza')
+            article.user_Details.flotaLeft
+              figcaption.userName.cAzulClaroUser
+                | @edinson
+              p.userInfo.margen
+                | ceno en 
+                span.userInfo_Category
+                  | Rest
+                | 									joya
+            .user_Details_Check
+              input(type='checkbox')
+          article.Dashboard_User
+            figure.userActividity.margen.flotaLeft
+              img.user_Img(src='../images/avatar.png', alt='Edinson Carranza')
+            article.user_Details.flotaLeft
+              figcaption.userName.cAzulClaroUser
+                | @edinson
+              p.userInfo.margen
+                | ceno en 
+                span.userInfo_Category
+                  | Rest
+                | 									joya
+            .user_Details_Check
+              input(type='checkbox')
+        //.Dashboard_Right_Menu
+          header.Dashboard_Right_Title
+            h4.cBlancoSidebarTitle.margen
+              | Mi libro viajero
+          ul.Dashboard_Right_Menu
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-folder
+                | 									crear grupo
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-calendar
+                | 									crear evento
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-briefcase
+                | 									top viajeros
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-pencil
+                | 									redactar noticia
+        //.Dashboard_Right_Menu
+          header.Dashboard_Right_Title
+            h4.cBlancoSidebarTitle.margen
+              | Hoteles
+          ul.Dashboard_Right_Menu
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-bed
+                | 									el mas cercano
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-phone
+                | 									reservar ahora
+        //.Dashboard_Right_Menu
+          header.Dashboard_Right_Title
+            h4.cBlancoSidebarTitle.margen
+              | Restaurantes
+          ul.Dashboard_Right_Menu
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-phone
+                | 									el mas cercano
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-home
+                | 									reservar ahora
+        //.Dashboard_Right_Menu
+          header.Dashboard_Right_Title
+            h4.cBlancoSidebarTitle.margen
+              | Viajes
+          ul.Dashboard_Right_Menu
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-plane
+                | 									destinos
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-star
+                | 									promociones
+        //.Dashboard_Right_Menu
+          header.Dashboard_Right_Title
+            h4.cBlancoSidebarTitle.margen
+              | Música
+          ul.Dashboard_Right_Menu
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-music
+                | 									Mi colección
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-heart
+                | 									Historia
+        //.Dashboard_Right_Menu
+          header.Dashboard_Right_Title
+            h4.cBlancoSidebarTitle.margen
+              | Juegos
+          ul.Dashboard_Right_Menu
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-smile-o
+                | 									Desarrolladores
+            li.list-Right--Menu
+              a.link-Right--Menu(href='#')
+                i.fa.fa-gamepad
+                | 									Juega
+
+script(src='../javascripts/maps.js')

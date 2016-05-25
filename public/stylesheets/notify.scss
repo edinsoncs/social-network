@@ -1,0 +1,140 @@
+.Number--Notify--Cont {
+	background-color: #d14233;
+	border-radius: 50%;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	left: 50%;
+    margin-left: -0.1em;
+	width: 18px;
+    padding: 0.1em 0;
+	.Number--Notify {
+		font-size: 10px;
+		display: block;
+		color: white;
+	}
+}
+.menuViaintiShow {
+	//background-color: red;
+	margin-top: 0.4em;
+	position: absolute;
+	top: 50%;
+	width: 250px;
+	z-index: 1234;
+	box-shadow: 0 2px 2px #CECDCD;
+	display: none;
+	$centradoNotify: center;
+	.Notify--Header {
+		text-align: $centradoNotify;
+		background-color: white;
+		border-bottom: 1px solid #dedede;
+		line-height: 55px;
+		.title {
+			font-weight: 400;
+			font-size: 1.2rem;
+			margin: 0;
+			color: #97A1AB;
+		}
+	}
+	.Notify--Container {
+	max-height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+	}
+	.Notify--Section {
+		background-color: #EAEFF3;
+		border-bottom: 1px solid #C3D8E9;
+		.Notify--Section--Users {
+			overflow: hidden;
+			width: 80%;
+			margin: 0 auto;
+			padding: 0.5em 0;
+			.Figure {
+				margin: 0; 
+				img {
+					width: 32px;
+					display: block;
+				}
+			}
+			.Notify--Iz {
+				float: left;
+				width: 17%;
+			}
+			.Notify--De {
+				float: left;
+				font-size: 10px;
+				margin: 0 0 0 1em;
+				width: 73%;
+				.Notify--De--UserName .title {
+					margin: 0;
+					font-size: 1rem;
+					font-weight: 300;
+					width: 50%;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+				.Notify--De--Alert {
+					margin: 0;
+				}
+			}
+		}
+
+		.Notify--Section--Friend {
+			overflow: hidden;
+			width: 80%;
+			margin: 0 auto;
+			padding: 0.5em 0;
+			.Figure {
+				margin: 0; 
+				img {
+					width: 32px;
+					display: block;
+				}
+			}
+			.Notify--Iz {
+				float: left;
+				width: 17%;
+			}
+			.Notify--De {
+				float: left;
+				font-size: 10px;
+				margin: 0 0 0 1em;
+				width: 60%;
+				.Notify--De--UserName .title {
+					margin: 0;
+					font-size: 1rem;
+					font-weight: 300;
+					width: 50%;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+				.Notify--De--Alert {
+					margin: 0;
+				}
+			}
+			.Notify--Accept {
+				cursor: pointer;
+				float: right;
+			    background: #E9556F;
+			    padding: 0.4em 0.5em;
+				i {
+					color: white;
+				}	
+			}
+		}
+	}
+}
+.cssNotifyShow {
+	display: block;
+	animation: showInitialize 1s;
+}
+@keyframes showInitialize {
+	0% {
+		opacity: 0;
+	}
+	90% {
+		opacity:1;
+	}
+}

@@ -1,0 +1,12 @@
+.widgetUnico {
+	width: 1200px;
+	margin: 1em auto 0 auto;
+	
+	.widgetUnico--Header {
+		.widgetUnico--Header--Cont {
+			display: flex;
+			align-items: center;
+
+		}
+	}
+}

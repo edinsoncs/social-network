@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    main
+      h1= title
+      p Welcome to #{title}
+      h2 Ciudades
+      
+      each ciudad in ciudades
+        article
+          h2
+            a.link(href='/places/#{title}/#{ciudad.ciudad}/')= ciudad.ciudad

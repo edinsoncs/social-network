@@ -1,0 +1,333 @@
+<style type="text/css">
+
+/* Chat */
+
+.chat-lobby {
+	cursor: pointer;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+.chat-lobby .image {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+    margin: 0px;
+    position: relative;
+}
+.chat-lobby .image .img {
+	width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px #BFBFBF;
+}
+
+.chat-box {
+	background: #fff;
+    border-radius: 7px;
+	width: 250px;
+	position: absolute;
+    right: 5px;
+    bottom: 60px;
+}
+.chat-box:before {
+	content: "";
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #6B8FAE;
+    position: absolute;
+    right: 20px;
+    bottom: -8px;
+    z-index: 1;
+}
+.chat-box:after {
+	content: "";
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    position: absolute;
+    right: 20px;
+    bottom: -6px;
+    z-index: 1;
+}
+.chat-box-header {
+	background: linear-gradient(#7691A7,#688FAF);
+    border-radius: 7px 7px 0px 0px;
+    padding: 6px;
+    position: relative;
+}
+.chat-box-header i {
+	background: #2EDE3C;
+    border-radius: 50%;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-top: 4px;
+    margin-left: 3px;
+    margin-right: 6px;
+    vertical-align: top;
+}
+.chat-box-header h2 {
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	display: inline-block;
+	margin: 0px;
+}
+.chat-box-header h2 a {
+	color: #FFFFFF;
+    text-shadow: 0px 1px 0px #4A5F71;
+}
+.chat-box-header h2 a:hover {
+	text-decoration: underline;
+}
+.chat-box-messages {
+    border-left: 1px #698FAE solid;
+    border-right: 1px #698FAE solid;
+    height: 260px;
+    overflow: auto;
+}
+.chat-box-messages ul {
+	list-style: none;
+	margin: 0px;
+	margin-top: 5px;
+	padding: 0px;
+}
+.chat-box-messages ul li {
+	display: block;
+	margin-bottom: 6px;
+	padding-left: 7px;
+	clear: both;
+}
+.chat-box-messages ul li figure {
+	display: inline-block;
+	margin: 0px;
+	vertical-align: top;
+}
+.chat-box-messages ul li figure img {
+	border: 1px #fff solid;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	vertical-align: top;
+	box-shadow: 0px 0px 1px #8F8F8F;
+}
+.chat-box-messages ul li span {
+	font-size: 12px;
+    color: #4C4C4C;
+    text-shadow: 0px 1px 0px #FFFFFF;
+    border-radius: 7px;
+    border: 1px #BBBBBB solid;
+    word-wrap: break-word;
+    display: inline-block;
+    max-width: 160px;
+    margin-left: 10px;
+    padding: 5px;
+    box-shadow: inset 0px 0px 0px 1px #FFF;
+    position: relative;
+}
+.chat-box-messages ul li span:before {
+    content: "";
+    display: block;
+    border-top: 5px transparent solid;
+    border-right: 5px #A3A3A3 solid;
+    border-bottom: 5px transparent solid;
+    position: absolute;
+    top: 11px;
+    left: -6px;
+}
+.chat-box-messages ul li span:after {
+	content: "";
+    display: block;
+    border-top: 5px transparent solid;
+    border-right: 5px #FFFFFF solid;
+    border-bottom: 5px transparent solid;
+    position: absolute;
+    top: 11px;
+    left: -5px;
+}
+.chat-box-messages ul li span a {
+	color: #2E6FD2;
+}
+.chat-box-messages ul li span a:hover {
+	text-decoration: underline;
+}
+.chat-box-messages ul li span b {
+	display: block;
+	color: #5D89B5;
+}
+.chat-box-messages ul ol {
+	display: block;
+	margin-bottom: 6px;
+	padding: 0px;
+	padding-right: 3px;
+	float: right;
+	clear: both;
+}
+.chat-box-messages ul ol figure {
+	display: inline-block;
+	margin: 0px;
+	vertical-align: top;
+}
+.chat-box-messages ul ol figure img {
+	border: 1px #fff solid;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	vertical-align: top;
+	box-shadow: 0px 0px 1px #8F8F8F;
+}
+.chat-box-messages ul ol span {
+	font-size: 12px;
+	color: #4C4C4C;
+	text-shadow: 0px 1px 0px #FFFFFF;
+	border-radius: 7px;
+	border: 1px #BBBBBB solid;
+	word-wrap: break-word;
+	display: inline-block;
+	max-width: 160px;
+	margin-right: 10px;
+	padding: 5px;
+	box-shadow: inset 0px 0px 0px 1px #FFF;
+	position: relative;
+}
+.chat-box-messages ul ol span:before {
+    content: "";
+    display: block;
+    border-top: 5px transparent solid;
+    border-left: 5px #BBBBBB solid;
+    border-bottom: 5px transparent solid;
+    position: absolute;
+    top: 10px;
+    right: -6px;
+}
+.chat-box-messages ul ol span:after {
+    content: "";
+    display: block;
+    border-top: 5px transparent solid;
+    border-left: 5px #FFFFFF solid;
+    border-bottom: 5px transparent solid;
+    position: absolute;
+    top: 10px;
+    right: -5px;
+}
+.chat-box-messages ul ol span a {
+	color: #2E6FD2;
+}
+.chat-box-messages ul ol span a:hover {
+	text-decoration: underline;
+}
+.chat-box-messages ul ol span b {
+	text-align: right;
+	display: block;
+	color: #5D89B5;
+}
+.chat-box-messages ul p {
+	font-size: 10px;
+	color: #717070;
+	text-align: center;
+	margin-bottom: 6px;
+	clear: both;
+}
+.chat-box-footer {
+	border: 1px #6A8FAE solid;
+    border-top: 1px #CDCDCD dashed;
+    border-radius: 0px 0px 7px 7px;
+}
+.chat-box-footer input {
+	background: transparent;
+    border: none;
+    width: 248px;
+    margin: 0px;
+    padding: 7px 5px;
+    outline: none;
+}
+
+/* Icons */
+
+.i-close {
+	background: url('../images/icons.png') -311px 1px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	position: absolute;
+	top: 4px;
+	right: 2px;
+}
+
+/* Emotics */
+
+.i-grin {
+	background: url('../images/chat/emotics.png') 0px 0px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.i-upset {
+	background: url('../images/chat/emotics.png') -15px 0px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.i-smile {
+	background: url('../images/chat/emotics.png') -31px 0px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.i-wink {
+	background: url('../images/chat/emotics.png') -46px 0px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.i-frown {
+	background: url('../images/chat/emotics.png') 0px -16px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.i-unsure {
+	background: url('../images/chat/emotics.png') -15px -16px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+.i-squint {
+	background: url('../images/chat/emotics.png') 0px -31px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: top;
+}
+
+</style>
+<div class="chat-lobby">
+	<figure class="image" data-user="">
+		<img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAIVAAAAJGExMjVkNjZiLTE3NTQtNDJmNy05YjQzLTBhOWY0NDhjNzY1NA.jpg" class="img">
+		<div class="chat-box">
+			<div class="chat-box-header">
+				<i></i><h2><a href="">Edinson Carranza</a></h2><span class="i-close"></span>
+			</div>
+			<div class="chat-box-messages">
+				<ul id="messages1">
+					<li><figure><a href=""><img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAIVAAAAJGExMjVkNjZiLTE3NTQtNDJmNy05YjQzLTBhOWY0NDhjNzY1NA.jpg"></a></figure><span><b>Edinsoncs</b>Texto <i class="i-smile"></i> demo right user he</span></li>
+					<li><figure><a href=""><img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAIVAAAAJGExMjVkNjZiLTE3NTQtNDJmNy05YjQzLTBhOWY0NDhjNzY1NA.jpg"></a></figure><span><b>Edinsoncs</b>Algo mas</span></li>
+					<p>Hoy a las 4 pm</p>
+					<ol><span><b>Ockang</b>enlace <a href="">www.viainti.com</a></span><figure><a href=""><img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAIVAAAAJGExMjVkNjZiLTE3NTQtNDJmNy05YjQzLTBhOWY0NDhjNzY1NA.jpg"></a></figure></ol>
+				</ul>
+			</div>
+			<div class="chat-box-footer">
+				<input name="" id="chat-input" type="text">
+			</div>
+		</div>
+	</figure>
+	<figure class="image" data-user="">
+		<img src="https://yt3.ggpht.com/-A7ArF5435tk/AAAAAAAAAAI/AAAAAAAAAAA/_yTz1Mv4u54/s900-c-k-no/photo.jpg" class="img">
+	</figure>
+</div>

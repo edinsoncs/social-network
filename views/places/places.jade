@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    main
+      h1= title
+      p Welcome to #{title}
+
+      include map.html
+      
+      each pais in paises
+        article
+          h2
+            a.link(href='/places/#{pais.pais}/')= pais.pais

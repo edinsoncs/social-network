@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="nofollow">
+    <meta name="description" content="Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea">
+    <title></title>
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" href="../stylesheets/viainti.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js"></script>
+    <script src="../javascripts/viaintibackend.js"></script>
+  </head>
+  <body>
+    <header data-role="header" class="menuViainti bgHeader">
+      <div class="header headerVuelosAdmin">
+        <div class="menuViaintiLeft">
+          <figure class="menuViainti_Logo margen enLinea"><img src="../images/logo.png" alt="Viainti tu libro viajero" class="logoHeader"></figure>
+        </div>
+        <div class="menuViaintiRight">
+          <figure class="menuViainti_UserAdmin"></figure>
+        </div>
+      </div>
+    </header>
+  </body>
+  <main>
+    <section class="contenidoPrincipal backendVuelos">
+      <form class="loginAccess">
+        <header class="loginAccess--Header">
+          <h2 class="title">VIAINTI</h2>
+        </header>
+        <fieldset class="loginAccess--Fieldset">
+          <input type="text" placeholder="Usuario" name="usuariobackend" class="loginAccess--Input">
+        </fieldset>
+        <fieldset class="loginAccess--Fieldset">
+          <input type="password" placeholder="Contraseña" name="passwordbackend" class="loginAccess--Input">
+        </fieldset>
+        <fieldset class="loginAccess--Fieldset">
+          <input type="submit" value="Ingresar" class="loginAccess--InputLogin">
+        </fieldset>
+      </form>
+    </section>
+    <section class="contenidoBackendAdmin">
+      <nav class="menuBackend">
+        <ul class="menuBackend--Ul">
+          <li class="menuBackend--List selectLinkBackend"><a href="#" class="menuBackend--Link selectLinkWhite"><i class="fa fa-home"></i>Inicio</a></li>
+          <li class="menuBackend--List"><a href="restaurantes/" class="menuBackend--Link"><i class="fa fa-suitcase"></i>Restaurantes </a></li>
+          <li class="menuBackend--List"><a href="vuelos/" class="menuBackend--Link"><i class="fa fa-suitcase"></i>Paquetes</a></li>
+          <li class="menuBackend--List"><a href="cruceros/" class="menuBackend--Link"><i class="fa fa-suitcase"></i>Cruceros</a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+</html>

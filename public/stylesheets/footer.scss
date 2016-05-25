@@ -1,0 +1,45 @@
+.footer_DerechosHome {
+	
+}
+
+.footer_DerechosHome .footer_DerechosHome_gen {
+	background: #cf5664;
+	padding: 1em 0;
+	margin: 0;
+}
+.footer_DerechosHome .footer_DerechosHome_gen .footer_DerechosHome_cont {
+	text-align: center;
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.footer_DerechosHome .footer_DerechosHome_cont .footer_DerechosHome_bloques .footer_title {
+	font-weight: 700;
+}
+.footer_DerechosHome .footer_DerechosHome_cont .footer_DerechosHome_bloques .footer_title::before {
+	content: "© ";
+}
+.footer_DerechosHome .footer_DerechosHome_cont .footer_DerechosHome_bloques .footer_pais {
+	margin: 0 1em;
+	outline: medium none;
+	background-image: url('../img/home/pais.png');
+	background-color: rgba(255, 255, 255, 0);
+	background-repeat: no-repeat;
+	background-position: center right;
+	height: 24px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: 0 .5em;
+	color: white;
+}
+.footer_DerechosHome .footer_DerechosHome_cont .footer_DerechosHome_bloques .footer_pais .select {
+	color: black;
+}
+.footer_DerechosHome .footer_DerechosHome_cont .footer_DerechosHome_bloques .footer_pais .select:hover{
+	color: red;
+}
+.footer_DerechosHome .footer_DerechosHome_cont .footer_DerechosHome_bloques .footer_list {
+	font-size: .8em;
+	border-right: 1px solid white;
+	padding: .1em .8em .2em .8em;
+}

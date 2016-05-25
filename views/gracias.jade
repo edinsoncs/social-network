@@ -1,0 +1,25 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='robots', content='nofollow')
+    meta(name='description', content='Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea')
+    title #{web}
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+    script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+   
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+    script(src='../javascripts/viaintibackend.js')
+  body
+     header.menuViainti.bgHeader(data-role='header')
+      .header.headerVuelosAdmin
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
+        .menuViaintiRight
+          figure.menuViainti_UserAdmin
+
+     main
+        section.titleGracias
+            h2 Gracias Por Su Visita

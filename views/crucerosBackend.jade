@@ -1,0 +1,408 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='robots', content='nofollow')
+    meta(name='description', content='Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea')
+    title #{title}
+    link(rel='stylesheet', href='../../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../../stylesheets/viainti.css')
+    
+    link(rel='stylesheet', href='//kendo.cdn.telerik.com/2015.2.902/styles/kendo.common-material.min.css')
+    link(rel='stylesheet', href='//kendo.cdn.telerik.com/2015.2.902/styles/kendo.material.min.css')
+     
+    script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+    script(src='//kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js')
+
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+    script(src='../../javascripts/viaintibackend.js')
+  body
+     header.menuViainti.bgHeader(data-role='header')
+      .header.headerVuelosAdmin
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src='../../images/logo.png', alt='Viainti tu libro viajero')
+        .menuViaintiRight
+          figure.menuViainti_UserAdmin
+          
+    main
+        
+        section.contenidoBackendAdmin
+            nav.menuBackend
+                ul.menuBackend--Ul
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="#")
+                            i(class="fa fa-home")
+                            | Inicio
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="../hoteles/")
+                            i(class="fa fa-cutlery")
+                            | Hoteles
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="../restaurantes/")
+                            i(class="fa fa-cutlery")
+                            | Restaurantes
+                    li.menuBackend--List
+                        a.menuBackend--Link(href="../vuelos/")
+                            i(class="fa fa-suitcase")
+                            | Paquetes
+                    li.menuBackend--List.selectLinkBackend
+                        a.menuBackend--Link.selectLinkWhite(href="../cruceros/")
+                            i(class="fa fa-suitcase")
+                            | Cruceros
+            section.contForm--Backend
+             form(class="Form--BackendCruceros")
+              fieldset.FormFieldset--Backend
+               label.FormLabels--Backend
+                | Titulo
+               input(type="text", name="tituloCruceros", class="FormInput--Backend", placeholder="Cruceros por estados unidos")
+              fieldset.FormFieldset--Backend
+               label.FormLabels--Backend
+                | Precio
+               input(type="number", name="precioCruceros", class="FormInput--Backend", placeholder="$12000")
+              div.ormFieldset--Backend.flexOne 
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Imagen
+                input(type="url", name="imagenCruceros", class="FormInput--Backend", placeholder="Url de la imagen")
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Cover Imagen
+                input(type="url", name="coverimagenCruceros", class="FormInput--Backend", placeholder="Url de la imagen")
+              div.FormFieldset--Backend
+               fieldset.FormFieldset--Backend
+                label.FormFieldset--Backend
+                 label.FormLabels--Backend
+                  | Fecha de ida
+                 input(type="date", name="dateidaCruceros", class="FormInput--Backend")
+               fieldset.FormFieldset--Backend
+                label.FormFieldset--Backend
+                 label.FormLabels--Backend
+                  | Fecha de llegada
+                 input(type="date", name="datellegadaCruceros" ,class="FormInput--Backend")
+              div.FormFieldset--Backend.flex
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Cantidad dias
+                select(name="cantidadDiasCruceros", class="FormSelect--Backend")
+                 option(value="1") 1
+                 option(value="3") 3
+                 option(value="5") 5
+                 option(value="7") 7
+                 option(value="10") 10
+                 option(value="15") 15
+                 option(value="30") 30
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Cantidad de noches
+                select(name="cantidadNochesCruceros", class="FormSelect--Backend")
+                 option(value="1") 1
+                 option(value="2") 2
+                 option(value="3") 3
+                 option(value="4") 4
+                 option(value="5") 5
+                 option(value="6") 6
+                 option(value="7") 7
+                 option(value="8") 8
+                 option(value="9") 9
+                 option(value="10") 10
+                 option(value="11") 11
+                 option(value="12") 12
+                 option(value="13") 13
+                 option(value="14") 14
+                 option(value="15") 15
+                 option(value="16") 16
+                 option(value="17") 17
+                 option(value="18") 18
+                 option(value="19") 19
+                 option(value="20") 20
+                 option(value="21") 21
+                 option(value="22") 22
+                 option(value="23") 23
+                 option(value="24") 24
+                 option(value="25") 25
+                 option(value="26") 26
+                 option(value="27") 27
+                 option(value="28") 28
+                 option(value="29") 29
+                 option(value="30") 30
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Personas
+                select(name="cantidadPersonasCruceros", class="FormSelect--Backend")
+                 option(value="1") 1
+                 option(value="2") 2
+                 option(value="3") 3
+                 option(value="4") 4
+                 option(value="5") 5
+                 option(value="6") 6
+                 option(value="7") 7
+                 option(value="8") 8
+                 option(value="9") 9
+                 option(value="10") 10
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Paises
+                select(name="paisesCruceros", class="FormSelect--Backend")
+                 option(value='Afganistán') Afganistán
+                 option(value='Albania') Albania
+                 option(value='Alemania') Alemania
+                 option(value='Andorra') Andorra
+                 option(value='Angola') Angola
+                 option(value='Anguilla') Anguilla
+                 option(value='Antártida') Antártida
+                 option(value='Antigua y Barbuda') Antigua y Barbuda
+                 option(value='Antillas Holandesas') Antillas Holandesas
+                 option(value='Arabia Saudí') Arabia Saudí
+                 option(value='Argelia') Argelia
+                 option(value='Argentina', selected="selected") Argentina
+                 option(value='Armenia') Armenia
+                 option(value='Aruba') Aruba
+                 option(value='Australia') Australia
+                 option(value='Austria') Austria
+                 option(value='Azerbaiyán') Azerbaiyán
+                 option(value='Bahamas') Bahamas
+                 option(value='Bahrein') Bahrein
+                 option(value='Bangladesh') Bangladesh
+                 option(value='Barbados') Barbados
+                 option(value='Bélgica') Bélgica
+                 option(value='Belice') Belice
+                 option(value='Benin') Benin
+                 option(value='Bermudas') Bermudas
+                 option(value='Bielorrusia') Bielorrusia
+                 option(value='Birmania') Birmania
+                 option(value='Bolivia') Bolivia
+                 option(value='Bosnia y Herzegovina') Bosnia y Herzegovina
+                 option(value='Botswana') Botswana
+                 option(value='Brasil') Brasil
+                 option(value='Brunei') Brunei
+                 option(value='Bulgaria') Bulgaria
+                 option(value='Burkina Faso') Burkina Faso
+                 option(value='Burundi') Burundi
+                 option(value='Bután') Bután
+                 option(value='Cabo Verde') Cabo Verde
+                 option(value='Camboya') Camboya
+                 option(value='Camerún') Camerún
+                 option(value='Canadá') Canadá
+                 option(value='Chad') Chad
+                 option(value='Chile') Chile
+                 option(value='China') China
+                 option(value='Chipre') Chipre
+                 option(value='Ciudad del Vaticano (Santa Sede)') Ciudad del Vaticano (Santa Sede)
+                 option(value='Colombia') Colombia
+                 option(value='Comores') Comores
+                 option(value='Congo') Congo
+                 option(value='Congo, República Democrática del') Congo, República Democrática del
+                 option(value='Corea') Corea
+                 option(value='Corea del Norte') Corea del Norte
+                 option(value='Costa de Marfíl') Costa de Marfíl
+                 option(value='Costa Rica') Costa Rica
+                 option(value='Croacia (Hrvatska)') Croacia (Hrvatska)
+                 option(value='Cuba') Cuba
+                 option(value='Dinamarca') Dinamarca
+                 option(value='Djibouti') Djibouti
+                 option(value='Dominica') Dominica
+                 option(value='Ecuador') Ecuador
+                 option(value='Egipto') Egipto
+                 option(value='El Salvador') El Salvador
+                 option(value='Emiratos Árabes Unidos') Emiratos Árabes Unidos
+                 option(value='Eritrea') Eritrea
+                 option(value='Eslovenia') Eslovenia
+                 option(value='España') España
+                 option(value='Estados Unidos') Estados Unidos
+                 option(value='Estonia') Estonia
+                 option(value='Etiopía') Etiopía
+                 option(value='Fiji') Fiji
+                 option(value='Filipinas') Filipinas
+                 option(value='Finlandia') Finlandia
+                 option(value='Francia') Francia
+                 option(value='Gabón') Gabón
+                 option(value='Gambia') Gambia
+                 option(value='Georgia') Georgia
+                 option(value='Ghana') Ghana
+                 option(value='Gibraltar') Gibraltar
+                 option(value='Granada') Granada
+                 option(value='Grecia') Grecia
+                 option(value='Groenlandia') Groenlandia
+                 option(value='Guadalupe') Guadalupe
+                 option(value='Guam') Guam
+                 option(value='Guatemala') Guatemala
+                 option(value='Guayana') Guayana
+                 option(value='Guayana Francesa') Guayana Francesa
+                 option(value='Guinea') Guinea
+                 option(value='Guinea Ecuatorial') Guinea Ecuatorial
+                 option(value='Guinea-Bissau') Guinea-Bissau
+                 option(value='Haití') Haití
+                 option(value='Honduras') Honduras
+                 option(value='Hungría') Hungría
+                 option(value='India') India
+                 option(value='Indonesia') Indonesia
+                 option(value='Irak') Irak
+                 option(value='Irán') Irán
+                 option(value='Irlanda') Irlanda
+                 option(value='Isla Bouvet') Isla Bouvet
+                 option(value='Isla de Christmas') Isla de Christmas
+                 option(value='Islandia') Islandia
+                 option(value='Islas Caimán') Islas Caimán
+                 option(value='Islas Cook') Islas Cook
+                 option(value='Islas de Cocos o Keeling') Islas de Cocos o Keeling
+                 option(value='Islas Faroe') Islas Faroe
+                 option(value='Islas Heard y McDonald') Islas Heard y McDonald
+                 option(value='Islas Malvinas') Islas Malvinas
+                 option(value='Islas Marianas del Norte') Islas Marianas del Norte
+                 option(value='Islas Marshall') Islas Marshall
+                 option(value='Islas menores de Estados Unidos') Islas menores de Estados Unidos
+                 option(value='Islas Palau') Islas Palau
+                 option(value='Islas Salomón') Islas Salomón
+                 option(value='Islas Svalbard y Jan Mayen') Islas Svalbard y Jan Mayen
+                 option(value='Islas Tokelau') Islas Tokelau
+                 option(value='Islas Turks y Caicos') Islas Turks y Caicos
+                 option(value='Islas Vírgenes (EE.UU.)') Islas Vírgenes (EE.UU.)
+                 option(value='Islas Vírgenes (Reino Unido)') Islas Vírgenes (Reino Unido)
+                 option(value='Islas Wallis y Futuna') Islas Wallis y Futuna
+                 option(value='Israel') Israel
+                 option(value='Italia') Italia
+                 option(value='Jamaica') Jamaica
+                 option(value='Japón') Japón
+                 option(value='Jordania') Jordania
+                 option(value='Kazajistán') Kazajistán
+                 option(value='Kenia') Kenia
+                 option(value='Kirguizistán') Kirguizistán
+                 option(value='Kiribati') Kiribati
+                 option(value='Kuwait') Kuwait
+                 option(value='Laos') Laos
+                 option(value='Lesotho') Lesotho
+                 option(value='Letonia') Letonia
+                 option(value='Líbano') Líbano
+                 option(value='Liberia') Liberia
+                 option(value='Libia') Libia
+                 option(value='Liechtenstein') Liechtenstein
+                 option(value='Lituania') Lituania
+                 option(value='Luxemburgo') Luxemburgo
+                 option(value='Macedonia, Ex-República Yugoslava de') Macedonia, Ex-República Yugoslava de
+                 option(value='Madagascar') Madagascar
+                 option(value='Malasia') Malasia
+                 option(value='Malawi') Malawi
+                 option(value='Maldivas') Maldivas
+                 option(value='Malí') Malí
+                 option(value='Malta') Malta
+                 option(value='Marruecos') Marruecos
+                 option(value='Martinica') Martinica
+                 option(value='Mauricio') Mauricio
+                 option(value='Mauritania') Mauritania
+                 option(value='Mayotte') Mayotte
+                 option(value='México') México
+                 option(value='Micronesia') Micronesia
+                 option(value='Moldavia') Moldavia
+                 option(value='Mónaco') Mónaco
+                 option(value='Mongolia') Mongolia
+                 option(value='Montserrat') Montserrat
+                 option(value='Mozambique') Mozambique
+                 option(value='Namibia') Namibia
+                 option(value='Nauru') Nauru
+                 option(value='Nepal') Nepal
+                 option(value='Nicaragua') Nicaragua
+                 option(value='Níger') Níger
+                 option(value='Nigeria') Nigeria
+                 option(value='Niue') Niue
+                 option(value='Norfolk') Norfolk
+                 option(value='Noruega') Noruega
+                 option(value='Nueva Caledonia') Nueva Caledonia
+                 option(value='Nueva Zelanda') Nueva Zelanda
+                 option(value='Omán') Omán
+                 option(value='Países Bajos') Países Bajos
+                 option(value='Panamá') Panamá
+                 option(value='Papúa Nueva Guinea') Papúa Nueva Guinea
+                 option(value='Paquistán') Paquistán
+                 option(value='Paraguay') Paraguay
+                 option(value='Perú') Perú
+                 option(value='Pitcairn') Pitcairn
+                 option(value='Polinesia Francesa') Polinesia Francesa
+                 option(value='Polonia') Polonia
+                 option(value='Portugal') Portugal
+                 option(value='Puerto Rico') Puerto Rico
+                 option(value='Qatar') Qatar
+                 option(value='Reino Unido') Reino Unido
+                 option(value='República Centroafricana') República Centroafricana
+                 option(value='CZ') República Checa
+                 option(value='ZA') República de Sudáfrica
+                 option(value='DO') República Dominicana
+                 option(value='SK') República Eslovaca
+                 option(value='RE') Reunión
+                 option(value='RW') Ruanda
+                 option(value='RO') Rumania
+                 option(value='Rusia') Rusia
+                 option(value='Sahara Occidental') Sahara Occidental
+                 option(value='Saint Kitts y Nevis') Saint Kitts y Nevis
+                 option(value='Samoa') Samoa
+                 option(value='Samoa Americana') Samoa Americana
+                 option(value='San Marino') San Marino
+                 option(value='San Vicente y Granadinas') San Vicente y Granadinas
+                 option(value='Santa Helena') Santa Helena
+                 option(value='Santa Lucía') Santa Lucía
+                 option(value='Santo Tomé y Príncipe') Santo Tomé y Príncipe
+                 option(value='Senegal') Senegal
+                 option(value='Seychelles') Seychelles
+                 option(value='Sierra Leona') Sierra Leona
+                 option(value='Singapur') Singapur
+                 option(value='Siria') Siria
+                 option(value='Somalia') Somalia
+                 option(value='Sri Lanka') Sri Lanka
+                 option(value='St. Pierre y Miquelon') St. Pierre y Miquelon
+                 option(value='Suazilandia') Suazilandia
+                 option(value='Sudán') Sudán
+                 option(value='Suecia') Suecia
+                 option(value='Suiza') Suiza
+                 option(value='Surinam') Surinam
+                 option(value='Tailandia') Tailandia
+                 option(value='Taiwán') Taiwán
+                 option(value='Tanzania') Tanzania
+                 option(value='Tayikistán') Tayikistán
+                 option(value='Territorios franceses del Sur') Territorios franceses del Sur
+                 option(value='Timor Oriental') Timor Oriental
+                 option(value='Togo') Togo
+                 option(value='Tonga') Tonga
+                 option(value='Trinidad y Tobago') Trinidad y Tobago
+                 option(value='Túnez') Túnez
+                 option(value='Turkmenistán') Turkmenistán
+                 option(value='Turquía') Turquía
+                 option(value='Tuvalu') Tuvalu
+                 option(value='Ucrania') Ucrania
+                 option(value='Uganda') Uganda
+                 option(value='Uruguay') Uruguay
+                 option(value='Uzbekistán') Uzbekistán
+                 option(value='Vanuatu') Vanuatu
+                 option(value='Venezuela') Venezuela
+                 option(value='Vietnam') Vietnam
+                 option(value='Yemen') Yemen
+                 option(value='Yugoslavia') Yugoslavia
+                 option(value='Zambia') Zambia
+                 option(value='Zimbabue ') Zimbabue 
+              div.FormFieldset--Backend.flex
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Pasaje
+                input(type="text", name="pasajeCruceros", class="FormInput--Backend", placeholder="Si o No")
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Mobilidad
+                input(type="text", name="mobilidadCruceros", class="FormInput--Backend", placeholder="Si o No")
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Hotel
+                input(type="text", name="hotelCruceros", class="FormInput--Backend", placeholder="Si o No")
+               fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Seguro Medico
+                input(type="text", name="seguromedicoCruceros", class="FormInput--Backend", placeholder="Si o No")            
+              fieldset.FormFieldset--Backend
+                label.FormLabels--Backend
+                 | Contenido del paquete
+                textarea(id="addPaquetes" name="contenidoCruceros", class="FormTextarea--Backend", cols="98", rows="10", placeholder="Ingrese el contenido del paquete")
+              fieldset.FormFieldset--Backend
+                input(type="submit", value="Publicar", class="FormSubmit--Backend") 
+    
+
+    
+
+

@@ -1,0 +1,248 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='Viainti')
+    title #{web}
+    link(rel='stylesheet', href='../../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../../stylesheets/viainti.css')
+
+    link(rel='stylesheet', href='http://vjs.zencdn.net/5.9.2/video-js.css')
+
+    script(src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css')
+
+    script(src='http://code.jquery.com/jquery-1.11.2.min.js')
+    script(src="/socket.io/socket.io.js")
+    script(src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js')
+    script(src='../../javascripts/viaintifrontend.js')
+    script(src='../../javascripts/viaintifrontendbackend.js')
+    script(src='../../javascripts/app-via.js')
+    script(src='../../javascripts/chat.js')
+
+  body
+    header.menuViainti.bgHeader(data-role='header')
+      include header-usuarios.jade
+      nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href='#') Inicio
+          li.liMenu
+            a.aLinkMenu(href='../hoteles/') Hoteles
+          li.liMenu
+            a.aLinkMenu(href='../restaurantes/') Restaurantes
+          li.liMenu
+            a.aLinkMenu(href='../vuelos/') Viajes
+          //li.liMenu
+            a.aLinkMenu(href='#') Musica
+          //li.liMenu
+            a.aLinkMenu(href='#') Noticias
+          //li.liMenu
+            a.aLinkMenu(href='#') Juegos
+    main
+      section.contenidoPrincipal.profileUser
+        section.profile--Iz
+          figure.profile--Iz--Figure
+            img(src="#{avatarProfile}", alt="#{nameProfile}", data-profileName="#{nameProfile}", class="jsProfileNameUser")
+        aside.profile--De
+          figure.profile--De--Figure(style="background-image:url('../../uploads/coverusuarios/#{cover}')")
+            if useridReq == userid
+              form.profile--De--EditCover(action="post", method="post", enctype="multipart/form-data")
+                label.EditCover--Name(for="editCover")
+                  i(class="fa fa-camera")
+                input.EditCover--File.uHidden(type="file", name="cover", id="editCover")
+                input.EditCover--Submit.uHidden(type="submit", value="Guardar")
+            else if useridReq !== userid
+              button.AddFriend(type="submit")
+                    i(class="fa fa-check-square")
+                    | Agregar
+              if invitacionID
+                each id in invitacionID
+                  if id.usuarioInvite == userid
+                    button.SendInvitate(type="submit")
+                      i(class="fa fa-check-square")
+                      | Solicitud Enviada
+                  else
+                    //Hola
+                
+                    
+
+      section.contenidoPrincipal.profileUser--Cont
+        section.profileUser--Cont--Iz
+          each post in posts
+                article.Dashboard_Post--User.uMargin(data-idpost="#{post.id}")
+                  if post.comentarios
+                    article.Post--User
+                      .Post--User--Date
+                        .Post--Date
+                          span.name
+                            | #{nameProfile}
+                        .Post--Date
+                          span.date
+                            | #{post.date}
+                      figure.Post--User--Foto.margen
+                        img.User--Foto(src='#{avatarProfile}', alt='')
+                    article.Post--User--Txt
+                      p.Post--Txt.margen
+                        | #{post.content}
+                      figure.Post--Figure--Img.margen(style='text-align:center')
+                        if post.imagen!==''
+                          img.Post--Img(src='../../uploads/usuarios/#{post.imagen}', alt='nombre de la foto' style='max-height:400px')
+                        if post.videon!==''
+                          video(width="700", height="364" id="my-video" , controls class="video-js uCenterVideo", data-setup="{}")
+                            source(src='../../uploads/videos/#{post.videon}', type='video/mp4')
+                            |   Your browser does not support HTML5 video.
+                    article.Post--User--Opt
+                      .Post--User--Cont
+                        .Post--User--Like
+                          .User--Like
+                           if post.likes
+                            i.fa.fa-heart.jsLike
+                            .Like.enLinea
+                              span.Like--Num
+                                | #{post.likes.length}
+                           else
+                            i.fa.fa-heart.jsLike
+                            .Like.enLinea
+                              span.Like--Num
+                                | 0
+                        .Post--User--Coment
+                          .User--Coment.jsShowComments
+                            i.fa.fa-comments
+                            .Comment.enLinea
+                              span.Comment--Num
+                                | #{post.comentarios.length}
+                        //.Post--User-Shared
+                          .User--Shared
+                            i.fa.fa-share
+                            .Shared.enLinea
+                              span.Shared--Num
+                                | 0
+                    article.Post--User--CommentsViews
+                      each co in post.comentarios
+                        div.CommentsViews--Show
+                            figure.CommentsViews--Show--Figure
+                                img(src="#{co.userPhoto}", alt="")
+                            aside.CommentsViews--Show--Data
+                              a.Show--Name(href="#{co.userId}")
+                                | #{co.userName}
+                              p.Show--Comments
+                                | #{co.userComment}
+                    
+                  else
+                    article.Post--User
+                      .Post--User--Date
+                        .Post--Date
+                          span.name
+                            | #{nameProfile}
+                        .Post--Date
+                          span.date
+                            | #{post.date}
+                      figure.Post--User--Foto.margen
+                        img.User--Foto(src='#{avatarProfile}', alt='')
+                    article.Post--User--Txt
+                      p.Post--Txt.margen
+                        | #{post.content}
+                      figure.Post--Figure--Img.margen(style='text-align:center')
+                        if post.imagen!==''
+                          img.Post--Img(src='../../uploads/usuarios/#{post.imagen}', alt='nombre de la foto' style='max-height:400px')
+                        if post.videon!==''
+                          video(width="700", height="364" id="my-video" , controls class="video-js uCenterVideo", data-setup="{}")
+                            source(src='../../../uploads/videos/#{post.videon}', type='video/mp4')
+                            |   Your browser does not support HTML5 video.
+                    article.Post--User--Opt
+                      .Post--User--Cont
+                        .Post--User--Like
+                         if post.likes
+                          .User--Like
+                            i.fa.fa-heart.jsLike
+                            .Like.enLinea
+                              span.Like--Num
+                                | #{post.likes.length}
+                         else
+                          .User--Like
+                            i.fa.fa-heart.jsLike
+                            .Like.enLinea
+                              span.Like--Num
+                                | 0
+                        .Post--User--Coment
+                          .User--Coment
+                            i.fa.fa-comments
+                            .Comment.enLinea
+                              span.Comment--Num
+                                | 0
+                        //.Post--User-Shared
+                          .User--Shared
+                            i.fa.fa-share
+                            .Shared.enLinea
+                              span.Shared--Num
+                                | 0
+                    article.Post--User--CommentsViews
+                  article.Post--User--Comments
+                      section.post--User--Comments--Cont
+                        div.postUser--Coments--Iz
+                          figure.figure--Comments
+                            img.imgComments(src="#{avatar}")
+                        div.posUser--Comments--De
+                          form.postComments
+                            input.textareComments.textareaVal(type="text", placeholder="Escriba su comentario", data-idpost="#{post.id}")
+                            input(type="submit", class="uHidden")
+            
+
+        aside.profileUser--Cont--De
+          
+          if useridReq == userid
+            header.profileUser--Header
+                h2.title
+                  | Mis Actividades
+            section.profileUser--Content
+              for actividad in actividades
+                article.profileUser--Article
+                  div.profileUser--Article--Iz
+                    figure.ProfileUser--Article--Iz--Figure
+                      img(src="#{actividad.fotoUser}", alt="")
+                  div.profileUser--Article--De
+                    strong.profileUser--Article--De--Name
+                      | @Edinsoncs
+                    p.profileUser--Article--De--Description
+                      | #{actividad.mensaje}  </br> <strong class="importantActivities">@#{actividad.nameservicio}</strong>
+                
+            header.profileUser--Header.uMarginOne
+                h2.title
+                  | Mis Amigos
+            section.profileUser--Cont--Friend
+              each friends in amigos
+                article.i--Friend
+                  a(href="#{friends.usuario}")
+                    figure.figure--Friend
+                      img(src="#{friends.img}", alt="")
+                    figcaption.figcaption--Friend
+                      | #{friends.name}
+                
+          else 
+            header.profileUser--Header
+                h2.title
+                  | Actividades
+            section.profileUser--Content
+              for actividad in actividades
+                article.profileUser--Article
+                  div.profileUser--Article--Iz
+                    figure.ProfileUser--Article--Iz--Figure
+                      img(src="#{actividad.fotoUser}", alt="")
+                  div.profileUser--Article--De
+                    strong.profileUser--Article--De--Name
+                      | @Edinsoncs
+                    p.profileUser--Article--De--Description
+                      | #{actividad.mensaje}  </br> <strong class="importantActivities">@#{actividad.nameservicio}</strong>
+                
+            header.profileUser--Header.uMarginOne
+                h2.title
+                  | Sus Amigos
+            section.profileUser--Cont--Friend
+              each friends in amigos
+                article.i--Friend
+                  a(href="#{friends.usuario}")
+                    figure.figure--Friend
+                      img(src="#{friends.img}", alt="")
+                    figcaption.figcaption--Friend
+                      | #{friends.name}
+    script(src="http://vjs.zencdn.net/5.9.2/video.js")

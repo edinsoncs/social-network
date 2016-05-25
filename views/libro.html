@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Viainti">
+    <title></title>
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" href="../stylesheets/viainti.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="../javascripts/viaintifrontend.js"></script>
+    <script src="../javascripts/viaintifrontendbackend.js"></script>
+  </head>
+  <body>
+    <header data-role="header" class="menuViainti bgHeader">
+      <div class="header">
+        <div class="menuViaintiLeft">
+          <figure class="menuViainti_Logo margen enLinea"><img src="../images/logo.png" alt="Viainti tu libro viajero" class="logoHeader"></figure>
+          <figure class="menuViainti_Alert vTopAlignIco enLinea colorBlue"><i class="fa fa-bell"></i></figure>
+          <figure class="menuViainti_Inbox vTopAlignIco enLinea"><i class="fa fa-envelope"></i></figure>
+        </div>
+        <div class="menuViaintiRight enLinea">
+          <form action="" class="menuViainti_Search enLinea vTopAlign">
+            <input type="search" placeholder="Busca viajeros, hoteles, restaurantes y musica" class="menuViainti_Search_Input">
+            <figure class="ico_Search margen"><i class="fa fa-search"></i></figure>
+          </form>
+          <figure class="menuViainti_Avatar enLinea"><img src="undefined" alt="undefined" class="avatarHeader"></figure>
+          <figure class="menuViainti_ArrowDown enLinea vTopAlignRow"><i class="fa fa-chevron-down jsUserDown"></i>
+            <ul class="menuViainti_ArrowDown--User">
+              <div class="arrowDown--Ico--Up"></div>
+              <li class="List"><a href="#" class="ArrowDown--Link">Mi Perfil<i class="fa fa-user"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Editar perfil<i class="fa fa-user"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Libro Viajero<i class="fa fa-bar-chart"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Medios de pago<i class="fa fa-credit-card"></i></a></li>
+              <li class="List"><a href="#" class="ArrowDown--Link">Privacidad<i class="fa fa-unlock-alt"></i></a></li>
+              <li class="List"><a href="../logout/" class="ArrowDown--Link">Desconectarse<i class="fa fa-power-off"></i></a></li>
+            </ul>
+          </figure>
+        </div>
+      </div>
+      <nav class="linkMenu">
+        <ul class="contMenu">
+          <li class="liMenu"><a href="#" class="aLinkMenu">Inicio</a></li>
+          <li class="liMenu"><a href="../hoteles/" class="aLinkMenu">Hoteles</a></li>
+          <li class="liMenu"><a href="../restaurantes/" class="aLinkMenu">Restaurantes</a></li>
+          <li class="liMenu"><a href="../vuelos/" class="aLinkMenu">Viajes</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Musica</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Noticias</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Juegos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="contenidoPrincipal">
+        <article class="cont_Principal">
+          <div class="cont_Planes_Hoy flotaLeft">
+            <p class="title_Planes margen">Planes para hoy:</p>
+          </div>
+          <div class="cont_Planes_Hoy flotaRight">
+            <div class="title_User_Planes margen">
+              <p class="title_User_Planes_Welcome margen enLinea">Hola</p><span class="title_User enLinea"></span>
+              <p class="margen enLinea">Mi libro viajero</p>
+            </div>
+          </div>
+        </article>
+        <article class="cont_Principal_Cover">
+          <article class="cover_Ads">
+            <h2 class="ads_Title_Top cBlanco margen fontA">El valle</h2>
+            <h2 class="ads_Title_SubTop cBlanco margen fontA">Sheraton</h2>
+            <button class="btn_Cover_Ads"><a href="red.html" class="linkBlanco">EXPLORAR</a></button>
+          </article>
+        </article>
+        <section class="cont_Principal_Dashboard">
+          <article class="Dashboard_Left">
+            <figure class="DashboardCity margen"><img src="../images/city2.jpg" alt="" class="imgCity">
+              <div class="iconCity"><i class="fa fa-file-image-o"></i></div>
+            </figure>
+            <figpcation class="DashboardCityDescription">Hoy recorri 1km y ahorre 100 soles en viajes, compre y visite al cine.</figpcation>
+            <div class="DashboardCityFunction">
+              <div class="grafArrow"></div>
+              <div class="DashboardCityFunction--Cont">
+                <div class="icoCity enLinea"><i class="fa fa-weixin one--Ico"></i></div>
+                <div class="icoCity enLinea jsWidget"><i class="fa fa-pencil-square-o two--Ico"></i></div>
+              </div>
+            </div>
+          </article>
+          <article class="Dashboard_Center">
+            <article class="Dashboard_Welcome">
+              <figure class="Dashboard_Map margen">
+                <!-- <img src="../images/mapa.jpg" alt="">-->
+                <iframe width="100%" height="312px" frameborder="0" src="https://a.tiles.mapbox.com/v4/ockang.n4k3n98g/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoib2NrYW5nIiwiYSI6IkVpVFRfalEifQ.Lfzy-jAItxumw9Pu_E-cIQ"></iframe>
+              </figure>
+              <form action="../publicacionusuarios/" class="pubuser">
+                <div class="Dashboard_Post">
+                  <textarea name="mensajepost" id="mensajepost" cols="" rows="" placeholder="Escribe tu primera visita, restaurante, hotel, etc" class="Post_Home noBorder"></textarea>
+                </div>
+                <div class="Dashboard_Post_Send">
+                  <div class="DashBoard_Send_Utils flotaRight">
+                    <div class="Send_Ico enLinea">
+                      <div class="Send_Ico_Geo enLinea"><i class="fa fa-map-marker"></i>
+                        <div class="descriptionIcon"><span class="descriptionIcon--Title">Ubicación</span></div>
+                      </div>
+                      <div class="Send_Ico_Movi enLinea"><i class="fa fa-film"></i>
+                        <div class="descriptionIcon"><span class="descriptionIcon--Title">Video</span></div>
+                      </div>
+                      <div class="Send_Ico_Photo enLinea"><i class="fa fa-camera"></i>
+                        <div class="descriptionIcon"><span class="descriptionIcon--Title">Foto</span></div>
+                      </div>
+                    </div>
+                    <div class="Send_btnSubmit enLinea">
+                      <input type="submit" value="Publicar" class="btn_Post">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </article>
+            <article class="Dashboard_Post--User">
+              <article class="Post--User">
+                <div class="Post--User--Date">
+                  <div class="Post--Date"><span class="name"></span></div>
+                  <div class="Post--Date"><span class="date"></span></div>
+                </div>
+                <figure class="Post--User--Foto margen"><img src="undefined" alt="" class="User--Foto"></figure>
+              </article>
+              <article class="Post--User--Txt">
+                <p class="Post--Txt margen"></p>
+              </article>
+              <article class="Post--User--Opt">
+                <div class="Post--User--Cont">
+                  <div class="Post--User--Like">
+                    <div class="User--Like">
+                      <div class="Like enLinea"><span class="Like--Num">10</span></div><i class="fa fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="Post--User--Coment">
+                    <div class="User--Coment">
+                      <div class="Comment enLinea"><span class="Comment--Num">8</span></div><i class="fa fa-comments"></i>
+                    </div>
+                  </div>
+                  <div class="Post--User-Shared">
+                    <div class="User--Shared">
+                      <div class="Shared enLinea"><span class="Shared--Num">3</span></div><i class="fa fa-share"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </article>
+            <article class="Dashboard_Post--User">
+              <article class="Post--User">
+                <div class="Post--User--Date">
+                  <div class="Post--Date"><span class="name">@Edinsoncs</span></div>
+                  <div class="Post--Date"><span class="date">Publicado hace 2 horas</span></div>
+                </div>
+                <figure class="Post--User--Foto margen"><img src="undefined" alt="" class="User--Foto"></figure>
+              </article>
+              <article class="Post--User--Txt">
+                <p class="Post--Txt margen">Hola que rico que almorze, ahora estoy viajando a rusia gracias a viainti tuve descuentos y una atencion muy buena en @RestSuper, Espero volver pronto colombia ciudad linda para compartir con todos los amigos. linda ciudad Cali</p>
+              </article>
+              <article class="Post--User--Opt">
+                <div class="Post--User--Cont">
+                  <div class="Post--User--Like">
+                    <div class="User--Like">
+                      <div class="Like enLinea"><span class="Like--Num">10</span></div><i class="fa fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="Post--User--Coment">
+                    <div class="User--Coment">
+                      <div class="Comment enLinea"><span class="Comment--Num">8</span></div><i class="fa fa-comments"></i>
+                    </div>
+                  </div>
+                  <div class="Post--User-Shared">
+                    <div class="User--Shared">
+                      <div class="Shared enLinea"><span class="Shared--Num">3</span></div><i class="fa fa-share"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </article>
+            <article class="Dashboard_Post--User">
+              <article class="Post--User">
+                <div class="Post--User--Date">
+                  <div class="Post--Date"><span class="name">@Edinsoncs</span></div>
+                  <div class="Post--Date"><span class="date">Publicado hace 2 horas</span></div>
+                </div>
+                <figure class="Post--User--Foto margen"><img src="undefined" alt="" class="User--Foto"></figure>
+              </article>
+              <article class="Post--User--Txt">
+                <p class="Post--Txt margen">Hola que rico que almorze, ahora estoy viajando a rusia gracias a viainti tuve descuentos y una atencion muy buena en @RestSuper, Espero volver pronto colombia ciudad linda para compartir con todos los amigos. linda ciudad Cali</p>
+                <figure class="Post--Figure--Img margen"><img src="../images/imgejemplo.jpg" alt="nombre de la foto" class="Post--Img"></figure>
+              </article>
+              <article class="Post--User--Opt">
+                <div class="Post--User--Cont">
+                  <div class="Post--User--Like">
+                    <div class="User--Like">
+                      <div class="Like enLinea"><span class="Like--Num">10</span></div><i class="fa fa-heart"></i>
+                    </div>
+                  </div>
+                  <div class="Post--User--Coment">
+                    <div class="User--Coment">
+                      <div class="Comment enLinea"><span class="Comment--Num">8</span></div><i class="fa fa-comments"></i>
+                    </div>
+                  </div>
+                  <div class="Post--User-Shared">
+                    <div class="User--Shared">
+                      <div class="Shared enLinea"><span class="Shared--Num">3</span></div><i class="fa fa-share"></i>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </article>
+          </article>
+          <aside class="Dashboard_Right">
+            <div class="Activity_Friend">
+              <header class="Dashboard_Right_Title">
+                <h4 class="titleRight margen cBlancoSidebarTitle">Actividades de mis amigos</h4>
+              </header>
+              <article class="Dashboard_User">
+                <figure class="userActividity margen flotaLeft"><img src="../images/avatar.png" alt="Edinson Carranza" class="user_Img"></figure>
+                <article class="user_Details flotaLeft">
+                  <figcaption class="userName cAzulClaroUser">@edinson</figcaption>
+                  <p class="userInfo margen">ceno en <span class="userInfo_Category">Rest</span>									joya</p>
+                </article>
+                <div class="user_Details_Check">
+                  <input type="checkbox">
+                </div>
+              </article>
+              <article class="Dashboard_User">
+                <figure class="userActividity margen flotaLeft"><img src="../images/avatar.png" alt="Edinson Carranza" class="user_Img"></figure>
+                <article class="user_Details flotaLeft">
+                  <figcaption class="userName cAzulClaroUser">@edinson</figcaption>
+                  <p class="userInfo margen">ceno en <span class="userInfo_Category">Rest</span>									joya</p>
+                </article>
+                <div class="user_Details_Check">
+                  <input type="checkbox">
+                </div>
+              </article>
+              <article class="Dashboard_User">
+                <figure class="userActividity margen flotaLeft"><img src="../images/avatar.png" alt="Edinson Carranza" class="user_Img"></figure>
+                <article class="user_Details flotaLeft">
+                  <figcaption class="userName cAzulClaroUser">@edinson</figcaption>
+                  <p class="userInfo margen">ceno en <span class="userInfo_Category">Rest</span>									joya</p>
+                </article>
+                <div class="user_Details_Check">
+                  <input type="checkbox">
+                </div>
+              </article>
+              <article class="Dashboard_User">
+                <figure class="userActividity margen flotaLeft"><img src="../images/avatar.png" alt="Edinson Carranza" class="user_Img"></figure>
+                <article class="user_Details flotaLeft">
+                  <figcaption class="userName cAzulClaroUser">@edinson</figcaption>
+                  <p class="userInfo margen">ceno en <span class="userInfo_Category">Rest</span>									joya</p>
+                </article>
+                <div class="user_Details_Check">
+                  <input type="checkbox">
+                </div>
+              </article>
+              <article class="Dashboard_User">
+                <figure class="userActividity margen flotaLeft"><img src="../images/avatar.png" alt="Edinson Carranza" class="user_Img"></figure>
+                <article class="user_Details flotaLeft">
+                  <figcaption class="userName cAzulClaroUser">@edinson</figcaption>
+                  <p class="userInfo margen">ceno en <span class="userInfo_Category">Rest</span>									joya</p>
+                </article>
+                <div class="user_Details_Check">
+                  <input type="checkbox">
+                </div>
+              </article>
+            </div>
+            <div class="Dashboard_Right_Menu">
+              <header class="Dashboard_Right_Title">
+                <h4 class="cBlancoSidebarTitle margen">Mi libro viajero</h4>
+              </header>
+              <ul class="Dashboard_Right_Menu">
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-folder"></i>									crear grupo</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-calendar"></i>									crear evento</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-briefcase"></i>									top viajeros</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-pencil"></i>									redactar noticia</a></li>
+              </ul>
+            </div>
+            <div class="Dashboard_Right_Menu">
+              <header class="Dashboard_Right_Title">
+                <h4 class="cBlancoSidebarTitle margen">Hoteles</h4>
+              </header>
+              <ul class="Dashboard_Right_Menu">
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-bed"></i>									el mas cercano</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-phone"></i>									reservar ahora</a></li>
+              </ul>
+            </div>
+            <div class="Dashboard_Right_Menu">
+              <header class="Dashboard_Right_Title">
+                <h4 class="cBlancoSidebarTitle margen">Restaurantes</h4>
+              </header>
+              <ul class="Dashboard_Right_Menu">
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-phone"></i>									el mas cercano</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-home"></i>									reservar ahora</a></li>
+              </ul>
+            </div>
+            <div class="Dashboard_Right_Menu">
+              <header class="Dashboard_Right_Title">
+                <h4 class="cBlancoSidebarTitle margen">Viajes</h4>
+              </header>
+              <ul class="Dashboard_Right_Menu">
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-plane"></i>									destinos</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-star"></i>									promociones</a></li>
+              </ul>
+            </div>
+            <div class="Dashboard_Right_Menu">
+              <header class="Dashboard_Right_Title">
+                <h4 class="cBlancoSidebarTitle margen">Música</h4>
+              </header>
+              <ul class="Dashboard_Right_Menu">
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-music"></i>									Mi colección</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-heart"></i>									Historia</a></li>
+              </ul>
+            </div>
+            <div class="Dashboard_Right_Menu">
+              <header class="Dashboard_Right_Title">
+                <h4 class="cBlancoSidebarTitle margen">Juegos</h4>
+              </header>
+              <ul class="Dashboard_Right_Menu">
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-smile-o"></i>									Desarrolladores</a></li>
+                <li class="list-Right--Menu"><a href="#" class="link-Right--Menu"><i class="fa fa-gamepad"></i>									Juega</a></li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

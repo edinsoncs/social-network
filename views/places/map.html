@@ -1,0 +1,544 @@
+<style type="text/css">
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+
+main {
+	width: 1000px;
+	margin: 0px auto;
+}
+.mod-map {
+	background: #F9F9F9;
+    border-radius: 7px;
+    box-shadow: inset 0px 0px 0px 1px #E5E3DF, inset 0px 0px 0px 2px #FFFFFF;
+}
+.mod-map .section {
+	display: inline-block;
+	width: 75%;
+	position: relative;
+}
+
+#map {
+	border-radius: 7px 0px 0px 7px;
+	width: 100%;
+	height: 600px;
+}
+
+.mod-map .search {
+    background: #FFF;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 8px;
+    right: 11px;
+}
+.mod-map .search input {
+	background: transparent;
+	color: #333;
+    border: none;
+    line-height: 30px;
+    padding: 0px 7px;
+    outline: none;
+}
+.mod-map .aside {
+    vertical-align: top;
+    display: inline-block;
+    width: 25%;
+    height: 600px;
+}
+.mod-map .info {
+	height: 100%;
+	position: relative;
+	box-shadow: -1px 0px 0px #DEDEDE;
+}
+.mod-map .info-header {
+	position: relative;
+	padding: 10px;
+}
+.mod-map .info-header:before {
+	content: "";
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid #E5E3DF;
+    position: absolute;
+    top: -10px;
+    right: 17px;
+}
+.mod-map .info-header:after {
+    content: "";
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid #F9F9F9;
+    position: absolute;
+    top: -8px;
+    right: 17px;
+}
+.mod-map .info-header h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #614e5a;
+	border-bottom: 1px #E2E2E2 solid;
+	margin: 0px;
+}
+.mod-map .info-header h2 strong {
+	display: inline-block;
+	padding-bottom: 5px;
+	box-shadow: 0px 1px 0px #7899E4;
+}
+.mod-map .info-content {
+
+}
+
+#places {
+	overflow-y: auto;
+    height: 500px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#places .place {
+	background: #FFF;
+    border: 1px #D6D6D6 solid;
+    margin: 10px 0px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.mod-map .info-footer {
+	font-family: sans-serif;
+    font-weight: normal;
+    font-size: 11px;
+    background: #ECECEC;
+    color: #3A3A3A;
+    text-shadow: 0px 1px 0px #fff;
+    border-radius: 0px 0px 5px 0px;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+</style>
+
+    <section class="mod-map">
+        <div class="section">
+            <div id="map"></div>
+            <div class="search"><input type="text" id="address" placeholder="Buscar una ubicación"></div>
+        </div><div class="aside">
+            <div class="info">
+                <div class="info-header">
+                    <h2><strong>Ubicacion</strong></h2>
+                </div>
+                <div class="info-content">
+                    //content
+                    <div id="places">
+                        <div class="place">
+                            lag: -11.935883156886026<br>
+                            long:-77.07183837890625<br>
+                            address: Lima, Perú
+                        </div>
+                    </div>
+                </div>
+                <div class="info-footer">
+                    &copy; 2016 viainti.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOnCUSlUQkfQ2IHeV4LnFIS8d6IeIN8OE&libraries=places"></script>
+<script type="text/javascript">
+
+var data = {
+    me: {
+        id: 1,
+        user: 'Ronal David',
+        picture: 'http://i.imgur.com/Hy2RMMD.png',
+        position: {
+            lat: -11.93, lng: -77.07
+        }
+    },
+    friends: [{
+        id: 2,
+        user: 'Edinson',
+        picture: 'http://i.imgur.com/3z6VBP9.png',
+        position: {
+            lat: -12.07, lng: -77.05
+        }
+    },
+    {
+        id: 3,
+        user: 'Juan Perez',
+        picture: 'http://www.devlops.com/design/viainti/mod-map/images/user.jpg',
+        position: {
+            lat: -12.21, lng: -76.88
+        }
+    }]
+};
+
+var locals = [
+    {
+        id: 1,
+        title: 'Fuster',
+        picture: 'http://i.imgur.com/H1LE08q.png',
+        position: {
+            lat: -11.79, lng: -77.16
+        }
+    },
+    {
+        id: 2,
+        title: 'Nautil',
+        picture: 'http://i.imgur.com/H1LE08q.png',
+        position: {
+            lat: -12.06, lng: -77.10
+        }
+    },
+    {
+        id: 3,
+        title: 'Vieques',
+        picture: 'http://i.imgur.com/H1LE08q.png',
+        position: {
+            lat: -12.14, lng: -76.98
+        }
+    },
+    {
+        id: 4,
+        title: 'Humacao',
+        picture: 'http://i.imgur.com/H1LE08q.png',
+        position: {
+            lat: -12.21, lng: -76.92
+        }
+    },
+    {
+        id: 5,
+        title: 'Ponce',
+        picture: 'http://i.imgur.com/H1LE08q.png',
+        position: {
+            lat: -12.02, lng: -76.89
+        }
+    }
+];
+
+var style = [
+    {
+        featureType: "all",
+        stylers: [
+            {saturation: -80}
+        ]
+    },
+    {
+        featureType: "road.arterial",
+        elementType: "geometry",
+        stylers: [
+            { hue: "#00ffee" },
+            { saturation: 50 }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {"color": "#ffd900"}
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {"color": "#82C7F9"},
+            {"visibility": "on"}
+        ]
+    },
+    {
+        featureType: "poi.business",
+        elementType: "labels",
+        stylers: [
+            { visibility: "off" }
+        ]
+    }
+];
+
+var style2 = [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+];
+
+var options = {
+    styles: style2,
+    mapTypeId: google.maps.MapTypeId.ROADMAP, //ROADMAP, SATELLITE, HYBRID, TERRAIN
+    center: data.me.position, //new google.maps.LatLng(0, 0) | {lat: 0, lng: 0}
+    zoom: 10
+};
+
+var map = new google.maps.Map(document.getElementById('map'), options);
+
+var markers = [];
+
+
+/* events */
+
+var geocoder = new google.maps.Geocoder(); 
+
+google.maps.event.addListener(map, 'click', function(e) {
+    
+    var marker = new google.maps.Marker({
+        map: map,
+        position: e.latLng,
+        title: 'Marcador',
+        icon: 'http://www.devlops.com/design/viainti/mod-map/images/maps/map_marker.png',
+        //label: 'A',
+        animation: google.maps.Animation.DROP,
+        draggable: true
+    });
+    map.panTo(e.latLng);
+    //map.setMap(marker);
+
+    //markers.push(marker);
+
+    geocoder.geocode({
+        latLng: e.latLng
+    }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            $('#places').append('<div class="place">lag: ' + e.latLng.lat() + '<br>long:' + e.latLng.lng() + '<br>address: ' + results[results.length - 2].formatted_address + '</div>');
+            console.log(results);
+        }
+    });
+
+    console.log('lat: ' + e.latLng.lat() + ', lng:' + e.latLng.lng());
+});
+
+map.addListener('mousemove', function(e) {
+    //console.log('lat: ' + Math.round(e.latLng.lat()) + ', ' + 'lng: ' + Math.round(e.latLng.lng()));
+});
+
+
+
+/* autocomplete */
+
+var autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'));
+
+autocomplete.addListener('place_changed', function() {
+    var place = autocomplete.getPlace();
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+    console.log(place);
+});
+
+$('#address').keypress(function(e) {
+    if (e.which == 13) {
+        geocoder.geocode({
+            'address': this.value
+        }, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            }
+            console.log(results);
+        });
+      return false;
+    }
+});
+
+
+/* me */
+
+var me = new google.maps.Marker({
+    map: map,
+    position: options.center, //map.getCenter()
+    title: data.me.user,
+    icon: 'http://www.devlops.com/design/viainti/mod-map/images/maps/user_blue.png',
+    zIndex: 100,
+    animation: google.maps.Animation.DROP, //BOUNCE
+    draggable: true
+});
+
+var meinfowindow = new google.maps.InfoWindow({
+    content: '<b>Yo!</b>',
+    //position: map.getCenter()
+});
+
+meinfowindow.open(map, me);
+
+google.maps.event.addListener(me, 'click', function() {
+    //var meinfowindow = new google.maps.InfoWindow();
+    meinfowindow.setContent('<img src="' + data.me.picture + '" width="35" height="35"><br><b>' + data.me.user + '</b>'); 
+    meinfowindow.open(map, me);
+});
+
+
+
+/* friends */
+
+//var limits = new google.maps.LatLngBounds();
+
+for (var i = 0; i < data.friends.length; i++) {
+
+    var marker = new google.maps.Marker({
+        map: map,
+        position: data.friends[i].position,
+        title: data.friends[i].user,
+        icon: 'http://www.devlops.com/design/viainti/mod-map/images/maps/user.png'
+    });
+
+    (function(data, marker, i) {
+        
+        var infowindow = new google.maps.InfoWindow({
+            //content: data.friends[i].user
+        });
+
+        google.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.setContent('<img src="' + data.friends[i].picture + '" width="35" height="35"><br><b>' + data.friends[i].user + '</b>'); 
+            infowindow.open(map, marker);
+            console.log(data);
+            //
+        });
+
+        google.maps.event.addListener(marker, 'mouseout', function() {
+            infowindow.close();
+        });
+
+        google.maps.event.addListener(marker, 'mousedown', function() {
+            //
+        });
+
+        google.maps.event.addListener(marker, 'mouseup', function() {
+            //
+        });
+
+    })(data, marker, i);
+
+
+
+    //limits.extend(marker.position);
+};
+
+//map.fitBounds(limits);
+
+
+/* locales */
+
+for (var i = 0; i < locals.length; i++) {
+
+    var marker = new google.maps.Marker({
+        map: map,
+        position: locals[i].position,
+        title: 'Hotel: ' + locals[i].title,
+        icon: 'http://www.devlops.com/design/viainti/mod-map/images/maps/hotel3stars.png',
+        animation: google.maps.Animation.DROP,
+        draggable: true
+    });
+
+    (function(locals, marker, i) {
+        
+        var infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.setContent('<img src="' + locals[i].picture + '" width="35" height="35">'); 
+            infowindow.open(map, marker);
+            console.log(data);
+            //
+        });
+
+        google.maps.event.addListener(marker, 'mouseout', function() {
+            infowindow.close();
+        });
+
+        google.maps.event.addListener(marker, 'mousedown', function() {
+            //
+        });
+
+        google.maps.event.addListener(marker, 'mouseup', function() {
+            //
+        });
+
+    })(locals, marker, i);
+
+};
+
+</script>

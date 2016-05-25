@@ -1,0 +1,116 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea')
+    title #{web}
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+    link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css', type='text/css')
+    
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')
+    script(type='text/javascript', src='//static.dohop.com/swl/js/iframe.js?wl=viainti')
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+    script(src='../javascripts/viainti.js')
+    script(src='../javascripts/viaintifrontend.js')
+  body.BodyVuelos
+    include header-vuelosVuelos.jade
+            
+    main
+      section.contenidoPrincipal
+        section.contenidoVuelos
+          section.contenidosVuelos--Iz
+            figure.contenidoVuelos--Figure.margen
+              img(src='../images/viajes/pubviaje1.jpg', alt='')
+          aside.contenidosVuelos--De
+            section.buscadorVuelos--Cont
+              .buscadorVuelos
+                form.vuelos(action='listado', method='GET')
+                  h2.vuelos--Title.margen
+                    | ¡Encuentra tu vuelo!
+                  fieldset.vuelos--Cont--Input
+                    input.inputVuelos.a(type='text', placeholder='Ciudad Origen', required='', name='a1')
+                  fieldset.vuelos--Cont--Input
+                    input.inputVuelos.b(type='text', required='', placeholder='Ciudad Destino', name='a2')
+                  fieldset.vuelos--Cont--Date
+                    fieldset.vuelos--Cont--Calendar--Cont.enLinea
+                      input.vuelos--Picker.dateOne(type='text', placeholder='Fecha Ida', name='d1')
+                    fieldset.vuelos--Cont--Calendar--Cont.enLinea
+                      input.vuelos--Picker.dateTwo(type='text', placeholder='Fecha Ida', name='d2')
+                  fieldset.vuelos--Cont--Enviar
+                    input.Enviar--Vuelos(type='submit', value='Buscar Vuelos')
+              .buscadorVuelos--Anuncios
+                figure.Anuncio--One.margen
+                  img(src='../images/viajes/pubviaje2.jpg', alt='')
+                figure.Anuncio--Two.margen
+                  img(src='../images/viajes/pubviaje3.jpg', alt='')
+         section.contenidoVuelosInfo
+          section.contenidoVuelosInfo--Cont
+            header.contenidoVuelosInfo--Header
+              h2.Header--Title Viajeros Viajando Ciudades
+            article.vuelos--Paises
+              article.vuelos--Paises--Article
+                figure.figure--Paises.margen
+                  img.img--Paises(src='../images/viajes/lima.jpg', alt='')
+                  .title--Paises--Cont
+                    h2.title--Paises.margen
+                      | Lima
+                .vuelos--Paises--Article--User
+                  figure.vuelos--User--Avatar.margen.flotaLeft
+                    img.img--Avatar--Vuelos(src='../images/viajando.png', alt='')
+                  p.vuelos--User--Nick.margen @Viainti
+                  .vuelos--User--Data
+                    //span.vuelos--User--Data--Title
+                      | Viajando hace 2 horas
+                .vuelos--Paises--Comprar
+                  button.vuelos--Paises--Comprar--Btn
+                    | Viajar
+              article.vuelos--Paises--Article
+                figure.figure--Paises.margen
+                  img.img--Paises(src='../images/viajes/cordoba.jpg', alt='')
+                  .title--Paises--Cont
+                    h2.title--Paises.margen
+                      | Córdoba
+                .vuelos--Paises--Article--User
+                  figure.vuelos--User--Avatar.margen.flotaLeft
+                    img.img--Avatar--Vuelos(src='../images/viajando.png', alt='')
+                  p.vuelos--User--Nick.margen @Viainti
+                  .vuelos--User--Data
+                    //span.vuelos--User--Data--Title
+                      | Viajando hace 2 horas
+                .vuelos--Paises--Comprar
+                  button.vuelos--Paises--Comprar--Btn
+                    | Viajar
+              article.vuelos--Paises--Article
+                figure.figure--Paises.margen
+                  img.img--Paises(src='../images/viajes/guadalajara.jpg', alt='')
+                  .title--Paises--Cont
+                    h2.title--Paises.margen
+                      | Guadalajara
+                .vuelos--Paises--Article--User
+                  figure.vuelos--User--Avatar.margen.flotaLeft
+                    img.img--Avatar--Vuelos(src='../images/viajando.png', alt='')
+                  p.vuelos--User--Nick.margen @Viainti
+                  .vuelos--User--Data
+                    //span.vuelos--User--Data--Title
+                      | Viajando hace 2 horas
+                .vuelos--Paises--Comprar
+                  button.vuelos--Paises--Comprar--Btn
+                    | Viajar
+              article.vuelos--Paises--Article
+                figure.figure--Paises.margen
+                  img.img--Paises(src='../images/viajes/sao.jpg', alt='')
+                  .title--Paises--Cont
+                    h2.title--Paises.margen
+                      | Sao Pablo
+                .vuelos--Paises--Article--User
+                  figure.vuelos--User--Avatar.margen.flotaLeft
+                    img.img--Avatar--Vuelos(src='../images/viajando.png', alt='')
+                  p.vuelos--User--Nick.margen @Viainti
+                  .vuelos--User--Data
+                    //span.vuelos--User--Data--Title
+                      | Viajando hace 2 horas
+                .vuelos--Paises--Comprar
+                  button.vuelos--Paises--Comprar--Btn
+                    | Viajar
+    script(src="../javascripts/vuelos.js")

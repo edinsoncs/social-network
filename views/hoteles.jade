@@ -1,0 +1,140 @@
+doctype html
+html(lang="es", ng-app="")
+  head
+    meta(charset="UTF-8")
+    meta(name="description", content="Viainti")
+    title #{web}
+    link(rel="stylesheet", href="../stylesheets/normalize.css")
+    link(rel="stylesheet", href="../stylesheets/viainti.css")
+
+    link(href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css', rel='stylesheet')
+
+    script(src="http://code.jquery.com/jquery-1.11.2.min.js")
+  
+    script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
+
+
+    script(src="../javascripts/viainti.js")
+    script(src="../javascripts/viaintifrontend.js")
+    script(src="../javascripts/hoteles.js")
+
+  body.BodyListHotel
+    header.menuViainti.bgHeader(data-role="header")
+      .header
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src="../images/logo.png", alt="Viainti tu libro viajero")
+          figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
+            i.fa.fa-bell
+            div.Number--Notify--Cont
+              span.Number--Notify.jsNotify--Show
+                | 0
+          //figure.menuViainti_Inbox.vTopAlignIco.enLinea
+            i.fa.fa-envelope
+        .menuViaintiRight.enLinea
+          form.menuViainti_Search.enLinea.vTopAlign(action="")
+            input.menuViainti_Search_Input(type="search", placeholder="Busca viajeros, hoteles, restaurantes y musica")
+            figure.ico_Search.margen
+              i.fa.fa-search
+          figure.menuViainti_Avatar.enLinea
+            img.avatarHeader(src="#{avatar}", alt="#{nombre}")
+          figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
+            i.fa.fa-chevron-down.jsUserDown
+            ul.menuViainti_ArrowDown--User
+              .arrowDown--Ico--Up
+              li.List
+                a.ArrowDown--Link(href="#")
+                  | Editar perfil
+                  i.fa.fa-user
+              li.List
+                a.ArrowDown--Link(href="#")
+                  | Libro Viajero
+                  i.fa.fa-bar-chart
+              li.List
+                a.ArrowDown--Link(href="#")
+                  | Medios de pago
+                  i.fa.fa-credit-card
+              li.List
+                a.ArrowDown--Link(href="#")
+                  | Privacidad
+                  i.fa.fa-unlock-alt
+              li.List
+                a.ArrowDown--Link(href="../logout/")
+                  | Desconectarse
+                  i.fa.fa-power-off
+      nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href="#") Inicio
+          li.liMenu
+            a.aLinkMenu(href="/", class="aLinkMenu aMenuHover") Hoteles
+          li.liMenu
+            a.aLinkMenu(href="#") Restaurantes
+          li.liMenu
+            a.aLinkMenu(href="viajes.html") Viajes
+          li.liMenu
+            a.aLinkMenu(href="#") Musica
+          li.liMenu
+            a.aLinkMenu(href="#") Noticias
+          li.liMenu
+            a.aLinkMenu(href="#") Juegos
+    main
+      section.listMap
+        .listMap--Map#mapHotel
+        //.listMap--hotelCity
+          figure.hotelCity--Figure.margen
+            .hotelCity--Figure--Img
+              img.friendHotel(src="../images/avatar.png", alt="")
+            .hotelCity--Figure--Title
+              span.Title Amigos que estuvieron aqui
+            .hotelCity--Figure--Friends
+              a.friendsVisit(href="#")
+                | Roger SC y 11
+              span.friendTitle
+                | amigos m&#225;s
+          .hotelCity--votStart
+            span.votStart--Title
+              | Calificaci&#243;n:
+            ul.votStart--Star
+              i.fa.fa-heart
+              i.fa.fa-heart
+              i.fa.fa-heart
+              i.fa.fa-heart-o
+              i.fa.fa-heart-o
+          fieldset.hotelCity--btnContact
+            button.hotelBtnContact
+              i.fa.fa-comment
+              span.hotelBtnContact--Title
+                | Disponible
+            button.hotelBtnContact
+              i.fa.fa-envelope
+              span.hotelBtnContact--Title
+                | Mensaje
+      section.listMapDetails
+        aside.listMapDetails--Aside
+          article.listMapDetails--Aside--Hotel
+            figure.aside--Hotel--Figure.margen
+              img.listHotelImgAside(src="#{resultados[0].Imagen}", alt="")
+            figpcation.aside--Hotel--FigureDetail
+              label.Title(for="") #{resultados[0].Nombre}
+              p.Title--subDescription.margen
+                | #{resultados[0].Descripccion}
+          ul.listMapDetails--Services--Hotel
+            header.services--Hotel--Header
+              h2.Title.margen
+                | Hoteles más visitados
+              li.services--Hotel--List
+                figure.services--Hotel--List--Figure.margen
+                  img.imgServicesHotel(src="#{resultados[0].Imagen}", alt="")
+                .services--Hotel--Description
+                  span.services--Hotel--Title
+                    | #{resultados[0].Descripccion}
+                  a.services--Hotel--Price(href="#{resultados[0].Nombre}?id=#{resultados[0]._id}")
+                    | Ver
+            
+        .listMapDetails--Locals
+          header.Locals--Header
+            h2.Title.margen
+              | Lista de hoteles
+          section.Locals--Show
+    script(src="../javascripts/mapahoteles.js")

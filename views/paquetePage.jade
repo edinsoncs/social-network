@@ -1,0 +1,167 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='robots', content='nofollow')
+    meta(name='description', content='Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea')
+    title #{titulo} #{name} 
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+    script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+   
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+    script(src='../javascripts/viaintifrontend.js')
+    //script(src='../javascripts/viaintibackend.js')
+  body
+    header.menuViainti.bgHeader(data-role='header')
+      .header
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
+       nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href='/') Inicio
+          li.liMenu
+            a.aLinkMenu.aMenuHover(href='/paquetes') Paquetes
+          li.liMenu
+            a.aLinkMenu(href='#') Viajes
+          li.liMenu
+            a.aLinkMenu(href='viajes.html') Cruceros
+          li.liMenu
+            a.aLinkMenu(href='#') Novedades
+          ul.contMenuSociales
+            li.ListSociales
+              iframe(src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fviainti&amp;send=false&amp;layout=button_count&amp;width=140&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21", scrolling="no", frameborder="0", style="border:none; overflow:hidden; width:78px; height:21px;", allowtransparency="true")
+    main
+        section.contenidoPrincipal
+          header.subMenuViajes
+            ul.subMenuViajes--Cont
+              li.listSubMenuViajes
+                a.link(href="/") 
+                  | Inicio
+              li.listSubMenuViajes
+                a.link(href="../paquetes")
+                  | Paquetes Turisticos
+          section.contenidoVuelosPage
+            header.contenidoVuelosPage--Header
+              h2.title #{titulo}
+              h2.title
+               span.title-ico
+                i(class="fa fa-map-marker") 
+                | #{pais}
+            figure.contenidoVuelosPage--Figure.margen
+              img(class="imgcover", src="#{imagenCover}", alt="")
+            section.contenidoVuelosPage--Cont.flex
+              section.contenidoVuelosPage--Iz
+               article.contenidoVuelosPage--Article
+                header.contenidoVuelosPage--Article--Header
+                 h2.title
+                  | Descripcción
+                div.contenidoVuelosPages--Article
+                 #{Contenido}
+              aside.contenidosVuelosPage--De
+                article.contenidosVuelosPage--Comprar
+                  header.Comprar--Cont
+                    h2.Title--Precio.margen AR $#{precio}
+                  div.Comprar--Cont
+                   span.Cont--Ico
+                    i(class="fa fa-male")
+                    |Exclusivo para
+                   strong.Cont--Title
+                    | #{personas} Personas
+                  div.Comprar--Cont
+                    a.Comprar--Cont--Btn(href="#{Payment.response.init_point}", name="MP-Checkout")
+                     | Comprar Paquete
+                  div.Comprar--Cont
+                   header.Comprar--Cont
+                    h5.Title--Incluye.margen.nopadding
+                     | Partida
+                  div.Comprar--Cont.Partida
+                    div.Comprar--Cont--Partida--Ida
+                     h2.Title--Ida.margen
+                      i(class="fa fa-calendar-o")
+                      | #{dateida}
+                    div.Comprar--Cont--Partida--Llega
+                     h2.Title--Llega.margen
+                       i(class="fa fa-calendar-o")
+                       | #{datellegada}
+
+                  div.Comprar--Cont
+                   header.Comprar--Cont
+                    h5.Title--Incluye
+                     | Incluye
+                   ul.Comprar--Cont--Ul
+                    li.List.Cont--Flex
+                     div.List--Cont
+                      span.List--Ico
+                       i(class="fa fa-plane")
+                      span.List--Title
+                       | Pasaje
+                     div.List--Cont
+                      span.List--Acept
+                       | #{pasaje}
+                    li.List.Cont--Flex
+                     div.List--Cont
+                      span.List--Ico
+                       i(class="fa fa-car")
+                      span.List--Title
+                       | Mobilidad
+                     div.List--Cont
+                      span.List--Acept
+                       | #{mobilidad}
+                    li.List.Cont--Flex
+                     div.List--Cont
+                      span.List--Ico
+                       i(class="fa fa-bed")
+                      span.List--Title
+                       | Hotel
+                     div.List--Cont
+                      span.List--Acept
+                       | #{hotel}
+                    li.List.Cont--Flex
+                     div.List--Cont
+                      span.List--Ico
+                       i(class="fa fa-medkit")
+                      span.List--Title
+                       | Seguro Medico
+                     div.List--Cont
+                      span.List--Acept
+                       | #{seguroMedico}
+                  //div.Comprar--Cont
+                   header.Comprar--Cont
+                    h5.Title--Incluye
+                     | Ubicación
+                   iframe(width='100%', height='250', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?q=mesco,heuvelstraat 95,tilburg, nederland&layer=tc&t=m&z=18&source=embed&output=svembed')
+    footer.footer_DerechosHome(data-role='footer')
+      ul.footer_DerechosHome_gen
+        .footer_DerechosHome_cont
+          .footer_DerechosHome_bloques.linea.float
+            span.footer_title.cBlanco Viainti 2015
+            select.footer_pais.noBorder
+              option.select(value='0')
+                | Argentina
+              option.select(value='1') Brasil
+              option.select(value='2') Chile
+              option.select(value='3') Colombia
+              option.select(value='4') Costa Rica
+              option.select(value='5') España
+              option.select(value='6') Guatemala
+              option.select(value='7') México
+              option.select(value='8') Panamá
+          .footer_DerechosHome_bloques.linea.floatD
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Ayuda
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Información
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Condiciones de uso
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Negocios
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Blog
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#')
+                | Desarrolladores
+                a
+    script(src="//resources.mlstatic.com/mptools/render.js")

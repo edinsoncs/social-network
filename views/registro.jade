@@ -1,0 +1,150 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    title #{web}
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/viaintihome.css')
+    link(rel='stylesheet', href='../stylesheets/animate.min.css')
+    script(src='http://code.jquery.com/jquery-1.11.2.min.js')
+    // Prefix free
+    script(src='../javascripts/prefixfree.min.js')
+    // animattion wowjs
+    script(src='../javascripts/wow.min.js')
+    script(src='../javascripts/viaintifrontend.js')
+    //if IE
+      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+  body
+    section.bgRegister
+      //
+        <video class="videoRegisterPlaying" autoplay="" muted="" loop="">
+        <source src="https://s3.amazonaws.com/pushreel-videos/movie.webm" type="video/webm">
+        <source src="https://s3.amazonaws.com/pushreel-videos/movie.mp4" type="video/mp4">
+        <source src="https://s3.amazonaws.com/pushreel-videos/movie.ogv" type="video/ogg">
+        </video>
+    section.viaRegistro.wow.fadeIn
+      form.formRegistro(action="/loginDenegado", method="post")
+        fieldset.registroFB.noBorder
+          .btnLinkFacebook
+            i.el-icon-facebook
+            a.titleFacebook.linkBlanco(href='../auth/facebook')
+              | Regístrate con facebook
+          .btnLinkTwitter
+            i.el-icon-twitter
+            a.titleTwitter.linkBlanco(href='../auth/twitter')
+              | Regístrate con twitter
+        //fieldset.dataRegister.noBorder
+          input.inputRegister(name='nick', type='text', placeholder='Nickname')
+        //fieldset.dataRegister.noBorder
+          input.inputRegister(name='nombre', type='text', placeholder='Nombres')
+        //fieldset.dataRegister.noBorder
+          input.inputRegister(name='apellidos', type='text', placeholder='Apellidos')
+        fieldset.dataRegister.noBorder
+          input.inputRegister(name='miemail', type='email', placeholder='Email')
+        fieldset.dataRegister.noBorder
+          input.inputRegister(name='mipassword', type='password', placeholder='Contraseña')
+        //fieldset.dataRegister.noBorder
+          input.inputRegister(name='passwordr', type='password', placeholder='Repita Contraseña')
+        //fieldset.dataRegisterDate.noBorder
+          select.dataMonth(name='selectMonth')
+            option(value='1') Enero
+            option(value='2') Febrero
+            option(value='3') Marzo
+            option(value='4') Abril
+            option(value='5') Mayo
+            option(value='6') Junio
+            option(value='7') Julio
+            option(value='8') Agosto
+            option(value='9') Septiembre
+            option(value='10') Octubre
+            option(value='11') Noviembre
+            option(value='12') Diciembre
+          input.dataNumb(name='day', type='number', min='1', max='31', placeholder='Día', maxlength='1')
+          input.dataNumb(name='year', type='number', min='1970', max='2000', placeholder='Año')
+        //fieldset.dataRegisterGen.noBorder
+          input#dataRegistroMale.dataRegisterRadio(type='radio', name='generoSexM', value="Soy Hombre")
+          label(for='dataRegistroMale') Masculino
+          input#dataRegistroFemale.dataRegisterRadio(type='radio', name='generoSexM', value="Soy Mujer")
+          label(for='dataRegistroFemale') Femenino
+        fieldset.dataRegisterInfo.noBorder
+          p.titleRegistroTerminos
+            | Al hacer click en Registrarse, aceptas los 
+            a.linkRegistro(href='#') términos y condiciones
+            |  y la 
+            a.linkRegistro(href='#') política de privacidad de Viainti.
+        fieldset.dataRegistroSend.noBorder
+          input.btnRegisterSend(name='registerGo', type='submit', value='Registrarme')
+      .loginAcceso
+        p.titleLoginAcceso.colorBlanco
+          | ¿Ya tienes una cuenta? 
+          a.linkLogin(href='#') Iniciar sesion
+    section.viaLogin
+      form.formLogin(action='/login', method="POST")
+        fieldset.loginFB.noBorder
+          .btnLinkFacebook
+            i.el-icon-facebook
+            a.titleFacebook.linkBlanco(href='#')
+              | Ingresa con facebook
+        fieldset.dataLogin.noBorder
+          input.inputLogin(name='username', type='text', placeholder='Email')
+        fieldset.dataLogin.noBorder
+          input.inputLogin(name='password', type='password', placeholder='Contraseña')
+        fieldset.dataRegistroSend.noBorder
+          input.btnRegisterSend(name='login', type='submit', value='Ingresar')
+      .loginAcceso
+        p.titleResetPass.colorBlanco
+          a.linkRecovery(href='#') ¿Has olvidado tu contraseña?
+        p.titleLoginAcceso.colorBlanco
+          | ¿No tienes cuenta? 
+          a.linkRegistro(href='#') Registrate
+    .resetPasswordBG
+    section.resetPassword
+      form.reset(action='')
+        figure.logoResetPassword
+          img.opacityLogo(src='../images/logo.png')
+        label.titleResetPassword
+          | Ingresa la 
+          span.titleBold dirección de correo electrónico
+          |  que usaste para registrarte. Te enviaremos un mensaje con tu nombre de usuario y un enlace para restablecer tu contraseña.
+        fieldset.recoveryPassword.noBorder
+          input.recoveryInput(name='recoveryEmail', type='text', placeholder='Direccíon de correo electronico')
+        fieldset.sendRecoveryPassword.noBorder
+          input.btnRecoverySend(name='sendRecovery', type='submit', value='RECUPERAR CONTRASEÑA')
+        .soporteReset
+          p.titleSoporte.margen
+            a.linkSoporte(href='#')
+              | Soporte Viainti
+    footer.footer_DerechosHome(data-role='footer')
+      ul.footer_DerechosHome_gen
+        .footer_DerechosHome_cont
+          .footer_DerechosHome_bloques.linea.float
+            span.footer_title.blanco.colorBlanco Viainti 2015
+            select.footer_pais.noBorder
+              option.select(value='0')
+                | Argentina
+              option.select(value='1') Brasil
+              option.select(value='2') Chile
+              option.select(value='3') Colombia
+              option.select(value='4') Costa Rica
+              option.select(value='5') España
+              option.select(value='6') Guatemala
+              option.select(value='7') México
+              option.select(value='8') Panamá
+          .footer_DerechosHome_bloques.linea.floatD
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Ayuda
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Información
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Condiciones de uso
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Negocios
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#') Blog
+            li.footer_list.linea
+              a.footer_list_link.linkBlanco(href='#')
+                | Desarrolladores
+                a
+    script.
+      new WOW().init();

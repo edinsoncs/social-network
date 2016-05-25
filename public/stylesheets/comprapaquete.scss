@@ -1,0 +1,122 @@
+.contenidoVuelosPage--Iz {
+	width: 68%;
+	background: $white;
+	padding: 0 1em;
+	
+}
+.contenidosVuelosPage--De {
+  	width: 25%;
+  	background: white;
+  	padding: 0 1em;
+  	font-family: helvetica;
+  	.contenidosVuelosPage--Comprar {
+  		text-align: $center;
+  		.Comprar--Cont {
+				margin: 1em 0;
+  			.Cont--Ico {
+  				margin: 0 0.5em 0 0;
+  				color: #8c959c;
+  				i {
+  					padding: 0 0.2em 0 0;
+  				}
+  			}
+  			.Cont--Title {
+  				color: #263545;
+  			}
+  			.Comprar--Cont {
+  				text-align: left;
+  				.Title--Incluye {
+					 font-weight: 400;
+					 font-size: 1.5em;
+					 margin: $cero;
+					 //padding: 0 0 0.5em 0;
+					 color: #616263;
+  				}
+  			}
+  			.Cont--Flex {
+  			  display: flex;
+  			  justify-content: space-between;
+  			}
+  			.Title--Precio {
+  				font-weight: 400;
+  				font-size: 2em;
+  				color: #8c959c;
+  			}
+  			.Comprar--Cont--Btn {
+  				background: $color_shop--comprar;
+  				padding: 0.7em 2.5em;
+  				text-decoration: $text-none;
+  				color: $white;
+  				border-radius: 4px;
+  				box-shadow: 0 4px 0 $color_shop--comprar--box;
+  				border: 1px solid $color_shop--comprar--box;
+  				font-family: helvetica;
+  				font-size: 1.2em;
+  				display:block;
+	  			&:hover {
+	  				background:#EC616F;
+	  			}
+  			}
+  			.Comprar--Cont--Ul {
+  				padding: $cero;
+  				margin: $cero;
+  			
+  				.List {
+  					margin: 0 0 0.5em 0;
+  					.List--Ico {
+  						color: $base-color;
+  						padding: 0 0.5em 0 0;
+  					}
+  					.List--Title {
+  						color: $base-color;
+  					}
+  					.List--Cont {
+  						.List--Acept {
+  							color: $base-color;
+  						}
+  					}
+  				}
+  			}
+  		}
+  		.Comprar--Cont:nth-child(4) {
+  			margin: 1em 0 0 0;
+  		}
+  		.Comprar--Cont.Partida {
+  			.Comprar--Cont--Partida--Ida {
+  				font-size: 12px;
+  				.Title--Ida {
+  					font-weight: 300;
+  					font-size: 1.2em;
+  					color: #8c959c;
+  					i {
+  						padding: 0 0.5em 0 0;
+  					}
+  				}
+  			}
+  			.Comprar--Cont--Partida--Llega {
+  				font-size: 12px;
+  				.Title--Llega {
+  					font-weight: 300;
+  					font-size: 1.2em;
+  					color: #8c959c;
+  					i {
+  						padding: 0 0.5em 0 0;
+  					}
+  				}
+  			}
+  		}
+  		.Partida {
+  			display: flex;
+  			justify-content: space-between;
+  			margin: 0 0 0.5em 0;
+  		}
+  		.nopadding {
+  			padding: 0!important;
+  		}
+
+  	}
+}
+
+.contenidoVuelosPages--Article:first-child {
+  background: red;
+}

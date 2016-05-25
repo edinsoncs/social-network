@@ -1,0 +1,145 @@
+[{
+	"pais": "Peru",
+	"ciudades": [
+		{
+			"ciudad": "Amazonas"
+		},
+		{
+			"ciudad": "Ancash"
+		},
+		{
+			"ciudad": "Apurímac"
+		},
+		{
+			"ciudad": "Arequipa"
+		},
+		{
+			"ciudad": "Ayacucho"
+		},
+		{
+			"ciudad": "Cajamarca"
+		},
+		{
+			"ciudad": "Cusco"
+		},
+		{
+			"ciudad": "Huancavelica"
+		},
+		{
+			"ciudad": "Huánuco"
+		},
+		{
+			"ciudad": "Ica"
+		},
+		{
+			"ciudad": "Junín"
+		},
+		{
+			"ciudad": "La Libertad"
+		},
+		{
+			"ciudad": "Lambayeque"
+		},
+		{
+			"ciudad": "Lima",
+			"resena": "La Ciudad de Lima, más conocida como \"La Ciudad de los Reyes\" fue fundada el 18 de enero  de 1535, a orillas del río Rímac, por el conquistador Francisco Pizarro, debido a las magníficas condiciones estratégicas y geográficas. La palabra Lima, proviene de Rímac - vocablo quechua, idioma oficial en el imperio incaico, que significa \"hablador\"."
+		},
+		{
+			"ciudad": "Loreto"
+		},
+		{
+			"ciudad": "Madre De Dios"
+		},
+		{
+			"ciudad": "Moquegua"
+		},
+		{
+			"ciudad": "Pasco"
+		},
+		{
+			"ciudad": "Piura"
+		},
+		{
+			"ciudad": "Puno"
+		},
+		{
+			"ciudad": "San Martin"
+		},
+		{
+			"ciudad": "Tacna"
+		},
+		{
+			"ciudad": "Tumbes"
+		},
+		{
+			"ciudad": "Ucayali"
+		}
+	]
+},
+{
+	"pais": "Argentina",
+	"ciudades": [
+		{
+			"ciudad": "Bahía Blanca"
+		},
+		{
+			"ciudad": "Buenos Aires"
+		},
+		{
+			"ciudad": "Catamarca"
+		},
+		{
+			"ciudad": "Córdoba"
+		},
+		{
+			"ciudad": "Corrientes"
+		},
+		{
+			"ciudad": "Formosa"
+		},
+		{
+			"ciudad": "Jujuy"
+		},
+		{
+			"ciudad": "La Plata"
+		},
+		{
+			"ciudad": "Mar del Plata"
+		},
+		{
+			"ciudad": "Mendoza"
+		},
+		{
+			"ciudad": "Neuquén"
+		},
+		{
+			"ciudad": "Paraná"
+		},
+		{
+			"ciudad": "Posadas"
+		},
+		{
+			"ciudad": "Resistencia"
+		},
+		{
+			"ciudad": "Rio Cuarto"
+		},
+		{
+			"ciudad": "Rosario"
+		},
+		{
+			"ciudad": "Salta"
+		},
+		{
+			"ciudad": "San Juan"
+		},
+		{
+			"ciudad": "San Miguel de Tucumán"
+		},
+		{
+			"ciudad": "Santa Fe"
+		}
+	]
+}]
+
+

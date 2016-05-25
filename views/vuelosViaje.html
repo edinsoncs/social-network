@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vuelos economicos, vuelos en linea, comprar vuelos en linea, vuelos al mejor precio, vuelos desde argentina peru, vuelos en linea">
+    <title>Viainti</title>
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/viainti.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//static.dohop.com/swl/js/iframe.js?wl=viainti"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js"></script>
+    <script src="javascripts/viainti.js"></script>
+  </head>
+  <body class="BodyVuelos">
+    <header data-role="header" class="menuViainti bgHeader">
+      <div class="header">
+        <div class="menuViaintiLeft">
+          <figure class="menuViainti_Logo margen enLinea"><img src="images/logo.png" alt="Viainti tu libro viajero" class="logoHeader"></figure>
+        </div>
+      </div>
+      <nav class="linkMenu">
+        <ul class="contMenu">
+          <li class="liMenu"><a href="#" class="aLinkMenu">Inicio</a></li>
+          <li class="liMenu"><a href="/paquetes/" class="aLinkMenu">Paquetes</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Viajes</a></li>
+          <li class="liMenu"><a href="viajes.html" class="aLinkMenu">Cruceros</a></li>
+          <li class="liMenu"><a href="#" class="aLinkMenu">Novedades</a></li>
+          <ul class="contMenuSociales">
+            <li class="ListSociales">
+              <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fviainti&amp;amp;send=false&amp;amp;layout=button_count&amp;amp;width=140&amp;amp;show_faces=false&amp;amp;font&amp;amp;colorscheme=light&amp;amp;action=like&amp;amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:78px; height:21px;" allowtransparency="true"></iframe>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="contenidoPrincipal">
+        <section class="contenidoVuelos">
+          <section class="contenidosVuelos--Iz">
+            <figure class="contenidoVuelos--Figure margen"><img src="images/viajes/pubviaje1.jpg" alt=""></figure>
+          </section>
+          <aside class="contenidosVuelos--De">
+            <section class="buscadorVuelos--Cont">
+              <div class="buscadorVuelos">
+                <form action="vuelos" method="GET" class="vuelos">
+                  <h2 class="vuelos--Title margen">¡Encuentra tu vuelo!</h2>
+                  <fieldset class="vuelos--Cont--Input">
+                    <input type="text" placeholder="Ciudad Origen" required="" name="a1" class="inputVuelos a">
+                  </fieldset>
+                  <fieldset class="vuelos--Cont--Input">
+                    <input type="text" required="" placeholder="Ciudad Destino" name="a2" class="inputVuelos b">
+                  </fieldset>
+                  <fieldset class="vuelos--Cont--Date">
+                    <fieldset class="vuelos--Cont--Calendar--Cont enLinea">
+                      <input type="text" placeholder="Fecha Ida" name="d1" class="vuelos--Picker dateOne">
+                    </fieldset>
+                    <fieldset class="vuelos--Cont--Calendar--Cont enLinea">
+                      <input type="text" placeholder="Fecha Ida" name="d2" class="vuelos--Picker dateTwo">
+                    </fieldset>
+                  </fieldset>
+                  <fieldset class="vuelos--Cont--Enviar">
+                    <input type="submit" value="Buscar Vuelos" class="Enviar--Vuelos">
+                  </fieldset>
+                </form>
+              </div>
+              <div class="buscadorVuelos--Anuncios">
+                <figure class="Anuncio--One margen"><img src="images/viajes/pubviaje2.jpg" alt=""></figure>
+                <figure class="Anuncio--Two margen"><img src="images/viajes/pubviaje3.jpg" alt=""></figure>
+              </div>
+            </section>
+          </aside>
+        </section>
+        <section class="contenidoVuelosInfo">
+          <section class="contenidoVuelosInfo--Cont">
+            <header class="contenidoVuelosInfo--Header">
+              <h2 class="Header--Title">Viajeros Viajando Ciudades</h2>
+            </header>
+            <article class="vuelos--Paises">
+              <article class="vuelos--Paises--Article">
+                <figure class="figure--Paises margen"><img src="images/viajes/lima.jpg" alt="" class="img--Paises">
+                  <div class="title--Paises--Cont">
+                    <h2 class="title--Paises margen">Lima</h2>
+                  </div>
+                </figure>
+                <div class="vuelos--Paises--Article--User">
+                  <figure class="vuelos--User--Avatar margen flotaLeft"><img src="images/viajando.png" alt="" class="img--Avatar--Vuelos"></figure>
+                  <p class="vuelos--User--Nick margen">@Viainti</p>
+                  <div class="vuelos--User--Data">
+                    <!--span.vuelos--User--Data--Title| Viajando hace 2 horas
+                    -->
+                  </div>
+                </div>
+                <div class="vuelos--Paises--Comprar">
+                  <button class="vuelos--Paises--Comprar--Btn">Viajar</button>
+                </div>
+              </article>
+              <article class="vuelos--Paises--Article">
+                <figure class="figure--Paises margen"><img src="images/viajes/cordoba.jpg" alt="" class="img--Paises">
+                  <div class="title--Paises--Cont">
+                    <h2 class="title--Paises margen">Córdoba</h2>
+                  </div>
+                </figure>
+                <div class="vuelos--Paises--Article--User">
+                  <figure class="vuelos--User--Avatar margen flotaLeft"><img src="images/viajando.png" alt="" class="img--Avatar--Vuelos"></figure>
+                  <p class="vuelos--User--Nick margen">@Viainti</p>
+                  <div class="vuelos--User--Data">
+                    <!--span.vuelos--User--Data--Title| Viajando hace 2 horas
+                    -->
+                  </div>
+                </div>
+                <div class="vuelos--Paises--Comprar">
+                  <button class="vuelos--Paises--Comprar--Btn">Viajar</button>
+                </div>
+              </article>
+              <article class="vuelos--Paises--Article">
+                <figure class="figure--Paises margen"><img src="images/viajes/guadalajara.jpg" alt="" class="img--Paises">
+                  <div class="title--Paises--Cont">
+                    <h2 class="title--Paises margen">Guadalajara</h2>
+                  </div>
+                </figure>
+                <div class="vuelos--Paises--Article--User">
+                  <figure class="vuelos--User--Avatar margen flotaLeft"><img src="images/viajando.png" alt="" class="img--Avatar--Vuelos"></figure>
+                  <p class="vuelos--User--Nick margen">@Viainti</p>
+                  <div class="vuelos--User--Data">
+                    <!--span.vuelos--User--Data--Title| Viajando hace 2 horas
+                    -->
+                  </div>
+                </div>
+                <div class="vuelos--Paises--Comprar">
+                  <button class="vuelos--Paises--Comprar--Btn">Viajar</button>
+                </div>
+              </article>
+              <article class="vuelos--Paises--Article">
+                <figure class="figure--Paises margen"><img src="images/viajes/sao.jpg" alt="" class="img--Paises">
+                  <div class="title--Paises--Cont">
+                    <h2 class="title--Paises margen">Sao Pablo</h2>
+                  </div>
+                </figure>
+                <div class="vuelos--Paises--Article--User">
+                  <figure class="vuelos--User--Avatar margen flotaLeft"><img src="images/viajando.png" alt="" class="img--Avatar--Vuelos"></figure>
+                  <p class="vuelos--User--Nick margen">@Viainti</p>
+                  <div class="vuelos--User--Data">
+                    <!--span.vuelos--User--Data--Title| Viajando hace 2 horas
+                    -->
+                  </div>
+                </div>
+                <div class="vuelos--Paises--Comprar">
+                  <button class="vuelos--Paises--Comprar--Btn">Viajar</button>
+                </div>
+              </article>
+            </article>
+          </section>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
