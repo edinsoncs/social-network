@@ -30,6 +30,7 @@ var UserSchema = new Schema({
 	Actividades: Array,
 	InvitacionesEnviadas: Array,
 	Amigos: Array,
+	Notificaciones: Array,
 	createdAt : {type: Date, default: Date.now} // Fecha de creación
 });
 

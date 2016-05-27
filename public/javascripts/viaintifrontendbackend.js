@@ -106,7 +106,7 @@ function showPosition(position) {
                                           '<article class="Post--User">'+
                                           '<div class="Post--User--Date">'+
                                              '<div class="Post--Date"><span class="name">'+data.user.name+'</span></div>'+
-                                              '<div class="Post--Date"><span class="date">hace 2 horas</span></div>'+
+                                              '<div class="Post--Date"><span class="date">hace un momento</span></div>'+
                                           '</div>'+
                                         '<figure class="Post--User--Foto margen">'+
                                         '<img src="'+data.user.photo+'" alt="" class="User--Foto">'+

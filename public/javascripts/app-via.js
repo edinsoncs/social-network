@@ -28,7 +28,6 @@ $(document).ready(function(){
 
 				templatehtml(mensajeInNotify);
 
-
 				//showNotify(mensajeInNotify);
 			});
 
@@ -64,6 +63,11 @@ $(document).ready(function(){
 			console.log(data);
 		});
 	}
+
+	//NOTIFY///MENSAJEDASHBOARD///////
+
+
+	//END///MENSAJEDASHBOARD///////
 
 
 	//NOTIFY///////FRIEND//////////////////
@@ -141,8 +145,6 @@ $(document).ready(function(){
 				var post = val($(".textareaVal"));
 				
 				var isID = $(this).find('.textareComments').attr('data-idpost');
-				
-
 
 				$.ajax({
 						url: '../u/postprofile/',
@@ -176,12 +178,12 @@ $(document).ready(function(){
 				
 				var post = $(this).find('.textareaVal');
 
-
 				var isID = $(this).find('.textareComments').attr('data-idpost');
 				
-				console.log('edinsonnn');
-
 				var isShowComments = $(this).parent().parent().parent();
+
+				var otherID = $(this).parent().parent().parent().parent().attr('data-iduser');
+
 
 				function idUserDash(n) {
 					var id = $(n).attr('href');
@@ -189,7 +191,6 @@ $(document).ready(function(){
 					
 					return replace;
 				}	
-
 
 				$.when(
 
@@ -205,7 +206,7 @@ $(document).ready(function(){
 						}),
 						success: function(data){
 							//Send Socket
-							sendSocketMensaje();
+							//sendSocketMensaje();
 
 							var sendComments = "<div class='CommentsViews--Show'>" +
 														"<figure class='CommentsViews--Show--Figure'>" + 
@@ -221,9 +222,6 @@ $(document).ready(function(){
 														"</aside>" +
 													"</div>";
 
-							console.log(data);
-
-							
 
 							function showComments(comment) {
 								$(comment).siblings('.Post--User--CommentsViews').fadeIn('slow');
@@ -250,9 +248,28 @@ $(document).ready(function(){
 						}),
 						success: function(data){
 							alert('se envio');
+
 							sendSocketMensaje();
 
 							console.log(data);
+						},
+						error: function(err){
+							alert('error' + err);
+						}
+					}),
+
+					$.ajax({
+						url: 'u/postprofilenotificaciones/',
+						type: 'POST',
+						dataType: 'JSON',
+						contentType: 'application/json',
+						data: JSON.stringify({
+							id: isID,
+							idUsuario: otherID,
+							mensaje: $(post).val()
+						}),
+						success: function(data){
+							
 						},
 						error: function(err){
 							alert('error' + err);
@@ -261,7 +278,7 @@ $(document).ready(function(){
 
 				).then(function(){
 					//Done
-				});
+				}); 
 
 				
 
@@ -567,6 +584,10 @@ $(document).ready(function(){
 				var notifyShow = $(".menuViaintiShow").addClass('cssNotifyShow');
 				var elementVisible = $(".menuViainti_Alert").removeClass('jsNotify');
 
+				function showContainerDashboard(show) {
+					$(show).slideToggle('slow');
+				}
+				
 
 				function alertActive(icon) {
 					return $(icon).css('color', 'white');
@@ -576,6 +597,7 @@ $(document).ready(function(){
 					$(".fa-bell").addClass(hide);
 				}
 
+				showContainerDashboard($('..menuViaintiShow--Notify'));
 				addDataIcon('hiddenClick');
 				alertActive($(".menuViainti_Alert i"));
 
@@ -666,5 +688,48 @@ $(document).ready(function(){
 
 	//END///////////////FRIEND////////////////////////
 
+
+
+	//START////////////ULTIMATESERVICES//////////////
+
+		 function ultimateServices() {
+				
+			function one(url) {
+				return url + '/3xa04c/'
+			}
+
+			$.getJSON(one('ultimate'), show, false);
+
+			function show(includes){
+				includes.map(function(current, index){
+					
+					if(index < 4) {
+						var nameLowerCase = current.Nombre.toLowerCase();
+						var nameLowerCase__Replace = nameLowerCase.replace('%20', '-');
+						var url = current.Categoria  + '/' + nameLowerCase__Replace + '?id=' + current._id;
+						var tUltimate = "<article class='Dashboard_User'>" +
+											"<figure class='userActividity margen flotaLeft'>" +
+												"<img src='"+current.Imagen+"' alt='Edinson Carranza' class='user_Img'>" + 
+											"</figure>" +
+											"<article class='user_Details flotaLeft'>" +
+												"<span class='userName cAzulClaroUser'>" +
+													current.Nombre +
+												"</span>" +
+												"<p class='userInfo margen'>" + 
+													"Se unio" + 
+													"<span class='userInfo_Category'>" +
+														" " + current.Ubicacion +
+													"</span>" +
+												"</p>" +
+											"</article>" +
+										"</article>";
+					}
+					$(".Dashboard_Right_Title").after(tUltimate);
+				});
+			}
+		 }
+		 ultimateServices();	
+		 
+	//END/////////////FINALIZESERVICES///////////////
 
 });

@@ -1,5 +1,17 @@
 .header
-        .menuViaintiShow
+        .menuViaintiShow--Notify
+          
+           each notify in notificaciones 
+            .containerShow--Notify
+              figure.figure--ContainerShow--Notify
+                img(src="#{notify.userPhoto}", alt="")
+              aside.aside--ContainerShow--Notify
+                header.aside--Header
+                  span.title
+                    | #{notify.userName}
+                div.aside--Description
+                  span.title
+                    | realizo un comentario
         .menuViaintiLeft
           figure.menuViainti_Logo.margen.enLinea
             img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
@@ -7,7 +19,7 @@
             i.fa.fa-bell
             div.Number--Notify--Cont
               span.Number--Notify.jsNotify--Show
-                | 0
+                | #{notificaciones.length}
           //figure.menuViainti_Inbox.vTopAlignIco.enLinea
             i.fa.fa-envelope
         .menuViaintiRight.enLinea

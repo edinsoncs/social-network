@@ -19,6 +19,8 @@ router.post('/', function(req, res, next){
 	var lon = req.body.lon;
 
 	var collection = db.get('hoteles');
+	var lastedservices = db.get('lastedservices');
+
 	collection.insert({
 		'Nombre': titulo,
 		'Descripccion': descript,
@@ -36,6 +38,25 @@ router.post('/', function(req, res, next){
 	}).error(function(err){
 		console.log(err);
 	});
+
+	//Insert in ultimate docs in dashboard
+
+	lastedservices.insert({
+		'Nombre': titulo,
+		'Categoria': 'hoteles',
+		'Descripccion': descript,
+		'Imagen': imagen,
+		'Cover': cover,
+		'Ubicacion': ubicacion,
+		'Direccion': direccion,
+		'Pais': pais,
+		'Tel': tel,
+		'Latitud': lat,
+		'Longitud': lon,
+		'Post': Array
+	});
+
+
 
 });
 

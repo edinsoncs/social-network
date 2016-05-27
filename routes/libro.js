@@ -64,6 +64,8 @@ router.get('/u/:id', function(req, res, next){
 	var usuarios = db.get('users');
 	var idUser = req.params.id;
 	
+	res.locals.functions = functions;
+
 	
 	usuarios.findById(idUser, function(err, post){
 		
@@ -108,7 +110,7 @@ router.post('/u/postprofile/', function(req, res, next){
 	var dashboard = db.get('dashboard');
 
 
-	console.log(idUsuarioFind);
+	
 
 	comentarios.findAndModify({
 		 query: { '_id': idUsuarioFind, 
@@ -146,12 +148,51 @@ router.post('/u/postprofile/', function(req, res, next){
 		}
 	});
 
+});
 
+
+router.post('/u/postprofilenotificaciones/', function(req, res, next){
+	
+	var idPost = req.body.id;
+
+	var mensaje = req.body.mensaje;
+	var idUsuarioFind = req.body.idUsuario;
+
+	var db = req.db;
+	var notificaciones = db.get('users');
 	
 
 
+	
+
+	notificaciones.findAndModify({
+		 query: { '_id': idUsuarioFind},
+		 update: {
+		 		$push: {
+		 			'Notificaciones': {
+		 				'userId': req.user._id,
+		 				'userComment': mensaje,
+		 				'userName': req.user.name,
+		 				'userPhoto': req.user.photo,
+		 				'userTime': new Date()
+		 			}
+		 		}
+		 },
+		 new: true
+
+	}).success(function(doc){
+		console.log('se agrego notificacion');
+
+		res.json({inserted: true});
+		
+	}).error(function(err){
+		if(err){
+			console.log(err);
+		}
+	});
 
 });
+
 
 router.post('/u/dashboardpost/', function(req, res, next){
 
@@ -191,7 +232,7 @@ router.post('/u/dashboardpost/', function(req, res, next){
 					state: true
 		});
 
-		console.log(doc);
+		
 
 		
 	}).error(function(err){
@@ -235,7 +276,7 @@ router.post('/u/likecoments/', function(req, res, next){
 		 new: true
 
 	}).success(function(doc){
-		console.log('funcionoo');
+		//console.log('funcionoo');
 		
 	}).error(function(err){
 		if(err){
@@ -260,7 +301,7 @@ router.post('/u/likecoments/', function(req, res, next){
 		 new: true
 
 	}).success(function(doc){
-		console.log('funcionoo');
+		//console.log('funcionoo');
 		
 	}).error(function(err){
 		if(err){
@@ -288,7 +329,10 @@ router.post('/u/post', multipartMiddleware, function(req, res, next){
 			console.log(err);
 		}
 		else {
-			
+			//console.log('edinson este id es');
+
+			var idRefresh = req.user._id;
+
 			var coverSave = path.join(__dirname, '..', 'public/uploads/', 'coverusuarios/' + nameImagen);
 			//var coverSave = __dirname + '../../public/uploads/coverusuarios/' + nameImagen;
 
@@ -306,7 +350,12 @@ router.post('/u/post', multipartMiddleware, function(req, res, next){
 						},
 						new: true
 					}).success(function(doc){
-						console.log(req.url)
+						/*res.json({
+							'nameResult': 'Se Actualizo Correctamente',
+						});*/
+						console.log(idRefresh);
+						res.redirect(idRefresh);
+
 						//res.redirect();
 					}).error(function(err){
 						console.log(err);
@@ -356,8 +405,11 @@ router.get('/', function(req, res, next) {
 				avatar: req.user.photo,
 				imagenpost: 'hola',
 				id: req.user._id,
+				notificaciones: req.user.Notificaciones,
 				posts: post
 			});
+
+		
 
 			
         }
@@ -562,5 +614,17 @@ router.post('/post', multipartMiddleware, function(req, res, next) {
 	
 	
 
-})
+});
+
+
+router.get('/ultimate/3xa04c/', function(req, res, next){
+	var db = req.db;
+	var ultimate = db.get('lastedservices');
+
+	ultimate.find({}, function(err, doc){
+		var reverse = doc.reverse();
+		res.json(reverse);
+	})
+});
+
 module.exports = router;

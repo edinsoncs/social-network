@@ -1,3 +1,55 @@
+.menuViaintiShow--Notify {
+	position: absolute;
+	top: 50%;
+	margin-top: 0.35em;
+	background-color: white;
+	z-index: 566;
+	box-shadow: 0 -1px 2px #707E8D;
+	width: 16%;
+	display: none;
+	.headerShow--Notify {
+		background-color: #CCCDCF;
+		margin: 0 0 1em 0;
+		padding: 0.5em 0.5em;
+		text-align: center;
+		.title {
+			margin: 0;
+			font-weight: 400;
+			color: #606E7D;
+			font-size: 1.2em;
+		}
+	}
+	.containerShow--Notify {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 0 0.5em;
+		margin: 0 0 0.5em 0;
+		.figure--ContainerShow--Notify {
+			margin: 0;
+			padding: 0 0.5em;
+			img {
+				width: 25px;
+				display: block;
+				border: 1px solid #dedede;
+			}
+		}
+		.aside--ContainerShow--Notify {
+			.aside--Header .title {
+				font-size: 0.9em;
+				color: #1AA5D0;
+			}
+			.aside--Description {
+				.title {
+					font-size: 0.85em;
+					color: #6e7f9d;
+				}
+			}
+		}
+	}
+}
+
 .Number--Notify--Cont {
 	background-color: #d14233;
 	border-radius: 50%;

@@ -25,7 +25,7 @@ html(lang='es')
       nav.linkMenu
         ul.contMenu
           li.liMenu
-            a.aLinkMenu(href='#') Inicio
+            a.aLinkMenu(href='../') Inicio
           li.liMenu
             a.aLinkMenu(href='../hoteles/') Hoteles
           li.liMenu
@@ -78,7 +78,7 @@ html(lang='es')
                             | #{nameProfile}
                         .Post--Date
                           span.date
-                            | #{post.date}
+                            | #{functions.elapsedTime(post.date)}
                       figure.Post--User--Foto.margen
                         img.User--Foto(src='#{avatarProfile}', alt='')
                     article.Post--User--Txt
@@ -136,7 +136,7 @@ html(lang='es')
                             | #{nameProfile}
                         .Post--Date
                           span.date
-                            | #{post.date}
+                            | #{functions.elapsedTime(post.date)}
                       figure.Post--User--Foto.margen
                         img.User--Foto(src='#{avatarProfile}', alt='')
                     article.Post--User--Txt

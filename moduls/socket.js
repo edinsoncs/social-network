@@ -1,6 +1,7 @@
 module.exports = function(io) {
     
     var usuariosArr = new Array();
+    var usuariosArrComment = new Array();
 
 	io.on('connection', function(socket){
 		console.log('usuario se ha conectado');
@@ -25,9 +26,9 @@ module.exports = function(io) {
 
 
 			socket.user = user.idMongoDB,
-			usuariosArr.push(user);
+			usuariosArrComment.push(user);
 
-			console.log(usuariosArr);
+			//console.log(usuariosArr);
 
 			/*for( var i = 0; i < usuariosArr.length; i++){
 				
@@ -47,13 +48,17 @@ module.exports = function(io) {
 
 
 		socket.on('nuevoComentario', function(data){
-			console.log(data);
-
-			for(var i = 0; i < usuariosArr.length; i++) {
 			
-				if(usuariosArr[i].idMongoDB == data.usuarioID) {
+			console.log('estoy aquiii')
+
+			for(var i = 0; i < usuariosArrComment.length; i++) {
+			
+				if(usuariosArrComment[i].idMongoDB == data.usuarioID) {
 				
-					var idEncontrado = '/#' +usuariosArr[i].idSocketClient;
+					var idEncontrado = '/#' +usuariosArrComment[i].idSocketClient;
+					
+					console.log('encontre el id?')
+
 					console.log(idEncontrado);
 					
 					var push = io.sockets.connected[idEncontrado];
@@ -75,6 +80,8 @@ module.exports = function(io) {
 		});
 
 		socket.on('friends', function(data){
+
+			console.log()
 			
 			for(var i = 0; i < usuariosArr.length; i++) {
 			
