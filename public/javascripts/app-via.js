@@ -597,7 +597,7 @@ $(document).ready(function(){
 					$(".fa-bell").addClass(hide);
 				}
 
-				showContainerDashboard($('..menuViaintiShow--Notify'));
+				showContainerDashboard($('.menuViaintiShow--Notify'));
 				addDataIcon('hiddenClick');
 				alertActive($(".menuViainti_Alert i"));
 
