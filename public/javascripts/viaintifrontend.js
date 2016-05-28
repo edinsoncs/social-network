@@ -101,8 +101,9 @@ $(document).ready(function(){
 			 		dataType: "JSON",
 			 		contentType: "application/json",
 			 		data: JSON.stringify({
+			 			username: $("input[name='username']").val(),
 			 			email: $("input[name='miemail']").val(),
-			 			password: $("input[name='password']").val()
+			 			password: $("input[name='mipassword']").val()
 			 			/*apellidos: $("input[name='apellidos']").val(),
 			 			email: $("input[name='miemail']").val(),
 			 			password: $("input[name='password']").val(),

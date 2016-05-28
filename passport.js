@@ -46,14 +46,20 @@ module.exports = function(passport) {
             if(err) throw(err);
             // Si existe en la Base de Datos, lo devuelve
             if(!err && user!= null) return done(null, user);
+
             
+            var fotoHDTwitter = profile._json.profile_image_url;
+            var fotoHDTwitter__Replace = fotoHDTwitter.replace('_normal', '');
+
+
             // Si no existe crea un nuevo objecto usuario
             var user = new User({
                 provider_id : profile.id,
                 provider: profile.provider,
                 token: accessToken,
                 name: profile.displayName,
-                photo: profile.photos[0].value,
+                /*photo: profile.photos[0].value,*/
+                photo: fotoHDTwitter__Replace,
                 contenido: {
                     post: {
                         idPost: 0,
@@ -121,8 +127,11 @@ module.exports = function(passport) {
     // Configuracion del autenticado local
     passport.use(new LocalStrategy(function(username, password, done) {
       process.nextTick(function() {
+
+        console.log(username);
+
         UserDetails.findOne({
-          'username': username, 
+          'email': email, 
         }, function(err, user) {
           if (err) {
             return done(err);
@@ -131,6 +140,10 @@ module.exports = function(passport) {
           if (!user) {
             return done(null, false);
           }
+
+          var user = new User({
+            'hoting': 'hot'
+          });
 
           if (user.password != password) {
             return done(null, false);

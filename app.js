@@ -208,7 +208,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' })
 // Ruta de callback, a la que redirigirá tras autenticarse con Facebook.
 // En caso de fallo redirige a o tra vista '/login'
 
-app.post('/login', passport.authenticate('local', { successRedirect: '/loginSuccess',failureRedirect: '/loginFailure'}));
+app.post('/login', passport.authenticate('local', { successRedirect: '/libro',failureRedirect: '/loginFailure'}));
 
 app.get('/loginDenegado', function(req, res, next) {
   //res.render('loginDenegado', {title: 'Se ha producido un error'});
