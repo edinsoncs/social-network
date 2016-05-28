@@ -85,7 +85,7 @@ $(document).ready(function(){
            }
 
      }
-      getLocation();
+     
 
      function getLocation() {
         if (navigator.geolocation) {
@@ -94,8 +94,9 @@ $(document).ready(function(){
             console.log("Geolocation is not supported by this browser.");
         }
     }
-
-
+    
+    getLocation();
+    
     function showPosition(position) {
        console.log( "Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude);
        dataLatitud = position.coords.latitude;
@@ -238,7 +239,7 @@ $(document).ready(function(){
                         });
       }*/
 
-     //geoActive();
+     geoActive();
 
 
 });
