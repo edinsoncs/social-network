@@ -4069,7 +4069,11 @@ select {
 		.Like--Num {
 			line-height: 35px;
 			font-size: .8em;
+      cursor: pointer;
 		}
+    .Likes--Users {
+      font-size: 0.8em;
+    }
 	}
 	i {
 		color: $color_carnation_approx;
@@ -4125,7 +4129,9 @@ select {
         padding: 0.25em;
         width: 100%;
         color: #7a7a7a;
-        border: 1px solid #E6E1E1;
+        border: 1px solid #BCB8B8;
+        outline: medium none;
+        margin: 0 0 0 0.5em;
       }
     }
   }

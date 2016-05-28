@@ -90,7 +90,9 @@ function showPosition(position) {
 }
  $('#formPublisher').submit(function(e) {
     e.preventDefault();
-   $.ajax({
+    
+    if($(this).find('textarea[name="mensajepost"]').length >= 1 ){
+        $.ajax({
         url: "post", // Url to which the request is send
         type: "POST",             // Type of request to be send, called as method
         data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
@@ -128,6 +130,8 @@ function showPosition(position) {
         }
 
     });
+
+    }
  
  })
 $('.Send_Ico_Geo.enLinea').on('click',function(){

@@ -188,7 +188,6 @@ $(document).ready(function(){
 				function idUserDash(n) {
 					var id = $(n).attr('href');
 					var replace = id.replace('u/', '');
-					
 					return replace;
 				}	
 
@@ -247,11 +246,14 @@ $(document).ready(function(){
 							mensaje: $(post).val()
 						}),
 						success: function(data){
-							alert('se envio');
+							
+							function clearInput(clearItem) {
+								$(clearItem).val('');
+							}
 
 							sendSocketMensaje();
 
-							console.log(data);
+							clearInput($(".textareComments"));
 						},
 						error: function(err){
 							alert('error' + err);

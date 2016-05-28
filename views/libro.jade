@@ -27,7 +27,7 @@ html(lang='es')
     script(src='../javascripts/chat.js')
 
   body
-    
+
     header.menuViainti.bgHeader(data-role='header')
       include header-principal.jade
       nav.linkMenu
@@ -163,8 +163,11 @@ html(lang='es')
                            if post.likes
                             i.fa.fa-heart.jsLikeDashboard
                             .Like.enLinea
-                              span.Like--Num
-                                | #{post.likes.length}
+                              if post.likes.length >= 1
+                                span.Like--Num(data-likesShow='yes')
+                                  | #{post.likes.length} 
+                                //span.Likes--Users
+                                  | Personas
                            else
                             i.fa.fa-heart.jsLikeDashboard
                             .Like.enLinea
@@ -188,7 +191,7 @@ html(lang='es')
                             figure.CommentsViews--Show--Figure
                                 img(src="#{co.userPhoto}", alt="")
                             aside.CommentsViews--Show--Data
-                              a.Show--Name(href="#{co.userId}")
+                              a.Show--Name(href="u/#{co.userId}")
                                 | #{co.userName}
                               p.Show--Comments
                                 | #{co.userComment}
@@ -221,8 +224,12 @@ html(lang='es')
                           .User--Like
                             i.fa.fa-heart.jsLikeDashboard
                             .Like.enLinea
-                              span.Like--Num
-                                | #{post.likes.length}
+                              if post.likes.length >= 1
+                                span.Like--Num
+                                  | #{post.likes.length}
+                                //span.Likes--Users
+                                  | Personas
+
                          else
                           .User--Like
                             i.fa.fa-heart.jsLikeDashboard
