@@ -178,6 +178,10 @@ $(document).ready(function(){
      $('#formPublisher').submit(function(e) {
         e.preventDefault();
         
+      
+        $(this).find('input[type="submit"]').val('Subiendo...');
+        $(this).find('input[type="submit"]').attr('disabled', 'disabled');
+
         if($(this).find('textarea[name="mensajepost"]').length >= 1 ){
             $.ajax({
             url: "post", // Url to which the request is send
@@ -213,6 +217,8 @@ $(document).ready(function(){
             
             document.getElementById("formPublisher").reset();
 
+            $(".jsPostInLoading").val('Publicar');
+            $(".jsPostInLoading").removeAttr('disabled');
 
             }
 

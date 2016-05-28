@@ -123,7 +123,7 @@ html(lang='es')
                          span.descriptionIcon--Title
                           | Foto
                     .Send_btnSubmit.enLinea
-                      input.btn_Post(type="submit", value="Publicar")
+                      input.btn_Post.jsPostInLoading(type="submit", value="Publicar")
            
             each post in posts
                 article.Dashboard_Post--User.uMargin(data-idpost="#{post.id}", data-iduser="#{post.usuarioId}")
