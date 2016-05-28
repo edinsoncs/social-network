@@ -11,7 +11,7 @@ html(lang='es')
 
     link(rel='stylesheet', href='http://vjs.zencdn.net/5.9.2/video-js.css')
     
-    script(src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css')
+    link(href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css', rel='stylesheet')
 
     script(src='http://code.jquery.com/jquery-1.11.2.min.js')
     
@@ -23,6 +23,8 @@ html(lang='es')
     script(src='../javascripts/viaintifrontendbackend.js')
     
     script(src='../../javascripts/app-via.js')
+
+    script(src='../../javascripts/app-secondary.js')
     
     script(src='../javascripts/chat.js')
 
@@ -95,17 +97,7 @@ html(lang='es')
               figure.Dashboard_Map.margen
                 // <img src="../images/mapa.jpg" alt="">
                 #map(style='height: 312px')
-                script.
-                  function initMap() {
-                      var myLatLng = {lat: -25.363, lng: 131.044};
-                      var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 4,
-                      center: myLatLng
-                    });
-                  
-
-                  }
-                script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDMXF4qKm0gweLiVCJ3LxkkkERN39VV-58&callback=initMap')
+                
               form.pubuser(action="", enctype="multipart/form-data" method="post", id="formPublisher")
                 .Dashboard_Post
                   fieldset.uHidden
@@ -261,97 +253,28 @@ html(lang='es')
                         
       
           aside.Dashboard_Right
-            .Activity_Friend
+            .Dashboard_Right_Menu
               header.Dashboard_Right_Title
+                h4.cBlancoSidebarTitle.margen
+                  | Que hacer
+              div.Dashboard_Show--City
+                .Show--City--Info
+                  header.City--Info--Header
+                    h2.title.jsTxtCityDashboard
+                      | Buenos Aires
+                  div.City--Info--Btn
+                    a.Btn--Continue(href="#")
+                      | Descubrir
+
+            .Activity_Friend
+              header.Dashboard_Right_Title.jsAfter
                 h4.titleRight.margen.cBlancoSidebarTitle
                   | Ultimos Servicios
               
              
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Mi libro viajero
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-folder
-                    | 									crear grupo
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-calendar
-                    | 									crear evento
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-briefcase
-                    | 									top viajeros
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-pencil
-                    | 									redactar noticia
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Hoteles
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-bed
-                    | 									el mas cercano
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-phone
-                    | 									reservar ahora
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Restaurantes
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-phone
-                    | 									el mas cercano
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-home
-                    | 									reservar ahora
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Viajes
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-plane
-                    | 									destinos
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-star
-                    | 									promociones
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Música
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-music
-                    | 									Mi colección
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-heart
-                    | 									Historia
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Juegos
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-smile-o
-                    | 									Desarrolladores
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='#')
-                    i.fa.fa-gamepad
-                    | 									Juega
+
+
+              
+            
     //include chat.html
     script(src="http://vjs.zencdn.net/5.9.2/video.js")

@@ -3,10 +3,10 @@ $(document).ready(function(){
 	var socket = io.connect('localhost:3535', {'forceNew': true});
 
 
-	function rSidebar(r){
+	/*function rSidebar(r){
 		$(r).remove();
 	}
-	rSidebar($(".jsRemove"));
+	rSidebar($(".jsRemove"));*/
 	
 	function sendData(id){
 		var s = $(id).attr('href');
@@ -726,12 +726,15 @@ $(document).ready(function(){
 											"</article>" +
 										"</article>";
 					}
-					$(".Dashboard_Right_Title").after(tUltimate);
+					$(".jsAfter").after(tUltimate);
 				});
 			}
 		 }
 		 ultimateServices();	
 		 
 	//END/////////////FINALIZESERVICES///////////////
+
+
+
 
 });
