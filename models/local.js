@@ -5,7 +5,7 @@ var UserDetail = new Schema({
       username: String,
       password: String,
       email: String,
-      photo: String,
+      photo: 'String',
       cover: String,
       posts: [{
 			id: Number,

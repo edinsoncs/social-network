@@ -13,15 +13,15 @@ router.get('/', function(req, res, next) {
 
 	var collections = db.get('vuelos');
 
+	console.log('registrando..')
+
 	var find = collections.findOne({
 		"usuario": nombre,
 		"password": password
 	}).success(function(doc){
 		if(doc !== null) {
-			res.send(doc);
-
+			console.log(doc)
 		}
-		
 		else {
 			res.json({error: "error"});
 		}

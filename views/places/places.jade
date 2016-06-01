@@ -1,16 +1,127 @@
 doctype html
-html
+html(lang="es", ng-app="")
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    main
-      h1= title
-      p Welcome to #{title}
+    meta(charset="UTF-8")
+    meta(name="description", content="Viainti")
+    title #{title}
+    link(rel="stylesheet", href="../stylesheets/normalize.css")
+    link(rel="stylesheet", href="../stylesheets/viainti.css")
 
-      include map.html
-      
-      each pais in paises
-        article
-          h2
-            a.link(href='/places/#{pais.pais}/')= pais.pais
+    link(href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css', rel='stylesheet')
+
+    script(src="http://code.jquery.com/jquery-1.11.2.min.js")
+  
+    script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
+
+
+    script(src="../javascripts/viainti.js")
+    script(src="../javascripts/viaintifrontend.js")
+    script(src="../javascripts/ciudades.js")
+
+  body
+    header.menuViainti.bgHeader(data-role="header")
+      .header
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src="../images/logo.png", alt="Viainti tu libro viajero")
+          figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
+            i.fa.fa-bell
+            div.Number--Notify--Cont
+              span.Number--Notify.jsNotify--Show
+                | 0
+          //figure.menuViainti_Inbox.vTopAlignIco.enLinea
+            i.fa.fa-envelope
+        .menuViaintiRight.enLinea
+          //form.menuViainti_Search.enLinea.vTopAlign(action="")
+            input.menuViainti_Search_Input(type="search", placeholder="Busca viajeros, hoteles, restaurantes y musica")
+            figure.ico_Search.margen
+              i.fa.fa-search
+          figure.menuViainti_Avatar.enLinea
+            img.avatarHeader(src="#{avatar}", alt="#{nombre}")
+          figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
+            i.fa.fa-chevron-down.jsUserDown
+            ul.menuViainti_ArrowDown--User
+              .arrowDown--Ico--Up
+              li.List
+                a.ArrowDown--Link(href="#")
+                  | Mi Perfil
+                  i.fa.fa-user
+              li.List
+                a.ArrowDown--Link(href="../logout/")
+                  | Desconectarse
+                  i.fa.fa-power-off
+      nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href="libro/") Inicio
+          li.liMenu
+            a.aLinkMenu(href="hoteles/") Hoteles
+          li.liMenu
+            a.aLinkMenu(href="restaurantes/") Restaurantes
+          li.liMenu
+            a.aLinkMenu(href="vuelos/") Viajes
+          
+
+    main
+     section.contenidoBg--Places
+      header.Places--Title
+        h2.title
+          | LATINOAMÉRICA
+     section.contenidoPrincipal
+      div.contenidoPrincipal--Paises
+       article.Paises--Articles
+        a.link(href="argentina/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/argentina.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Argentina
+       article.Paises--Articles
+        a.link(href="bolivia/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/bolivia.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Bolivia
+       article.Paises--Articles
+        a.link(href=("chile/"))
+          div.Paises--ArticlesBG
+          img(src="../images/paises/chile.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Chile
+       article.Paises--Articles
+        a.link(href="colombia/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/colombia.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Colombia
+       article.Paises--Articles
+        a.link(href="ecuador/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/ecuador.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Ecuador
+       article.Paises--Articles
+        a.link(href="paraguay/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/paraguay.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Paraguay
+       article.Paises--Articles
+        a.link(href="peru/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/peru.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Peru
+       article.Paises--Articles
+        a.link(href="uruguay/")
+          div.Paises--ArticlesBG
+          img(src="../images/paises/uruguay.jpg", alt="")
+          header.Paises--Articles--Header
+           h2.title
+            | Uruguay

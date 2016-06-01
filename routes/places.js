@@ -4,44 +4,59 @@ var router = express.Router();
 /* places */
 router.get('/', function(req, res, next) {
 
-	var db = req.db;
-	var places = db.get('places');
-
-	places.find({}, function(err, doc) {
-		res.render('places/places', {
-			title: 'Places',
-			paises: doc
-		});
+	res.render('places/places', {
+			title: 'Viainti en ' + 'Latinoamerica',
+			nombre: req.user.name,
+			avatar: req.user.photo
 	});
 
 });
 
 router.get('/:pais', function(req, res, next) {
 
-	var db = req.db;
-	var places = db.get('places');
 
-	places.findOne({"pais": req.params.pais}, function(err, doc) {
-		res.render('places/pais', {
-			title: doc.pais,
-			ciudades: doc.ciudades
-		});
-		console.log(doc);
-	});
+	var db = req.db;
+	var paises = db.get('paises');
+
+	paises.findOne({
+		'pais': req.params.pais
+	}).success(function(result, err){
+
+		if(result !== null) {
+			res.render('places/pais', {
+				title: 'Viainti en ' + req.params.pais,
+				nombre: req.user.name,
+				avatar: req.user.photo,
+				img: result.galeria
+			});
+
+			console.log(err);
+		}
+		else {
+			res.render('places/trabajando', {
+				title: 'Viainti',
+				nombre: req.user.name,
+				avatar: req.user.photo
+			});
+		}
+		
+
+		
+	}).error(function(err){
+		console.log('no encontro');
+	})
+
 
 });
 
 router.get('/:pais/:ciudad', function(req, res, next) {
 
-	var db = req.db;
-	var places = db.get('places');
+	var nameCiudad = req.params.ciudad;
 
-	places.findOne({"pais": req.params.pais, "ciudades.ciudad": req.params.ciudad}, function(err, doc) {
-		/*res.render('places/pais', {
-			title: doc.ciudad,
-			ciudades: doc.ciudades
-		});*/
-		console.log(doc);
+	res.render('places/ciudad', {
+		title: 'Viainti en ' + nameCiudad,
+		nombre: req.user.name,
+		avatar: req.user.photo
 	});
 
 });

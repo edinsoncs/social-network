@@ -25,14 +25,16 @@ html(lang='es')
         .menuHome_div_title.linea
           h1.menuHome_title.margen.colorPrimary
             | Tu libro viajero
-        form.menuHome_login.linea.floatD(action="/login", method="POST")
-          fieldset.menuHome_fieldset.noBorder.linea
-            input.inputEmail(name='username', type='text', placeholder='edinson@hotmail.com', autofocus='')
-          fieldset.menuHome_fieldset.noBorder.linea
-            input.inputPass(name="password" type='password', placeholder='Ingrese su clave')
-          fieldset.menuHome_fieldset.noBorder.linea
-            input.menuHome_inputSubmit.bgLogin-btn.noBorder(type='submit', value='Ingresar')
-            a.menuHome_buttonLogin.linkBlanco(href='registro/') Registrar
+        div.menuHome_Access.floatD
+          div.menuHome_Access--Facebook.float
+            a.Facebook--Btn(href="auth/facebook")
+              i.el-icon-facebook
+              | Ingresar Con Facebook
+          div.menuHome_Access--Twitter.floatD
+            a.Twitter--Btn(href="auth/twitter")
+              i.el-icon-twitter
+              | Ingresar Con Twitter
+
     .slideHome
       figure.slideHome_cont.margen
         img(src='images/slide-libro.jpg', alt='')

@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800);
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700);
+
 
 @font-face {
   font-family: 'FontAwesome';
@@ -2643,7 +2644,178 @@ body {
 		margin: 0;
 		padding: 0.5em 0;
 	}
+
+  .contenidoPrincipal--Cityes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .Cityes--Show {
+      margin: 0;
+      height: 250px;
+      background-image: url('http://static.thousandwonders.net/Buenos.Aires.original.10795.jpg');
+      background-color: #9D9D9D;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      position: relative;
+      width: 50%;
+      .Cityes--Show--BG {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.41);
+        border: 4px solid white;
+      }
+      .Cityes--Show--Header {
+        position: absolute;
+        z-index: 45;
+        width: 100%;
+        top: 50%;
+        margin-top: -4em;
+      }
+      .Cityes--Show--Header .title {
+        color: white;
+        font-size: 2.5em;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: 'Noto Sans', sans-serif;
+      }
+    }
+    .ShowMain--De {
+      background-color: white;
+      height: 235px;
+      overflow: hidden;
+      width: 48%;
+      padding: 0.5em;
+      .ShowMain--De--Articles {
+        font-family: 'Lato', sans-serif;
+        p {
+          margin: 0 0 0.5em 0;
+          font-size: 13px;
+          color: #444;
+          b {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .contenidoPrincipal--Paises {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .Paises--Articles {
+      width: 250px;
+      height: auto;
+      position: relative;
+      border: 4px solid white;
+      cursor: pointer;
+      margin: 2em 0 1em 0;
+      .Paises--ArticlesBG {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.27);
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+      .Paises--Articles--Header {
+        position: absolute;
+        top: 50%;
+        margin-top: -2em;
+        width: 100%;
+        text-align: center;
+        .title {
+          color: white;
+          font-weight: 600;
+          font-family: 'Lato', sans-serif;
+        }
+      }
+    }
+  }
+  .paises {
+    display: flex;
+    justify-content: space-between;
+    
+    .paises--Iz {
+      width: 68%;
+      .paises--Iz--Header {
+        background: #dd516b;
+        padding: .6em 0;
+        width: 100%;
+        .title {
+          margin: 0 1em;
+          color: white;
+          font-weight: 400;
+          font-size: 1em;
+        }
+      }
+    }
+  }
 }
+
+.contenidoBg--Places {
+  background-image: url('../images/latam.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  .Places--Title {
+   position: absolute;
+   width: 50%;
+   left: 50%;
+   top: 50%;
+   margin-top: -6em;
+   .title {
+    color: white;
+    font-size: 3em;
+    text-shadow: 0 2px 10px black;
+   }
+  }
+}
+
+.contenidoBg--Places--BGSlider {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    .Places--PaisSlider--Data {
+      position: absolute;
+      //background: red;
+      z-index: 50;
+      top: 23%;
+      width: 1220px;
+      margin: 0 auto;
+      left: 50%;
+      margin-left: -40em;
+      .PaisSlider--Data--Show {
+        width: 30%;
+        float: right;
+        background-color: #fff;
+        padding: 0.5em;
+        p {
+          strong {
+            color: #1a9bfa;
+          }
+          span {
+            color: #555554;
+          }
+          font-size: 0.85em;
+        }
+      }
+    }
+    .rslides {
+      margin: 0;
+    }
+  }
+
 .contenidoBackendAdmin {
 	width: 1200px;
 	margin: 0 auto;
@@ -4625,6 +4797,41 @@ select {
     }
 }
 
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  left: 0;
+  top: 0;
+
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
 
 /*Utils*/
 @import "utils";

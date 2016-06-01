@@ -92,6 +92,8 @@ router.get('/u/:id', function(req, res, next){
 				amigos: post.Amigos,
 				actividades: actividadesShow
 			});
+
+
 		}
 	});
 
@@ -162,34 +164,39 @@ router.post('/u/postprofilenotificaciones/', function(req, res, next){
 	var notificaciones = db.get('users');
 	
 
+	if(idUsuarioFind !== req.user._id) {
+		notificaciones.findAndModify({
+			 query: { '_id': idUsuarioFind},
+			 update: {
+			 		$push: {
+			 			'Notificaciones': {
+			 				'userId': req.user._id,
+			 				'userComment': mensaje,
+			 				'userName': req.user.name,
+			 				'userPhoto': req.user.photo,
+			 				'userTime': new Date()
+			 			}
+			 		}
+			 },
+			 new: true
+
+		}).success(function(doc){
+			console.log('se agrego notificacion');
+
+			res.json({inserted: true});
+			
+		}).error(function(err){
+			if(err){
+				console.log(err);
+			}
+		});
+	}
+	else {
+		console.log('bla');
+	}
+
 
 	
-
-	notificaciones.findAndModify({
-		 query: { '_id': idUsuarioFind},
-		 update: {
-		 		$push: {
-		 			'Notificaciones': {
-		 				'userId': req.user._id,
-		 				'userComment': mensaje,
-		 				'userName': req.user.name,
-		 				'userPhoto': req.user.photo,
-		 				'userTime': new Date()
-		 			}
-		 		}
-		 },
-		 new: true
-
-	}).success(function(doc){
-		console.log('se agrego notificacion');
-
-		res.json({inserted: true});
-		
-	}).error(function(err){
-		if(err){
-			console.log(err);
-		}
-	});
 
 });
 
@@ -408,8 +415,6 @@ router.get('/', function(req, res, next) {
 				notificaciones: req.user.Notificaciones,
 				posts: post
 			});
-
-		
 
 			
         }

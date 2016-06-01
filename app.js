@@ -42,7 +42,7 @@ var publicar = require('./routes/publicar');
 /*Publicar en perfiles personales*/
 var pUsuarios = require('./routes/ajax/post');
 /*mildwares registro*/
-var registro = require('./routes/registro');
+//var registro = require('./routes/registro');
 var registrando = require('./routes/registrando');
 
 /*mildwares plataforma*/
@@ -151,7 +151,7 @@ function ensureAuthenticated(req, res, next) {
     return next();
   }
   else {
-    res.redirect('/registro');
+    res.redirect('/');
   }
 }
 
@@ -171,10 +171,10 @@ app.use('/users/', users);
 
 app.use('/publicarviainti/', publicar);
 
-app.use('/places/', places);
+app.use('/places/', ensureAuthenticated, places);
 
 /*Use Registro*/
-app.use('/registro/', registro);
+//app.use('/registro/', registro);
 app.use('/add/', registrando);
 
 /*Use Publicaciones*/

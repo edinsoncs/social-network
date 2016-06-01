@@ -26,6 +26,7 @@ router.get('/', function(req, res, next) {
  
 });
 
+
 router.get('/:namehotel', function(req, res, next){
 	var toUrl = url.parse(req.url, true).query;
 	var idHotel = toUrl.id;

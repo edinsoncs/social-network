@@ -125,36 +125,36 @@ module.exports = function(passport) {
     }));
 
     // Configuracion del autenticado local
-    passport.use(new LocalStrategy(function(username, password, done) {
+   /* passport.use(new LocalStrategy(function(username, password, photo, done) {
       process.nextTick(function() {
 
-        console.log(username);
-
-        UserDetails.findOne({
+        User.findOne({
           'email': email, 
         }, function(err, user) {
           if (err) {
             return done(err);
+            console.log('one');
           }
 
           if (!user) {
             return done(null, false);
+            console.log('two');
           }
-
-          var user = new User({
-            'hoting': 'hot'
-          });
 
           if (user.password != password) {
             return done(null, false);
+            console.log('tree');
           }
+
+          console.log('hola edinson');
+          console.log(photo);
 
           return done(null, user);
         });
       });
 
     }));
-           
+     */      
 
 };
 

@@ -1,6 +1,7 @@
 .header
         .menuViaintiShow--Notify
           
+          if notificaciones
            each notify in notificaciones 
             .containerShow--Notify
               figure.figure--ContainerShow--Notify
@@ -12,14 +13,21 @@
                 div.aside--Description
                   span.title
                     | realizo un comentario
+          else
+            //Not
         .menuViaintiLeft
           figure.menuViainti_Logo.margen.enLinea
             img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
           figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
             i.fa.fa-bell
             div.Number--Notify--Cont
+             if notificaciones
               span.Number--Notify.jsNotify--Show
                 | #{notificaciones.length}
+             else
+              span.Number--Notify.jsNotify--Show
+                | 0
+
           //figure.menuViainti_Inbox.vTopAlignIco.enLinea
             i.fa.fa-envelope
         .menuViaintiRight.enLinea

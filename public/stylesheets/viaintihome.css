@@ -1225,7 +1225,7 @@
   content: "\e72a";
 }
 
-.menuHome .menuHome_div .menuHome_login .menuHome_fieldset .inputEmail, .inputPass {
+.menuHome .menuHome_div form .menuHome_fieldset .inputEmail, .inputPass {
   background: linear-gradient(#f5f0f0, #f3f3f3);
   border: 1px solid #eaeaea;
   border-radius: 3px;
@@ -1459,37 +1459,37 @@ body {
   width: 115px;
 }
 
-.menuHome .menuHome_div .menuHome_login {
+.menuHome .menuHome_div form {
   vertical-align: top;
   padding: .35em 0 0 0;
   margin: 0 0 0 10em;
 }
 
-.menuHome .menuHome_div .menuHome_login .menuHome_fieldset {
+.menuHome .menuHome_div form .menuHome_fieldset {
   position: relative;
   padding: .4em 0 0 0;
 }
 
-.menuHome .menuHome_div .menuHome_login .menuHome_fieldset .inputEmail:focus {
+.menuHome .menuHome_div form .menuHome_fieldset .inputEmail:focus {
   box-shadow: 0 0 2px #34495e;
   border: 1px solid #dbdada;
 }
 
-.menuHome .menuHome_div .menuHome_login .menuHome_fieldset .menuHome_inputSubmit {
+.menuHome .menuHome_div form .menuHome_fieldset .menuHome_inputSubmit {
   color: white;
   padding: .25em .7em;
   box-shadow: 0 4px 0 #9e3c47;
   outline: medium none;
 }
 
-.menuHome .menuHome_div .menuHome_login .menuHome_fieldset .menuHome_buttonLogin {
+.menuHome .menuHome_div form .menuHome_fieldset .menuHome_buttonLogin {
   padding: .25em .7em;
   background: #0085ca;
   box-shadow: 0 4px 0 #0a6696;
   margin: 0 0 0 1em;
 }
 
-.menuHome .menuHome_div .menuHome_login .menuHome_fieldset .inputPass:focus {
+.menuHome .menuHome_div form .menuHome_fieldset .inputPass:focus {
   box-shadow: 0 0 2px #34495e;
   border: 1px solid #dbdada;
 }
@@ -1503,6 +1503,35 @@ body {
   font-size: 1.5em;
   font-weight: 400;
 }
+
+.menuHome .menuHome_div .menuHome_Access {
+  overflow: hidden;
+  line-height: 55px;
+}
+         .menuHome_Access .menuHome_Access--Facebook .Facebook--Btn {
+          background: #3b5999;
+          padding: 0.5em 1em;
+          border-radius: 4px;
+          cursor: pointer;
+          text-decoration: none;
+          color: white;
+         }
+
+         .menuHome_Access .menuHome_Access--Facebook {
+          margin: 0 1em 0 0;
+         }
+         .menuHome_Access .menuHome_Access--Twitter .Twitter--Btn {
+          background: #60a9de;
+          padding: 0.5em 1em;
+          color: white;
+          border-radius:4px;
+          cursor: pointer;
+          text-decoration: none;
+          color: white;
+         }
+         .menuHome_Access div a i {
+           margin: 0 0.8em 0 0;
+         }
 
 .slideHome {
   margin: 0;

@@ -90,7 +90,7 @@ $(document).ready(function(){
 
 	function r(){ 
 
-		 $(".formRegistro").submit(function(e){
+		 /*$(".formRegistro").submit(function(e){
 		 		e.preventDefault();
    			
 	   			var Register = "../add/registro/";
@@ -110,7 +110,7 @@ $(document).ready(function(){
 			 			passwordR: $("input[name='passwordr']").val(),
 			 			mes: $("select[name='selectMonth']").val(),
 			 			dia: $("input[name='day']").val(),
-			 			ano: $("input[name='year']").val()*/
+			 			ano: $("input[name='year']").val()
 			 		}),
 			 		success: function(data){
 			 			console.log(data);
@@ -126,15 +126,13 @@ $(document).ready(function(){
 
 		 		});
 
-		 });
+		 });*/
 
 		 $(".menuHome_login").submit(function(e){
 		 	
 		 	e.preventDefault();
 
 		 	var a = "../add/login/";
-		 	
-
 
 		 	$.ajax({
 		 		url: a,

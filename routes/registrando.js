@@ -3,12 +3,15 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+var nodemailer = require('nodemailer');
 
+var smtpTransport = require('nodemailer-smtp-transport');
 
 router.post('/registro/', function(req, res, next) {
 
 	var db = req.db;
 
+	var username = req.body.username;
 	var email = req.body.email;
 	var password = req.body.password;
 	/*var apellidos = req.body.apellidos;
@@ -23,18 +26,45 @@ router.post('/registro/', function(req, res, next) {
 	var collections = db.get('users');
 
 	collections.insert({
-		"email": email,
-		"password": password
-		/*"apellidos": apellidos,
+		"username": username,
 		"email": email,
 		"password": password,
-		"passwordR": passwordR,
-		"mes": mes,
-		"dia": dia,
-		"year": ano,
-		"genero": genero*/
+		'photo': 'https://avatars1.githubusercontent.com/u/4240285?v=3&s=460',
+		'notificaciones': []
 	}).success(function(err, doc){
+
+		/*Send message*/
+		var transporter = nodemailer.createTransport(smtpTransport({
+		    host: 'single-2364.banahosting.com',
+		    port: 465,
+		    auth: {
+		        user: 'info@viainti.com',
+		        pass: 'via123'
+		    }
+		}));
+
+		var mailOptions = {
+		    from: '"Viainti tu libro viajero 👥" <info@viainti.com>', // sender address
+		    to: email, // list of receivers
+		    subject: 'Hello ✔', // Subject line
+		    text: 'Hello world 🐴', // plaintext body
+		    html: '<b>Hello world 🐴</b>' // html body
+		};
+
+		transporter.sendMail(mailOptions, function(error, info){
+			if(error) {
+				return console.log(error)
+			}
+			else {
+				console.log('se envio el mensaje');
+			}
+		});
+
+
 		res.json({inserted: true});
+
+
+
 	}).error(function(err){
 		res.json({error: "Hay aqui un error"});
 	});
