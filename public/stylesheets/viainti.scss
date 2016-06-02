@@ -4778,6 +4778,8 @@ select {
       }
       .CommentsViews--Show--Data {
         margin: 0 0 0 0.5em;
+        width: 95%;
+        overflow: hidden;
       }
       .CommentsViews--Show--Data .Show--Name {
         color: #1AA5D0;
@@ -4788,6 +4790,12 @@ select {
         white-space: nowrap;
         width: 50%;
         text-decoration: none;  
+      }
+      .CommentsViews--Show--Data .Show--Hour {
+        float: right;
+        font-size: 0.7rem;
+        color: #bcbdbf;
+        word-spacing: 1px;
       }
       .CommentsViews--Show--Data .Show--Comments {
         margin: 0;

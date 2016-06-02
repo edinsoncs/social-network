@@ -107,7 +107,7 @@ html(lang='es')
                 .Dashboard_Post_Send
                   .DashBoard_Send_Utils.flotaRight
                     .Send_Ico.enLinea
-                      .Send_Ico_Geo.enLinea
+                      //.Send_Ico_Geo.enLinea
                         i.fa.fa-map-marker
                         .descriptionIcon
                          span.descriptionIcon--Title
@@ -185,6 +185,7 @@ html(lang='es')
                             aside.CommentsViews--Show--Data
                               a.Show--Name(href="u/#{co.userId}")
                                 | #{co.userName}
+                              a.Show--Hour #{functions.elapsedTime(co.userTime)}
                               p.Show--Comments
                                 | #{co.userComment}
                     

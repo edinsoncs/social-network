@@ -161,7 +161,7 @@ $(document).ready(function(){
 							sendSocketMensaje();
 						},
 						error: function(err){
-							alert('error' + err);
+							
 						}
 				});
 
@@ -212,11 +212,11 @@ $(document).ready(function(){
 															"<img src='"+data.userData.photo+"' alt=''>" + 
 														"</figure>" + 
 														"<aside class='CommentsViews--Show--Data'>" + 
-															"<a href='"+data.userData.iduser+"' class='Show--Name'>" + 
+															"<a href='u/"+data.userData.iduser+"' class='Show--Name'>" + 
 																data.userData.name + 
 															"</a>"+
 															"<p class='Show--Comments'>" + 
-																data.userPost
+																data.userPost +
 															"</p>" + 
 														"</aside>" +
 													"</div>";
@@ -271,7 +271,6 @@ $(document).ready(function(){
 							mensaje: $(post).val()
 						}),
 						success: function(data){
-							
 						},
 						error: function(err){
 							alert('error' + err);
@@ -343,8 +342,7 @@ $(document).ready(function(){
 				
 				var isID_USER = $(this).parent().parent().parent().parent().parent().attr('data-iduser');
 
-				
-
+				var likeID = $(this).parent().find('.Like--Num');
 
 				$.ajax({
 					url: '../libro/u/likecoments/',
@@ -357,7 +355,14 @@ $(document).ready(function(){
 						like: 1
 					}),
 					success: function(data){
-						alert('likeado');
+						function aumentLike(bro) {
+							var _likeCant = $(bro).text();
+							var _likeCant__Number = Number(_likeCant);
+							var _likeNumber = 1;
+							var _resultado = _likeCant__Number + _likeNumber;
+							$(bro).text(_resultado);
+						}
+						aumentLike(likeID);
 					},
 					error: function(err){
 						console.log(err);

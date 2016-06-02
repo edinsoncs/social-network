@@ -178,11 +178,19 @@ $(document).ready(function(){
      $('#formPublisher').submit(function(e) {
         e.preventDefault();
         
-      
+
+        function videoYoutube(dataVideo) {
+          var yt = dataVideo.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+          var ytIframe = "<iframe width='560' height='315' src='https://www.youtube.com/embed/"+ yt +"' frameborder='0' allowfullscreen></iframe>";
+        }
+
+        videoYoutube($(this).find('textarea').val());
+        
         $(this).find('input[type="submit"]').val('Subiendo...');
         $(this).find('input[type="submit"]').attr('disabled', 'disabled');
 
         if($(this).find('textarea[name="mensajepost"]').length >= 1 ){
+            
             $.ajax({
             url: "post", // Url to which the request is send
             type: "POST",             // Type of request to be send, called as method
@@ -194,7 +202,6 @@ $(document).ready(function(){
             {
               var imgstr = data.imagen !='' ? '<img src="../../uploads/usuarios/'+data.imagen+'" alt="nombre de la foto" class="Post--Img">': '';
               var videostr = data.videon !='' ? '<video width="95%" controls=""><source src="../../uploads/videos/'+data.videon+'" type="video/mp4">Your browser does not support HTML5 video.</video>': '';
-
                          $(".Dashboard_Welcome").after('<article class="Dashboard_Post--User">'+
                                               '<article class="Post--User">'+
                                               '<div class="Post--User--Date">'+

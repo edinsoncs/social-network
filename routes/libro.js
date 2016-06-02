@@ -162,9 +162,33 @@ router.post('/u/postprofilenotificaciones/', function(req, res, next){
 
 	var db = req.db;
 	var notificaciones = db.get('users');
+
+
+	notificaciones.findAndModify({
+			 query: { '_id': idUsuarioFind},
+			 update: {
+			 		$push: {
+			 			'Notificaciones': {
+			 				'userId': req.user._id,
+			 				'userComment': mensaje,
+			 				'userName': req.user.name,
+			 				'userPhoto': req.user.photo,
+			 				'userTime': new Date()
+			 			}
+			 		}
+			 },
+			 new: true
+
+		}).success(function(doc){
+			res.json({inserted: true});
+		}).error(function(err){
+			if(err){
+				console.log(err);
+			}
+		});
 	
 
-	if(idUsuarioFind !== req.user._id) {
+	/*if(idUsuarioFind !== req.user._id) {
 		notificaciones.findAndModify({
 			 query: { '_id': idUsuarioFind},
 			 update: {
@@ -195,7 +219,7 @@ router.post('/u/postprofilenotificaciones/', function(req, res, next){
 		console.log('bla');
 	}
 
-
+	*/
 	
 
 });
@@ -284,6 +308,7 @@ router.post('/u/likecoments/', function(req, res, next){
 
 	}).success(function(doc){
 		//console.log('funcionoo');
+		res.json({inserted: true})
 		
 	}).error(function(err){
 		if(err){
