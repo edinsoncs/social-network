@@ -7,7 +7,6 @@ $(document).ready(function(){
 			e.preventDefault();
 			function message(text){
 				var showText = $(text).val();
-				alert(showText);
 				return showText;
 			}
 			function id(show){
@@ -22,7 +21,7 @@ $(document).ready(function(){
 			
 
 			$.ajax({
-				url: "../addhoteles/post",
+				url: "../../addhoteles/post",
 				type: "POST",
 	            dataType: "JSON",
 	            contentType: "application/json",

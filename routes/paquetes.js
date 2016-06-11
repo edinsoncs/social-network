@@ -39,7 +39,15 @@ function accept(pref) {
 
 router.get('/', function(req, res, next){
 	
-	res.render('paquetes', {title: 'La mejor variedad de paquetes turisticos - Viainti'});
+	res.render('paquetes', {
+
+        title: 'La mejor variedad de paquetes turisticos - Viainti',
+        nombre: req.user.name,
+        avatar: req.user.photo,
+        id: req.user._id,
+        notificaciones: req.user.Notificaciones
+
+    });
 
 });
 
@@ -70,6 +78,7 @@ router.get('/:paquetetitle', function(req, res, next){
             function price(){
                 return Number(doc.Precio);
             }
+            
             var preference = {
                 "items": [{
                         "title": doc.Titulo,
@@ -99,6 +108,10 @@ router.get('/:paquetetitle', function(req, res, next){
                                     seguroMedico: doc.SeguroMedico,
                                     Contenido: doc.Contenido,
                                     Payment: data,
+                                    nombre: req.user.name,
+                                    avatar: req.user.photo,
+                                    id: req.user._id,
+                                    notificaciones: req.user.Notificaciones,
                                     name: "Viainti"
                         });
 

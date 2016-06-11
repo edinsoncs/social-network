@@ -3,75 +3,32 @@ head
   meta(charset='UTF-8')
   meta(name='description', content='Viainti')
   title #{web}
-  link(rel='stylesheet', href='../stylesheets/normalize.css')
-  link(rel='stylesheet', href='../stylesheets/viainti.css')
+  link(rel='stylesheet', href='../../stylesheets/normalize.css')
+  link(rel='stylesheet', href='../../stylesheets/viainti.css')
   <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 
   script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
 
+  script(src="/socket.io/socket.io.js")
+
   script(src='http://code.jquery.com/jquery-1.11.2.min.js')
-  script(src='../javascripts/hotelesv1.js')
+  script(src='../../javascripts/hotelesv1.js')
+  script(src='../../javascripts/app-via.js')
+  script(src='../../javascripts/viaintifrontend.js')
 
   
 header.menuViainti.bgHeader(data-role='header')
-  .header
-    .menuViaintiLeft
-      figure.menuViainti_Logo.margen.enLinea
-        img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
-      figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
-            i.fa.fa-bell
-            div.Number--Notify--Cont
-              span.Number--Notify.jsNotify--Show
-                | 0
-      //figure.menuViainti_Inbox.vTopAlignIco.enLinea
-        i.fa.fa-envelope
-    .menuViaintiRight.enLinea
-      form.menuViainti_Search.enLinea.vTopAlign(action='')
-        input.menuViainti_Search_Input(type='search', placeholder='Busca viajeros, hoteles, restaurantes y musica')
-        figure.ico_Search.margen
-          i.fa.fa-search
-      figure.menuViainti_Avatar.enLinea
-        img.avatarHeader(src='#{avatar}', alt='#{nombre}')
-      figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
-        i.fa.fa-chevron-down.jsUserDown
-        ul.menuViainti_ArrowDown--User
-          .arrowDown--Ico--Up
-          li.List
-            a.ArrowDown--Link(href='#')
-              | Editar perfil
-              i.fa.fa-user
-          li.List
-            a.ArrowDown--Link(href='#')
-              | Libro Viajero
-              i.fa.fa-bar-chart
-          li.List
-            a.ArrowDown--Link(href='#')
-              | Medios de pago
-              i.fa.fa-credit-card
-          li.List
-            a.ArrowDown--Link(href='#')
-              | Privacidad
-              i.fa.fa-unlock-alt
-          li.List
-            a.ArrowDown--Link(href='#')
-              | Desconectarse
-              i.fa.fa-power-off
+  include header-hotelesprofile
   nav.linkMenu
     ul.contMenu
       li.liMenu
-        a.aLinkMenu(href='#') Inicio
+        a.aLinkMenu(href='../../libro/') Inicio
       li.liMenu
-        a.aLinkMenu(href='#') Hoteles
+        a.aLinkMenu(href='../../hoteles') Hoteles
       li.liMenu
-        a.aLinkMenu(href='#') Restaurantes
+        a.aLinkMenu(href='../../restaurantes') Restaurantes
       li.liMenu
-        a.aLinkMenu(href='viajes.html') Viajes
-      li.liMenu
-        a.aLinkMenu(href='#') Musica
-      li.liMenu
-        a.aLinkMenu(href='#') Noticias
-      li.liMenu
-        a.aLinkMenu(href='#') Juegos
+        a.aLinkMenu(href='../../vuelos') Viajes
 main
   section.contenidoPrincipal
     section.cont_Principal_Dashboard
@@ -104,64 +61,53 @@ main
                   a.Dashboard--Hotel--Link(href='#')
                     | Matrimonial
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 29
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Bicameral
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Suites
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Estándar
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Premiun
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Matrimonial Superior
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Junior Suite
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Triple
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
+                    span.Title--Cantidad si
                 li.Dashboard--Hotel--Listas
                   a.Dashboard--Hotel--Link(href='#')
                     | Simple
                   .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-            .Dashboard--Hotel--VerMas
+                    span.Title--Cantidad si
+            //.Dashboard--Hotel--VerMas
               .VerMas--Cont
                 a.VerMas--Link(href='#')
                   | Ver todos
                 i.fa.fa-plus
-        .Dashboard_Left--Hotel--Cont--Descuentos
-          article.Dashboard--Hotel--Descuentos
-            header.Dashboard--Hotel--Title
-              h4.Title.margen Descuentos
-            .Dashboard--Hotel--Descuentos--Listas
-              ul.Descuentos--Listas
-                li.Dashboard--Hotel--Descuentos
-                  span.Hotel--Descuentos
-                    | Con descuentos
-                  .Hotel--Descuentos--Cantidad
-                    span.Title--Cantidad
-                      | %20
+        
       article.Dashboard_Center
         article.Dashboard_Welcome
           form(class='sendHotel', id="formHotel")
@@ -184,7 +130,10 @@ main
                     | Publicar
       
         if !posts
-          h2 hola escribe algo
+          div.linesNotComments
+            .lineNotComments--One
+            .lineNotComments--Two
+            .lineNotComments--Tree
         else
           each key in posts
             article.Dashboard_Post--User
@@ -314,4 +263,4 @@ main
                 i.fa.fa-gamepad
                 | 									Juega
 
-script(src='../javascripts/maps.js')
+script(src='../../javascripts/maps.js')

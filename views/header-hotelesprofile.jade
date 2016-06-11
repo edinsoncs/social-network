@@ -1,0 +1,43 @@
+.header
+        .menuViaintiShow--Notify
+          if notificaciones
+           each notify in notificaciones 
+            .containerShow--Notify
+              figure.figure--ContainerShow--Notify
+                img(src="#{notify.userPhoto}", alt="")
+              aside.aside--ContainerShow--Notify
+                header.aside--Header
+                  span.title
+                    | #{notify.userName}
+                div.aside--Description
+                  span.title
+                    | realizo un comentario
+          else
+            //Not
+        .menuViaintiLeft
+          figure.menuViainti_Logo.margen.enLinea
+            img.logoHeader(src='../../images/logo.png', alt='Viainti tu libro viajero')
+          figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
+            i.fa.fa-bell
+            div.Number--Notify--Cont
+             if notificaciones
+              span.Number--Notify.jsNotify--Show
+                | #{notificaciones.length}
+             else
+              span.Number--Notify.jsNotify--Show
+                | 0
+        .menuViaintiRight.enLinea
+          figure.menuViainti_Avatar.enLinea
+              img.avatarHeader(src='#{avatar}', alt='#{nombre}')
+            figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
+              i.fa.fa-chevron-down.jsUserDown
+              ul.menuViainti_ArrowDown--User
+                .arrowDown--Ico--Up
+                li.List
+                  a.ArrowDown--Link.jsIDSocket(href='../../libro/u/#{id}')
+                    | Mi Perfil
+                    i.fa.fa-user
+                li.List
+                  a.ArrowDown--Link(href='../../logout/')
+                    | Desconectarse
+                    i.fa.fa-power-off

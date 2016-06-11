@@ -6,7 +6,13 @@ var url = require('url');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('cruceros', {web: 'Viainti'});
+  res.render('cruceros', {
+    web: 'Viainti',
+    nombre: req.user.name,
+    avatar: req.user.photo,
+    id: req.user._id,
+    notificaciones: req.user.Notificaciones
+ });
 });
 
 router.get('/:cruceros', function(req, res, next) {
@@ -33,6 +39,10 @@ router.get('/:cruceros', function(req, res, next) {
     		hotel: doc.Hotel,
     		seguroMedico: doc.SeguroMedico,
     		Contenido: doc.Contenido,
+            nombre: req.user.name,
+            avatar: req.user.photo,
+            id: req.user._id,
+            notificaciones: req.user.Notificaciones,
     		name: "Viainti"
 		});
 	});

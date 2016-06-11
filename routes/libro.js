@@ -19,6 +19,11 @@ var router = express.Router();
 
 var shortid = require('shortid');
 
+/*Geolocation*/
+
+
+
+
 //add var globals
 var nameToImg = '';
 var nameToVideo = '';
@@ -429,7 +434,8 @@ router.get('/', function(req, res, next) {
 
         else{
           
-          //limitar x posts
+        
+
 			var post = items.reverse();
 			res.render('libro', {
 				web: req.user.name +" " + "Mi Libro - Viainti tu libro viajero",
@@ -441,11 +447,8 @@ router.get('/', function(req, res, next) {
 				posts: post
 			});
 
-			
         }
      });
-
-	console.log('mostrando posts');
     
 	/*users.find({}, function(err, items){
 		if(err){

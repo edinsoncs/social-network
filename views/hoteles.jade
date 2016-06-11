@@ -10,29 +10,54 @@ html(lang="es", ng-app="")
     link(href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css', rel='stylesheet')
 
     script(src="http://code.jquery.com/jquery-1.11.2.min.js")
+    
+    script(src="/socket.io/socket.io.js")
   
     script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
 
 
     script(src="../javascripts/viainti.js")
     script(src="../javascripts/viaintifrontend.js")
+
+    script(src='../../javascripts/app-via.js')
+
     script(src="../javascripts/hoteles.js")
 
   body.BodyListHotel
     header.menuViainti.bgHeader(data-role="header")
       .header
+        .menuViaintiShow--Notify
+          
+          if notificaciones
+           each notify in notificaciones 
+            .containerShow--Notify
+              figure.figure--ContainerShow--Notify
+                img(src="#{notify.userPhoto}", alt="")
+              aside.aside--ContainerShow--Notify
+                header.aside--Header
+                  span.title
+                    | #{notify.userName}
+                div.aside--Description
+                  span.title
+                    | realizo un comentario
+          else
+            //Not
         .menuViaintiLeft
           figure.menuViainti_Logo.margen.enLinea
             img.logoHeader(src="../images/logo.png", alt="Viainti tu libro viajero")
           figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
             i.fa.fa-bell
             div.Number--Notify--Cont
+             if notificaciones
+              span.Number--Notify.jsNotify--Show
+                | #{notificaciones.length}
+             else
               span.Number--Notify.jsNotify--Show
                 | 0
           //figure.menuViainti_Inbox.vTopAlignIco.enLinea
             i.fa.fa-envelope
         .menuViaintiRight.enLinea
-          form.menuViainti_Search.enLinea.vTopAlign(action="")
+          //form.menuViainti_Search.enLinea.vTopAlign(action="")
             input.menuViainti_Search_Input(type="search", placeholder="Busca viajeros, hoteles, restaurantes y musica")
             figure.ico_Search.margen
               i.fa.fa-search
@@ -43,7 +68,7 @@ html(lang="es", ng-app="")
             ul.menuViainti_ArrowDown--User
               .arrowDown--Ico--Up
               li.List
-                a.ArrowDown--Link(href="#")
+                a.ArrowDown--Link.jsIDSocket(href='u/#{id}')
                   | Editar perfil
                   i.fa.fa-user
               li.List
@@ -65,19 +90,13 @@ html(lang="es", ng-app="")
       nav.linkMenu
         ul.contMenu
           li.liMenu
-            a.aLinkMenu(href="#") Inicio
+            a.aLinkMenu(href="/libro/") Inicio
           li.liMenu
-            a.aLinkMenu(href="/", class="aLinkMenu aMenuHover") Hoteles
+            a.aLinkMenu(href="../hoteles/", class="aLinkMenu aMenuHover") Hoteles
           li.liMenu
-            a.aLinkMenu(href="#") Restaurantes
+            a.aLinkMenu(href="../restaurantes/") Restaurantes
           li.liMenu
-            a.aLinkMenu(href="viajes.html") Viajes
-          li.liMenu
-            a.aLinkMenu(href="#") Musica
-          li.liMenu
-            a.aLinkMenu(href="#") Noticias
-          li.liMenu
-            a.aLinkMenu(href="#") Juegos
+            a.aLinkMenu(href="../vuelos/") Viajes
     main
       section.listMap
         .listMap--Map#mapHotel

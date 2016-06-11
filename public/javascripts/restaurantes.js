@@ -52,7 +52,7 @@
 	                "<a class='Aside--BtnMap' data-lat='"+lat(data[i].Latitud)+"' data-lon='"+lon(data[i].Longitud)+"'>"+
 	                  "<span class='BtnMap--Ico'><i class='fa fa-map-marker'></i></span><span class='BtnMap--Title'>Ver Mapa</span>"+
 	                "</a>"+
-	                "<a href='"+urlCaracters+"?id="+data[i]._id+"' class='Aside--BtnMap' data-hoteles='"+data[i]._id+"'>"+
+	                "<a href='show/"+urlCaracters+"?id="+data[i]._id+"' class='Aside--BtnMap' data-hoteles='"+data[i]._id+"'>"+
 	                  "<btn class='BtnMap--Ico'>"+
 	                  "<i class='fa fa-info-circle'></i>"+
 	                  "</btn><span class='BtnMap--Title'>Info</span>"+

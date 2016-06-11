@@ -30,8 +30,10 @@ module.exports = function(passport) {
 
     // Deserializa el objeto usuario almacenado en la sesión para
     // poder utilizarlo
-    passport.deserializeUser(function(obj, done) {
-        done(null, obj);
+    passport.deserializeUser(function(id, done) {
+         User.findById(id, function(err, user) {
+            done(err, user);
+          });
     });
 
     // Configuración del autenticado con Twitter

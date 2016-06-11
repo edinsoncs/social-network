@@ -1,20 +1,37 @@
 header.menuViainti.bgHeader(data-role='header')
       .header
+        .menuViaintiShow--Notify
+          
+          if notificaciones
+           each notify in notificaciones 
+            .containerShow--Notify
+              figure.figure--ContainerShow--Notify
+                img(src="#{notify.userPhoto}", alt="")
+              aside.aside--ContainerShow--Notify
+                header.aside--Header
+                  span.title
+                    | #{notify.userName}
+                div.aside--Description
+                  span.title
+                    | realizo un comentario
+          else
+            //Not
         .menuViaintiLeft
           figure.menuViainti_Logo.margen.enLinea
             img.logoHeader(src='../images/logo.png', alt='Viainti tu libro viajero')
           figure.menuViainti_Alert.vTopAlignIco.enLinea.colorBlue.jsNotify
             i.fa.fa-bell
             div.Number--Notify--Cont
+             if notificaciones
+              span.Number--Notify.jsNotify--Show
+                | #{notificaciones.length}
+             else
               span.Number--Notify.jsNotify--Show
                 | 0
           //figure.menuViainti_Inbox.vTopAlignIco.enLinea
             i.fa.fa-envelope
         .menuViaintiRight.enLinea
-          form.menuViainti_Search.enLinea.vTopAlign(action='')
-            input.menuViainti_Search_Input(type='search', placeholder='Busca viajeros, hoteles, restaurantes y musica')
-            figure.ico_Search.margen
-              i.fa.fa-search
+          
           figure.menuViainti_Avatar.enLinea
               img.avatarHeader(src='#{avatar}', alt='@Edinson Carranza')
             figure.menuViainti_ArrowDown.enLinea.vTopAlignRow
@@ -48,15 +65,13 @@ header.menuViainti.bgHeader(data-role='header')
        nav.linkMenu
         ul.contMenu
           li.liMenu
-            a.aLinkMenu(href='/') Inicio
+            a.aLinkMenu(href='/libro') Inicio
           li.liMenu
             a.aLinkMenu.aMenuHover(href='../vuelos/') Vuelos
           li.liMenu
             a.aLinkMenu(href='../paquetes/') Paquetes
           li.liMenu
             a.aLinkMenu(href='../cruceros/') Cruceros
-          li.liMenu
-            a.aLinkMenu(href='#') Novedades
           ul.contMenuSociales
             li.ListSociales
               iframe(src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fviainti&amp;send=false&amp;layout=button_count&amp;width=140&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21", scrolling="no", frameborder="0", style="border:none; overflow:hidden; width:78px; height:21px;", allowtransparency="true")

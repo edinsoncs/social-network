@@ -12,3 +12,45 @@
 .uCenterVideo {
 	margin: 0 auto;
 }
+
+.linesNotComments {
+	margin: 1em 0;
+	.lineNotComments--One {
+		width: 175px;
+		height: 7px;
+		background-color: #c2c7ca;
+		animation: unoA 0.5s infinite;
+	}
+	.lineNotComments--Two {
+		margin: 0.5em 0;
+		width: 140px;
+		height: 7px;
+		background-color: #c2c7ca;
+		animation: dos 1s infinite;
+	}
+
+	.lineNotComments--Tree {
+		margin: 0.5em 0;
+		width: 105px;
+		height: 7px;
+		background-color: #c2c7ca;
+		animation: tres 1.2s infinite;
+	}
+	@keyframes unoA {
+		50% {
+			background: #afb6b9;
+		}
+	}
+	@keyframes dos {
+		20% {
+			background: #afb6b9;
+		}
+	}
+	@keyframes tres {
+		70% {
+			background: #afb6b9;
+		}
+	}
+
+	
+}

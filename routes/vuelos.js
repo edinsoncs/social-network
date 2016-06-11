@@ -6,7 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('vuelosViajes', {
   	web: "Viajes - Viainti tu libro viajero",
   	nombre: req.user.name,
-  	avatar: req.user.photo
+  	avatar: req.user.photo,
+  	id: req.user._id,
+	notificaciones: req.user.Notificaciones
 
   });
 });

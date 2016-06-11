@@ -148,10 +148,10 @@ $(document).ready(function(){
             function showInCity(data) {
 
               var paisLocalize = data.results[0].address_components[3].long_name;
+              
+              console.log(data);
 
-              console.log(paisLocalize);
-                
-                function dashboardCity(elem){
+               function dashboardCity(elem){
                 
                    for(var i = 0; i < fileCitis.length; i++) {
 
@@ -163,9 +163,20 @@ $(document).ready(function(){
                    }
                  
                    $(elem).text(data.results[0].address_components.long_name);
-                }
+               }
                //include city
                 dashboardCity($(".jsTxtCityDashboard"));
+             
+                var hoteles = function(name){
+                  var _nameMin = name;
+                  var convertName = encodeURIComponent(_nameMin);
+                  var _link = convertName.replace('%20', '-').toLowerCase();
+
+                  var h = $(".jsHot a").attr('href', '../hoteles/' + _link );
+                  var r = $(".jsRest a").attr('href', '../restaurantes/' + _link);
+                }
+                hoteles(data.results[0].address_components[2].long_name);
+
             }
 
 
@@ -189,7 +200,7 @@ $(document).ready(function(){
         $(this).find('input[type="submit"]').val('Subiendo...');
         $(this).find('input[type="submit"]').attr('disabled', 'disabled');
 
-        if($(this).find('textarea[name="mensajepost"]').length >= 1 ){
+        if($(this).find('textarea[name="mensajepost"]').length >= 3 ){
             
             $.ajax({
             url: "post", // Url to which the request is send
@@ -202,6 +213,7 @@ $(document).ready(function(){
             {
               var imgstr = data.imagen !='' ? '<img src="../../uploads/usuarios/'+data.imagen+'" alt="nombre de la foto" class="Post--Img">': '';
               var videostr = data.videon !='' ? '<video width="95%" controls=""><source src="../../uploads/videos/'+data.videon+'" type="video/mp4">Your browser does not support HTML5 video.</video>': '';
+                         
                          $(".Dashboard_Welcome").after('<article class="Dashboard_Post--User">'+
                                               '<article class="Post--User">'+
                                               '<div class="Post--User--Date">'+

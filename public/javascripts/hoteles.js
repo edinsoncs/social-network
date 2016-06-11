@@ -22,6 +22,8 @@
         	var urlTo = encodeURIComponent(url);
         	var urlFormat = urlTo.replace("%20", '-');
         	var urlCaracters = urlFormat.toLowerCase();
+        	var urlCity = data[i].Ubicacion;
+        	var urlCityReplace = urlCity.replace(' ', '-');
         	var template = "<article class='Locals--List'>"+	
 	            "<figure class='Locals--List--Figure margen'><img src='"+data[i].Imagen+"' alt='"+data[i].Nombre+"' class='imgListHotel'>"+"</figure>"+
 	            "<aside class='Locals--List--Aside'>"+
@@ -51,7 +53,7 @@
 	                "<a class='Aside--BtnMap' data-lat='"+lat(data[i].Latitud)+"' data-lon='"+lon(data[i].Longitud)+"'>"+
 	                  "<span class='BtnMap--Ico'><i class='fa fa-map-marker'></i></span><span class='BtnMap--Title'>Ver Mapa</span>"+
 	                "</a>"+
-	                "<a href='"+urlCaracters+"?id="+data[i]._id+"' class='Aside--BtnMap' data-hoteles='"+data[i]._id+"'>"+
+	                "<a href='show" + '/' + urlCaracters+"?id="+data[i]._id+"' class='Aside--BtnMap' data-hoteles='"+data[i]._id+"'>"+
 	                  "<btn class='BtnMap--Ico'>"+
 	                  "<i class='fa fa-info-circle'></i>"+
 	                  "</btn><span class='BtnMap--Title'>Info</span>"+
