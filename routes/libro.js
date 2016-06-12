@@ -81,6 +81,7 @@ router.get('/u/:id', function(req, res, next){
 		else {
 			
 			var postUser = post.posts.reverse();
+			console.log(postUser);
 			var actividadesShow = post.Actividades.reverse();
 			//console.log(post.post.id);
 			res.render('usuarioProfile', {
@@ -116,9 +117,6 @@ router.post('/u/postprofile/', function(req, res, next){
 	var comentarios = db.get('users');
 	var dashboard = db.get('dashboard');
 
-
-	
-
 	comentarios.findAndModify({
 		 query: { '_id': idUsuarioFind, 
 		 		posts: { $elemMatch: { 'id': idPost}
@@ -146,7 +144,7 @@ router.post('/u/postprofile/', function(req, res, next){
 		            date: doc.userTime,
 					state: true
 		});*/
-
+		console.log('funciono');
 		res.json({inserted: true});
 		
 	}).error(function(err){
@@ -601,6 +599,7 @@ router.post('/post', multipartMiddleware, function(req, res, next) {
 					$push: {
 						"posts": {
 								id: idGenerate,
+								idUser: req.user._id,
 			                    content: text,
 			                    imagen: imgPost,
 			                    videon: videoPost,

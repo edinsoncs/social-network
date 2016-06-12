@@ -69,7 +69,7 @@ html(lang='es')
       section.contenidoPrincipal.profileUser--Cont
         section.profileUser--Cont--Iz
           each post in posts
-                article.Dashboard_Post--User.uMargin(data-idpost="#{post.id}")
+                article.Dashboard_Post--User.uMargin(data-idpost="#{post.id}", data-iduser="#{post.idUser}")
                   if post.comentarios
                     article.Post--User
                       .Post--User--Date

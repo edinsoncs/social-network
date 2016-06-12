@@ -16,7 +16,7 @@ html(lang="es", ng-app="")
 
     script(src="../javascripts/viainti.js")
     script(src="../javascripts/viaintifrontend.js")
-    script(src="../javascripts/hoteles.js")
+
     script(src='../javascripts/app-via.js')
 
   body.BodyListHotel
@@ -27,17 +27,16 @@ html(lang="es", ng-app="")
           li.liMenu
             a.aLinkMenu(href="/libro/") Inicio
           li.liMenu
-            a.aLinkMenu(href="../hoteles/", class="aLinkMenu aMenuHover") Hoteles
+            a.aLinkMenu(href="../hoteles/") Hoteles
           li.liMenu
-            a.aLinkMenu(href="../restaurantes/") Restaurantes
+            a.aLinkMenu(href="../restaurantes/",  class="aLinkMenu aMenuHover") Restaurantes
           li.liMenu
             a.aLinkMenu(href="../vuelos/") Viajes
     main
       section.contenidoPrincipal.containerNot
         div.content__Notfound
           figure.Notfound--Figure
-            img(src="../../images/noHotel.png", alt="")
+            img(src="../../images/noRest.png", alt="")
         div.content__Message
           h2.title
-            | En este lugar no</br>contamos con hoteles
-    script(src="../javascripts/mapahoteles.js")
+            | En este lugar no</br>contamos con Restaurantes

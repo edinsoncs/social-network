@@ -184,12 +184,12 @@ $(document).ready(function(){
 
 				var otherID = $(this).parent().parent().parent().parent().attr('data-iduser');
 
-
-				function idUserDash(n) {
+				//Defaced 12-06-16
+				/*function idUserDash(n) {
 					var id = $(n).attr('href');
 					var replace = id.replace('u/', '');
 					return replace;
-				}	
+				}*/	
 
 				$.when(
 
@@ -200,7 +200,7 @@ $(document).ready(function(){
 						contentType: 'application/json',
 						data: JSON.stringify({
 							id: isID,
-							idUsuario: idUserDash($(".jsIDSocket")),
+							idUsuario: otherID,
 							mensaje: $(post).val()
 						}),
 						success: function(data){
@@ -242,7 +242,7 @@ $(document).ready(function(){
 						contentType: 'application/json',
 						data: JSON.stringify({
 							id: isID,
-							idUsuario: idUserDash($(".jsIDSocket")),
+							idUsuario: otherID,
 							mensaje: $(post).val()
 						}),
 						success: function(data){

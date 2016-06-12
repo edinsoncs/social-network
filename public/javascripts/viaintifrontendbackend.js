@@ -173,7 +173,7 @@ $(document).ready(function(){
                   var _link = convertName.replace('%20', '-').toLowerCase();
 
                   var h = $(".jsHot a").attr('href', '../hoteles/' + _link );
-
+                  var r = $(".jsRest a").attr('href', '../restaurantes/' + _link);
                 }
                 hoteles(data.results[0].address_components[2].long_name);
 

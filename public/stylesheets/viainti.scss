@@ -4841,6 +4841,34 @@ select {
   border: 0;
   }
 
+.containerNot {
+  .content__Notfound {
+    text-align: center;
+    .Notfound--Figure img {
+      animation: not 2s infinite;
+      margin: 2em 0;
+    }
+    @keyframes not {
+     0% {
+        transform: scale(1.1,1.1);
+     }
+     25% {
+      transform: rotate(20deg);
+     }
+     70% {
+      transform: rotate(-20deg);
+     }
+    }
+  }
+  .content__Message {
+    text-align: center;
+    .title {
+      font-weight: 400;
+      color: #1aa5d0;
+    }
+  }
+}
+
 /*Utils*/
 @import "utils";
 @import "notify";

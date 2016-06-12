@@ -30,8 +30,8 @@ router.get('/:geo/', function(req, res, next) {
         console.log(req.user.Notificaciones);
       }
       else {
-        res.render('errorHoteles', {
-          web: 'Hoteles - Viainti tu libro viajero',
+        res.render('errorRest', {
+          web: 'Restaurantes - Viainti tu libro viajero',
           nombre: req.user.name,
           avatar: req.user.photo
        });
