@@ -232,17 +232,7 @@ html(lang='es')
                     strong.profileUser--Article--De--Name
                       | @Edinsoncs
                     p.profileUser--Article--De--Description
-                      | #{actividad.mensaje}  </br> <strong class="importantActivities">@#{actividad.nameservicio}</strong>
-                
-            //header.profileUser--Header.uMarginOne
-                h2.title
-                  | Sus Amigos
-            //section.profileUser--Cont--Friend
-              each friends in amigos
-                article.i--Friend
-                  a(href="#{friends.usuario}")
-                    figure.figure--Friend
-                      img(src="#{friends.img}", alt="")
-                    figcaption.figcaption--Friend
-                      | #{friends.name}
+                      | #{actividad.mensaje}  </br>
+                      strong.importantActivities 
+                      | @#{actividad.nameservicio}
     script(src="https://vjs.zencdn.net/5.9.2/video.js")
