@@ -143,7 +143,7 @@ $(document).ready(function(){
 
         function inCity(lon, lat) {
 
-            $.getJSON('http://maps.googleapis.com/maps/api/geocode/json' + '?latlng=' + lat + ',' + lon, showInCity, false);
+            $.getJSON('https://maps.googleapis.com/maps/api/geocode/json' + '?latlng=' + lat + ',' + lon, showInCity, false);
             
             function showInCity(data) {
 
@@ -241,7 +241,12 @@ $(document).ready(function(){
 
             }
 
-        });
+
+          });
+
+        }
+
+        else if {
 
         }
      
