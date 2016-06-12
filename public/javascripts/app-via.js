@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var socket = io.connect('127.0.0.1:3535', {'forceNew': true});
+	var socket = io.connect('127.0.0.1', {'forceNew': true});
 
 
 	/*function rSidebar(r){
