@@ -1,0 +1,75 @@
+.container__Gracias {
+	background-image: url('../images/gracias.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 250px;
+	width: 100%;
+}
+.container__Gracias--Info {
+	width: 1220px;
+	margin: 0 auto;
+	.Gracias--Info--Header {
+		.title {
+			font-weight: 400;
+		}
+	}
+	.Gracias--Info--Data {
+		.Data--Iz {
+			font-size: 0.9rem;
+			color: #444;
+			.txtLink {
+				text-decoration: none;
+				color: #0085CA;
+			}
+		}
+	}
+	.Gracias--Info--Login {
+		
+		width: 50%;
+		margin: 4em auto;
+		.Login--Header {
+			text-align: center;
+			margin: 0 0 4em 0;
+			.title {
+				font-weight: 400;
+			}
+		}
+		.Login--Container {
+		display: flex;
+		justify-content: space-between;
+		}
+		.Login--Iz .link{
+			background: #3b5999;
+		    padding: 0.8em 1em;
+		    border-radius: 4px;
+		    cursor: pointer;
+		    text-decoration: none;
+		    color: white;
+		    i {
+		    	margin: 0 0.8em 0 0;
+		    	&:before {
+		    		content: "\f230";
+				    padding-right: 1em;
+				    border-right: 1px solid #eaeaea;
+		    	}
+		    }
+		}
+		.Login--De .link {
+			background: #60a9de;
+		    padding: 0.8em 1em;
+		    color: white;
+		    border-radius: 4px;
+		    cursor: pointer;
+		    text-decoration: none;
+		    color: white;
+		    i {
+		    	margin: 0 0.8em 0 0;
+		    	&:before {
+		    		content: "\f099";
+				    padding-right: 1em;
+				    border-right: 1px solid #eaeaea;
+		    	}
+		    }
+		}
+	}
+}

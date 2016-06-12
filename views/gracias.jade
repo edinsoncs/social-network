@@ -21,5 +21,26 @@ html(lang='es')
           figure.menuViainti_UserAdmin
 
      main
-        section.titleGracias
-            h2 Gracias Por Su Visita
+        section.container__Gracias
+        section.container__Gracias--Info
+            header.Gracias--Info--Header
+              h2.title
+                | Gracias por su visita, Le esperamos nuevamente
+            div.Gracias--Info--Data
+              article.Data--Iz
+                span.txt Esperamos que haya encontrado lo que busca, seguiremos mejorando para brindarle el mejor servicio en donde usted se encuentre, no olvide hacernos llegar sus consultas y aportes: 
+                 a.txtLink(href="mailto:info@viainti.com") info@viainti.com 
+                 | de igual manera agradecerle personalmente del equipo de viainti.
+            div.Gracias--Info--Login
+              header.Login--Header
+                h2.title
+                  | Ingresar Nuevamente
+              div.Login--Container
+                div.Login--Iz
+                  a.link(href="auth/facebook")
+                    i(class="fa fa-facebook-official", aria-hidden="true")
+                    | Ingresar Con Facebook
+                div.Login--De
+                  a.link(href="auth/twitter")
+                    i(class="fa fa-twitter", aria-hidden="true")
+                    | Ingresar Con Twitter
