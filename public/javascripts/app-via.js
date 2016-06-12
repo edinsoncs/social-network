@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var socket = io.connect('localhost', {'forceNew': true});
+	var socket = io.connect('162.243.1.205:3535', {'forceNew': true});
 
 
 	/*function rSidebar(r){
