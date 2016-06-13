@@ -22,7 +22,7 @@ $(document).ready(function(){
     function viajes(request, response){
         $.ajax({
         jsonp:"cb",
-        url: "http://picker.dohop.com/search/?lang=es&sid=completer",
+        url: "https://picker.dohop.com/search/?lang=es&sid=completer",
         dataType: "jsonp",
         data: {m: 10,input: request.term},
         success: function(data) {
