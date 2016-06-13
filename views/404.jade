@@ -3,6 +3,16 @@ html(lang="en")
 head
 	meta(charset="UTF-8")
 	title #{title}
+	link(rel="stylesheet", href="../stylesheets/normalize.css")
+	link(rel="stylesheet", href="../stylesheets/viainti.css")
 body
-	include error.html
+	main.contenidoPrincipal.showErroContainer
+		h1.showError
+			span.uno
+				| 4
+			span.dos
+				| 0
+			span.tres
+				| 4
+
 	

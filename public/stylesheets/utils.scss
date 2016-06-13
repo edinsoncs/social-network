@@ -54,3 +54,40 @@
 
 	
 }
+.showErroContainer {
+	position: relative;
+	height: 100vh;
+	.showError {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -1em;
+		margin-left: -0.5em;
+		color: white;
+		font-size: 5em;
+		font-weight: 400;
+		color: #2f3f4e;
+		.uno {
+			animation: numberOne 1s infinite;
+			transition: all 0.5s ease;
+		}
+		.dos {
+			animation: numberTwo 1s infinite;
+			transition: all 0.5s ease;
+		}
+		.tres {
+			animation: numberOne 1s infinite;
+			transition: all 0.5s ease;
+		}
+		@keyframes numberOne {
+			50% {
+				font-size: 1.2em;
+			}
+		}
+		@keyframes numberTwo {
+			20% {
+				font-size: 0.8em;
+			}
+		}
+	}
+}
