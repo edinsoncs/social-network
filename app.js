@@ -238,9 +238,13 @@ app.get('/logout', function(req, res, next) {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  /*var err = new Error('Error 404');
   err.status = 404;
-  next(err);
+  next(err);*/
+  res.render('404', {
+    title: 'Error 404'
+  });
+
 });
 
 // error handlers

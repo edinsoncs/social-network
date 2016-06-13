@@ -57,7 +57,7 @@ router.get('/', function(req, res, next) {
 
   res.header('Access-Control-Allow-Credentials', 'true');
 
-  res.render('Publicar', {title: 'Publicar - Viainti'});
+  res.render('publicar', {title: 'Publicar - Viainti'});
   
   console.log(req.cookies);
   next();
