@@ -1,6 +1,6 @@
 (function(){
 
-	var a__C =  "http://freegeoip.net/json/";
+	var a__C =  "https://freegeoip.net/json/";
 
 	var obj = {};
 
