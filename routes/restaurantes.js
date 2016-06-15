@@ -2,6 +2,19 @@ var express = require('express');
 var router = express.Router();
 var url = require('url');
 
+
+
+router.get('/', function(req, res, next){
+  
+  res.render('restUnique', {
+    title: 'Restaurantes - Viainti tu libro viajero',
+    nombre: req.user.name,
+    avatar: req.user.photo,
+    notificaciones: req.user.Notificaciones
+  });
+
+});
+
 /* GET users listing. */
 router.get('/:geo/', function(req, res, next) {
   

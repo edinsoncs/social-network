@@ -13,6 +13,8 @@
 	margin: 0 auto;
 }
 
+
+
 .linesNotComments {
 	margin: 1em 0;
 	.lineNotComments--One {
@@ -54,6 +56,7 @@
 
 	
 }
+
 .showErroContainer {
 	position: relative;
 	height: 100vh;
@@ -91,3 +94,103 @@
 		}
 	}
 }
+
+.geolocaTion {
+	position: relative;
+	.geolocaTion--Container {
+		width: 50%;
+		margin: 0 auto;
+		height: 100vh;
+		.geolocation--Header {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -5.5em;
+			margin-top: -7em;
+			font-weight: 400;
+			.title {
+				font-weight: 400;
+				color: #d14233;
+			}
+		}
+		.geoOneCircle {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -4em;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			background-color: #d14233;
+			z-index: 59;
+		}
+		.geoTwoCircle {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 150px;
+			height: 150px;
+			border: 10px solid #d14233;
+			border-radius: 50%;
+			margin-left: -5.5em;
+			margin-top: -1.5em;
+			z-index: 58;
+			animation: geoLat 2s ease;
+			 animation-iteration-count: infinite;
+		}
+		.geoTreeCircle {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 150px;
+			height: 150px;
+			border: 10px solid #d14233;
+			border-radius: 50%;
+			margin-left: -5.5em;
+			margin-top: -1.5em;
+			z-index: 58;
+			animation: geoIs 2s ease infinite;
+			opacity: 0;
+		}
+		@keyframes geoLat {
+			0% {
+				transform: scale(0);
+				opacity: 0;
+			}
+			25% {
+				transform: scale(0);
+				opacity: 0.1;
+			}
+			50% {
+				transform: scale(0.1);
+				opacity: 0.3;
+			}
+			75% {
+				transform: scale(0.5);
+				opacity: 0.5; 
+			}
+			100% {
+				transform: scale(2);
+				opacity: 0.0;  
+			}
+		}
+		@keyframes geoIs {
+			1% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			25% {
+				opacity: 1;
+				transform: scale(0.1);
+			}
+			28% {
+				opacity: 1;
+				transform: scale(0.2);
+			}
+		}
+
+	}
+}
+
+
+

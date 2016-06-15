@@ -1,6 +1,20 @@
  
 $(document).ready(function(){
 
+    function red(one, two) {
+      var url = window.location.pathname;
+      if(one == url){
+        window.location.href = one + '/';
+      }
+      else if(two == url) {
+        window.location.href = two + '/';
+      }
+      else  {
+        //
+      }
+    }
+    red('/hoteles', '/restaurantes');
+
     var fileCitis = [{
       'nameCity': 'Buenos Aires',
       'img': 'http://www.apertura.com/__export/1440099509296/sites/revistaap/img/clase/2015/08/20/obelisco_img_buenos_aires_crop1440099509161.jpg_1913337537.jpg'
@@ -167,15 +181,32 @@ $(document).ready(function(){
                //include city
                 dashboardCity($(".jsTxtCityDashboard"));
              
-                var hoteles = function(name){
+                function urlVerify(){
+                  return window.location.pathname;
+                }
+
+                var geoServices = function(name){
                   var _nameMin = name;
                   var convertName = encodeURIComponent(_nameMin);
                   var _link = convertName.replace('%20', '-').toLowerCase();
 
                   var h = $(".jsHot a").attr('href', '../hoteles/' + _link );
                   var r = $(".jsRest a").attr('href', '../restaurantes/' + _link);
+                  
+                  if(urlVerify() == '/hoteles/' || urlVerify == '/hoteles'){
+                     setTimeout(function(){
+                        window.location.href = '/hoteles/' + _link;
+                     }, 1500);
+                      
+                  }
+                  else if(urlVerify() == '/restaurantes/'){
+                    setTimeout(function(){
+                       window.location.href = '/restaurantes/' + _link;
+                    });
+                  }
+
                 }
-                hoteles(data.results[0].address_components[2].long_name);
+                geoServices(data.results[0].address_components[2].long_name);
 
             }
 

@@ -4,6 +4,16 @@ var url = require('url');
 
 var bodyParser = require('body-parser');
 
+router.get('/', function(req, res, next){
+	 res.render('hotelUnique', {
+	 		web: 'Hoteles - Viainti tu libro viajero',
+			nombre: req.user.name,
+			avatar: req.user.photo,
+			notificaciones: req.user.Notificaciones
+	 });
+
+});
+
 /* GET users listing. */
 router.get('/:geo/', function(req, res, next) {
   

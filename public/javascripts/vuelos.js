@@ -50,7 +50,7 @@ $(document).ready(function(){
 
      function via() {
         $url = document.location.search;
-        $api = "http://whitelabel.dohop.com/w/viainti/";
+        $api = "https://whitelabel.dohop.com/w/viainti/";
        
         $(".info").html("<iframe width='100%' height='2153px' scrolling='no' style='overflow:hidden;border:none;' src="+$api+$url+"></iframe>");
         $(".logoHeader").click(function(){
