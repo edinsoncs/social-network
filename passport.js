@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+
 var User = mongoose.model('User');
 
 var path = require('path');
@@ -6,6 +7,7 @@ var path = require('path');
 var fs = require('fs');
 
 var UserDetails = mongoose.model('userInfo');
+
 // Estrategia de autenticación con Twitter
 var TwitterStrategy = require('passport-twitter').Strategy;
 // Estrategia de autenticación con Facebook
@@ -25,14 +27,14 @@ module.exports = function(passport) {
 
     // Serializa al usuario para almacenarlo en la sesión
     passport.serializeUser(function(user, done) {
-        done(null, user);
+        done(null, user._id);
     });
 
     // Deserializa el objeto usuario almacenado en la sesión para
     // poder utilizarlo
     passport.deserializeUser(function(id, done) {
          User.findById(id, function(err, user) {
-            done(err, user);
+                done(err, user);
           });
     });
 
@@ -125,6 +127,9 @@ module.exports = function(passport) {
             });
         });
     }));
+
+
+    
 
     // Configuracion del autenticado local
    /* passport.use(new LocalStrategy(function(username, password, photo, done) {

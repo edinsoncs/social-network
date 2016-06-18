@@ -75,6 +75,10 @@ var otherfriend = require('./routes/add/other');
 var gracias = require('./routes/gracias');
 
 
+/*ajax services*/
+var ajaxservices = require('./routes/ajaxservices');
+
+
 var app = express();
 
 /*Iniciamos con socket*/
@@ -187,6 +191,9 @@ app.use('/paquetes/', ensureAuthenticated, paquetes);
 app.use('/addpaquetes/', addPaquetes);
 app.use('/addcruceros/', addCruceros);
 app.use('/cruceros/', ensureAuthenticated, cruceros);
+
+/*Services add*/
+app.use('/servicesadd', ensureAuthenticated, ajaxservices);
 
 /*Restaurantes y hoteles*/
 app.use('/addhoteles', addHotel);

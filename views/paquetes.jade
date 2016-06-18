@@ -13,7 +13,7 @@ html(lang='es')
    
     script(src='../javascripts/app-via.js')
     script(src='../javascripts/viaintifrontend.js')
-    script(src='../javascripts/viaintibackend.js')
+    script(src='../javascripts/app-via2.js')
   body
     include header-vuelosPaquetes.jade
     main
@@ -59,6 +59,41 @@ html(lang='es')
               div.contenidosVuelos--Separador
               div.contenidosVuelos--Circle
               section.contenidos--Vuelos--Cont
+               each pa in paquetes
+                article.contenidos--Vuelos--PostPaquetes
+                 figure.PostPaquetes--Figure
+                  img(class="PostPaquetes--Img", src="../uploads/services/#{pa.Imagen}")
+                 div.PostPaquetes--Info
+                  div.InfoPaquetes--Cont
+                   h2.Info--Precio.margen
+                    | AR $#{pa.Precio}
+                  div.InfoPaquetes--Cont
+                   h2.Info--Precio.margen
+                    i(class="fa fa-map-marker")
+                    | #{pa.Paises}
+                 div.PostPaquetes--Date
+                  div.InfoPaquetes--Data
+                   span.InfoPaquetes--Data--Ico
+                    i(class="fa fa-calendar-o")
+                   span.InfoPaquetes--Data--Title
+                    | De: #{pa.DateIda}
+                  div.InfoPaquetes--Data
+                   span.InfoPaquetes--Data--Ico
+                    i(class="fa fa-calendar-o")
+                   span.InfoPaquetes--Data--Title
+                    | Hasta: #{pa.DateLlegada}
+                  button.btn--sendArtilce
+                   - var titulo = pa.Titulo
+                   - var convert = titulo.toLowerCase()
+                   - var isurl = encodeURIComponent(convert)
+                   - var es = isurl.replace('%20', '-')
+                   - var esTwo = es.replace('%20', '-')
+                   - var replaceAll = esTwo.replace('%20', '-')
+                   -var replaceAllTwo = replaceAll.replace('%20', '-')
+                   - var replaceAllTree = replaceAllTwo.replace('%20', '-')
+                   - var replaceAllFour = replaceAllTree.replace('%20', '-')
+                   a(href="s/"+replaceAllFour+"?id=#{pa._id}")
+                    | Ver Paquete
               div.contenidosVuelos--Pagination
                ul.contenidosVuelos--Pagination--Ul
                 li.List--Title.linea.toPaginatorPrevius

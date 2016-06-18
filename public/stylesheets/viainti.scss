@@ -2192,7 +2192,7 @@ body {
 						position: absolute;
 						left: 50%;
 						top: 50%;
-						margin-top: -8.3em;
+						margin-top: -5.3em;
 						margin-left: 2.5em;
 					}
 				}
@@ -3949,6 +3949,13 @@ select {
 			color: $white;
 			outline: medium none;
 		}
+    .loginAccess--Select {
+      padding: 0.5em 2em 0.5em 0.5em;
+      width: 100%;
+      border: none;
+      border-bottom: 4px solid #6dcff6;
+    }
+
 	}
 	.loginAccess--Header .title {
 		font-size: 3em;
@@ -4213,12 +4220,16 @@ select {
 		color: $white;
 		padding: 0 0.5em;
 	}
+  .avatarHeader {
+    width: 35px;
+    border-radius: 50%;
+  }
 }
 .subMenuViajes--Cont .listSubMenuViajes {
 	.link {
 		text-decoration: none;
 	}
-	&:first-child .link {
+	&:first-child, &:nth-child(2) .link {
 		color: $color_regent_gray_approx;
 		&:after {
 			content: "/";
@@ -4227,7 +4238,8 @@ select {
 	}
 	&:last-child .link {
 		color: $color_dodger_blue_approx;
-	}
+	 text-transform: capitalize;
+  }
 }
 .subMenuViajes .subMenuViajes--Cont .listSubMenuViajes {
 	list-style-type: none;
@@ -4877,3 +4889,4 @@ select {
 
 /*Gracias*/
 @import "gracias";
+@import "miservicios";

@@ -31,6 +31,9 @@ var UserSchema = new Schema({
 	InvitacionesEnviadas: Array,
 	Amigos: Array,
 	Notificaciones: Array,
+	permisoServicios: false,
+	miServicio: String,
+	activeService: false,
 	createdAt : {type: Date, default: Date.now} // Fecha de creación
 });
 

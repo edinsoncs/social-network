@@ -37,21 +37,44 @@ function accept(pref) {
 }*/
 
 
-router.get('/', function(req, res, next){
+router.get('/:numberpaquete', function(req, res, next){
 	
-	res.render('paquetes', {
+	var db = req.db;
+    var paquetes = db.get('paquetes');
 
-        title: 'La mejor variedad de paquetes turisticos - Viainti',
-        nombre: req.user.name,
-        avatar: req.user.photo,
-        id: req.user._id,
-        notificaciones: req.user.Notificaciones
+    var estado = req.params.numberpaquete;
+  
+    var cantidadLimite = 10;
 
+    var paginator = Number(estado) * cantidadLimite;
+
+
+    paquetes.find({}, {skip: paginator, limit: cantidadLimite}, function(err, doc){
+        if(err){
+            throw err;
+        }
+        else {
+            console.log(doc);
+
+             res.render('paquetes', {
+                title: 'La mejor variedad de paquetes turisticos - Viainti',
+                nombre: req.user.name,
+                avatar: req.user.photo,
+                id: req.user._id,
+                notificaciones: req.user.Notificaciones,
+                paquetes: doc
+            });
+           
+        }
     });
+
+    
+
+    
 
 });
 
-router.get('/:paquetetitle', function(req, res, next){
+router.get('/view/:paquetetitle', function(req, res, next){
 	var query = require('url').parse(req.url,true).query;
 	var a = req.params.paquetetitle;
 	var id = query.id;
@@ -60,82 +83,26 @@ router.get('/:paquetetitle', function(req, res, next){
 	var collection = db.get('paquetes');
 
 
-	/*collection.find({"_id":id}).success(function(err, doc){
-		console.log(doc._id);
-	})*/
-    
-
-
 	collection.findOne({ "_id": id }, function(err, doc){
-    	
-		//var key = doc.forEach(function(data){console.log(data.Titulo);});
-
         if(err){
             return err
         }
-
     	else {
-            function price(){
-                return Number(doc.Precio);
-            }
-            
-            var preference = {
-                "items": [{
-                        "title": doc.Titulo,
-                        "quantity": 1,
-                        "currency_id": "ARS",
-                        "unit_price": price()
-                }]
-            };
-
-            mp.createPreference (preference, function (err, data){
-                    if (err) {
-                        res.send (err);
-                    } else {
-
-                             res.render('paquetePage', {
-                                    title: id,
-                                    titulo: doc.Titulo,
-                                    precio: doc.Precio,
-                                    dateida: doc.DateIda,
-                                    datellegada: doc.DateLlegada,
-                                    imagenCover: doc.ImagenCover,
-                                    pais: doc.Paises,
-                                    personas: doc.CantidadPersonas,
-                                    pasaje: doc.Pasaje,
-                                    mobilidad: doc.Mobilidad,
-                                    hotel: doc.Hotel,
-                                    seguroMedico: doc.SeguroMedico,
-                                    Contenido: doc.Contenido,
-                                    Payment: data,
-                                    nombre: req.user.name,
-                                    avatar: req.user.photo,
-                                    id: req.user._id,
-                                    notificaciones: req.user.Notificaciones,
-                                    name: "Viainti"
-                        });
-
-                      
-                    }
+          
+           res.render('paquetePage', {
+                paquete: doc,
+                nombre: req.user.name,
+                avatar: req.user.photo,
+                id: req.user._id,
+                notificaciones: req.user.Notificaciones,
+                name: "Viainti"
             });
-
-            
-
-           
-
-
                 
         }
 
-    	//console.log(doc.Titulo)
     	
 	});
-	
- 	//var data = collection.find({"_id": id});
 
- 	//console.log(data);
-
-	//res.render('paquetePage', {title: a, name: "Web"});
 });
 
 module.exports = router;

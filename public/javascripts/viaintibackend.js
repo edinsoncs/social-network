@@ -98,7 +98,7 @@ $(document).ready(function(){
     
     
     
-    $(".Form--Backend").submit(function(even){
+    /*$(".Form--Backend").submit(function(even){
        
         even.preventDefault();
 
@@ -106,7 +106,7 @@ $(document).ready(function(){
         
         /*$(".dassasa").click(function(){
             alert(editor.value());
-        });*/
+        });
 
         $.ajax({
             url: "/addpaquetes",
@@ -143,7 +143,7 @@ $(document).ready(function(){
         });
 
          alert(editorVal);
-    });
+    });*/
 
     $(".Form--BackendCruceros").submit(function(even){
         
@@ -275,7 +275,7 @@ $(document).ready(function(){
 
     var page;
 
-    function APIPAGE(page){
+    /*function APIPAGE(page){
         var MIAPI = "/addpaquetes/";
         
         if(page === undefined) {
@@ -299,10 +299,12 @@ $(document).ready(function(){
                 var q = data[i].Titulo;
                 var r = encodeURIComponent(q);
                 var z = r.replace(/%20/g, "-");
-                //console.log(z);
+                
+                console.log(data);
+
                 toAdd += "<article class='contenidos--Vuelos--PostPaquetes'><figure class='PostPaquetes--Figure'><img class='PostPaquetes--Img' src="+data[i].Imagen+"></figure><div class='PostPaquetes--Info'><div class='InfoPaquetes--Cont'><h2 class='Info--Precio margen'>"+"AR$"+Number(p).toLocaleString()+"</h2></div><div class='InfoPaquetes--Cont'><h2 class='Info--Precio margen'><i class='fa fa-map-marker'></i>"+data[i].Paises+"</h2></div></div><div class='PostPaquetes--Date'><div class='InfoPaquetes--Data'><span class='InfoPaquetes--Data--Ico'><i class='fa fa-calendar-o'></i></span><span class='InfoPaquetes--Data--Title'>De:"+" "+data[i].DateIda+"</span></div><div class='InfoPaquetes--Data'><span class='InfoPaquetes--Data--Ico'><i class='fa fa-calendar-o'></i></span><span class='InfoPaquetes--Data--Title'>Hasta:"+" "+data[i].DateLlegada+"</span></div><button class='btn--sendArtilce'><a href='/paquetes/"+z+"?id="+data[i]._id+"'>Consultar</a></button></div></article>";
                 //pageAdd = $(".contenidosVuelos--De").append("<div class='contenidos--Vuelos--Pagination'><ul><li>Siguiente</li></ul></div>");
-                /*<div onclick='APIPAGE(\"" + Number(Number(page) + 1) +"\");'>SIGUIENTE</div>*/              
+                /*<div onclick='APIPAGE(\"" + Number(Number(page) + 1) +"\");'>SIGUIENTE</div>            
                 
             }
 
@@ -335,3 +337,4 @@ $(document).ready(function(){
         }
     }
     APIPAGE();
+    */  

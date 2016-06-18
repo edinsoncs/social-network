@@ -18,10 +18,6 @@ var fs = require('fs');
 
 var path = require('path');
 
-//Initialize passport
-router.use(passport.initialize());
-router.use(passport.session());
-
 var expressSession = require('express-session');
 var cookieParser = require('cookie-parser');
 
@@ -34,9 +30,14 @@ router.use(expressSession({
   resave: false, 
   saveUninitialized: true, 
   cookie:{
-     maxAge : 360000000000 // one hour in millis
+     maxAge : 3600000 // one hour in millis
    }
  }));
+
+//Initialize passport
+router.use(passport.initialize());
+router.use(passport.session());
+
 
 
 /*validation url*/
@@ -55,12 +56,9 @@ function permisosRoot(req, res, next){
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-  res.header('Access-Control-Allow-Credentials', 'true');
+  res.render('Publicar', {title: 'Publicar - Viainti'});
 
-  res.render('publicar', {title: 'Publicar - Viainti'});
-  
-  console.log(req.cookies);
-  next();
+
 });
 
 router.post('/login', passport.authenticate('local', {
@@ -71,6 +69,7 @@ router.post('/login', passport.authenticate('local', {
 router.get('/admin', permisosRoot, function(req, res, next) {
 	res.render('admin', {title: 'Administrador - Viainti'});
 	console.log('estoy aqui');
+	console.log(req.user);
 	next();
 });
 
@@ -99,7 +98,7 @@ router.get('/restaurantes', permisosRoot, function(req, res, next){
 
 //ABM DEVELOPER
 
-router.post('/abm-home', form, function(req, res, next){
+/*router.post('/abm-home', form, function(req, res, next){
 
 	
 	var db = req.db;
@@ -139,10 +138,10 @@ router.post('/abm-home', form, function(req, res, next){
 		}
 	});
 
-	/**/
 
 
-});
+
+});*/
 
 
 
