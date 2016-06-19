@@ -10,6 +10,8 @@ var fs = require('fs');
 
 var path = require('path');
 
+var shortid = require('shortid');
+
 router.post('/', dataForm, function(req, res, next){
 	var db = req.db;
 
@@ -35,8 +37,11 @@ router.post('/', dataForm, function(req, res, next){
 
 	var collection = db.get('paquetes');
 
-	var saveDirectory = path.join(__dirname, '..', 'public/uploads/', 'services' + fileOne.name);
-	var saveDirectory2 = path.join(__dirname, '..', 'public/uploads/', 'services' + fileTwo.name);
+	var itemFileOne = shortid.generate() + fileOne.name;
+	var itemFileTwo = shortid.generate() + fileTwo.name;
+
+	var saveDirectory = path.join(__dirname, '..', 'public/uploads/', 'services' + itemFileOne);
+	var saveDirectory2 = path.join(__dirname, '..', 'public/uploads/', 'services' + itemFileTwo);
 
 	fs.readFile(fileOne.path, function(err, data){
 		if(err){
@@ -79,8 +84,8 @@ router.post('/', dataForm, function(req, res, next){
 		"CantidadNoches": cantidadNoches,
 		"CantidadPersonas": cantidadPersonas,
 		"Paises": paises,
-		"Imagen": fileOne.name,
-		"ImagenCover": fileTwo.name,
+		"Imagen": itemFileOne,
+		"ImagenCover": itemFileTwo,
 		"Pasaje": pasaje,
 		"Mobilidad": mobilidad,
 		"Hotel": hotel,

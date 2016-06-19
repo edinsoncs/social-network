@@ -1,0 +1,53 @@
+$coloursWhite: white;
+.adminAprob {
+	//background-color: $coloursWhite;
+	.adminAprob__Details {
+		width: 50%;
+		background-color: $coloursWhite;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1em;
+		.Details--Header .title {
+			font-weight: 400;
+			font-size: 1em;
+			color: #1da1f2;
+		}
+		.Details--De {
+			.Details--De--Status:first-child {
+				font-size: 0.85em;
+				margin: 0 0.5em;
+			}
+			.Details--De--Status:nth-child(1) {
+				background-color: #f1c40f;
+				padding: 0.5em;
+				color: white;
+				border-radius: 4px;
+			}
+			.Details--De--StatusAccept:first-child {
+				font-size: 0.85em;
+				margin: 0 0.5em;
+			}
+			.Details--De--StatusAccept:nth-child(1) {
+				background-color: #3498db;
+				padding: 0.5em;
+				color: white;
+				border-radius: 4px;
+			}
+			.Details--De--Button {
+				background-color: #e74c3c;
+				color: white;
+				border: none;
+				padding: 0.4em;
+				border-radius: 4px;
+				outline: medium none;
+			}
+		}
+	}
+	.adminAprob__Not {
+		.showNot {
+			font-weight: 400;
+			color: #e74c3c;
+		}
+	}
+}

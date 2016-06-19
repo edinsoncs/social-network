@@ -1,0 +1,55 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='Viainti')
+    title #{web}
+    
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+    
+    link(href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css', rel='stylesheet')
+
+    script(src='https://code.jquery.com/jquery-1.11.2.min.js')
+    
+    script(src="/socket.io/socket.io.js")
+    script(src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js')
+    script(src='../javascripts/viaintifrontend.js')
+    
+    script(src='../javascripts/viaintifrontendbackend.js')
+    script(src='../../javascripts/app-via.js')
+    script(src='../../javascripts/admin.js')
+
+  body
+
+    header.menuViainti.bgHeader(data-role='header')
+      include header-principal.jade
+      nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href='#') Inicio
+          li.liMenu.jsHot
+            a.aLinkMenu(href='../hoteles/') Hoteles
+          li.liMenu.jsRest
+            a.aLinkMenu(href='../restaurantes/') Restaurantes
+          li.liMenu
+            a.aLinkMenu(href='../vuelos/') Viajes
+    main
+     section.contenidoPrincipal.adminAprob
+      each u in usuarios
+       if u.permisoServicios
+       
+        div.adminAprob__Details(data-id="#{u._id}")
+         header.Details--Header
+          h2.title
+           | #{u.name}
+         aside.Details--De
+          if u.activeService != true
+           span.Details--De--Status
+            | Pendiente
+          else
+           span.Details--De--StatusAccept
+            | Aceptado
+          button.Details--De--Button.jsUser
+           i(class="fa fa-check")

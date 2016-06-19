@@ -78,6 +78,9 @@ var gracias = require('./routes/gracias');
 /*ajax services*/
 var ajaxservices = require('./routes/ajaxservices');
 
+/*admin edinson*/
+var adminshow = require('./routes/adminshow');
+
 
 var app = express();
 
@@ -194,6 +197,7 @@ app.use('/cruceros/', ensureAuthenticated, cruceros);
 
 /*Services add*/
 app.use('/servicesadd', ensureAuthenticated, ajaxservices);
+app.use('/isadmin', ensureAuthenticated, adminshow);
 
 /*Restaurantes y hoteles*/
 app.use('/addhoteles', addHotel);
