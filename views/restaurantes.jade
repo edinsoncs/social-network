@@ -87,9 +87,13 @@ html(lang='es', ng-app="viainti")
                 span.BtnMap--Title
                  | Ver Mapa
                - var name = re.Nombre
-               - var encode = encodeURIComponent(name)
-               - var replace = encode.replace('%20', '-')
-               a.Aside--BtnMap(href="show/#{replace}?id=#{re._id}",data-hoteles="#{re._id}")
+               - var letterLow = name.toLowerCase();
+               - var encode = encodeURIComponent(letterLow)
+               - var replaceOne = encode.replace('%20', '-')
+               - var replaceTwo = replaceOne.replace('%20', '-')
+               - var replaceTree = replaceTwo.replace('%20', '-')
+               - var replaceFour = replaceTree.replace('%20', '-')
+               a.Aside--BtnMap(href="show/#{replaceTwo}?id=#{re._id}",data-hoteles="#{re._id}")
                 btn.BtnMap--Ico
                  i.fa.fa-info-circle
                 span.BtnMap--Title

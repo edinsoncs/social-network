@@ -87,8 +87,8 @@ module.exports = function(passport) {
         //picture.type(large) para passport tomar la foto mas grande
     // Configuración del autenticado con Facebook
     passport.use(new FacebookStrategy({
-        clientID : "892816844120117",
-        clientSecret: "f5b63f25ef70c9f64704161cdeab6bc9",
+        clientID : "707943249343883",
+        clientSecret: "729c1b966df2f02f69347f839a1340d4",
         callbackURL : '/auth/facebook/callback',
         profileFields : ['id', 'displayName',/*'provider',*/ 'picture.type(large)', 'emails']
     }, function(accessToken, refreshToken, profile, done) {
