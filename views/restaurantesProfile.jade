@@ -46,87 +46,19 @@ main
           .DashboardHotel--Acerca--City
             h4.Acerca--City--Title.margen Ubicación:
             .Acerca--City--Title--Name
-              p.City--Name.margen Buenos Aires
+              p.City--Name.margen #{ubiHotel}
             h4.Acerca--City--Title.margen Dirección:
             .Acerca--City--Title--Name
               p.City--Name.margen.jsDireccion 
-                | Av. corrientes 2451
+                | #{direHotel}
           .DashboardHotel--Acerca--Mapa
             figure.Mapa.margen#map(data-latitud="#{latHotel}", data-longitud="#{lonHotel}")
-              //img(src='../../images/hoteles/ubicacion.jpg', alt='')
-        //.Dashboard_Left--Hotel--Cont--SubTop
-          article.Dashboard--Hotel--Habitaciones
-            header.Dashboard--Hotel--Title
-              h4.Title.margen Habitaciones
-            .Dashboard--Hotel--Listas
-              ul.Listas--Contenedor
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Matrimonial
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 29
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Bicameral
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Suites
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Estándar
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Premiun
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Matrimonial Superior
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Junior Suite
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Triple
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-                li.Dashboard--Hotel--Listas
-                  a.Dashboard--Hotel--Link(href='#')
-                    | Simple
-                  .Dashboard--Hotel--Listas--Cantidad.enLinea
-                    span.Title--Cantidad 10
-            .Dashboard--Hotel--VerMas
-              .VerMas--Cont
-                a.VerMas--Link(href='#')
-                  | Ver todos
-                i.fa.fa-plus
-        //.Dashboard_Left--Hotel--Cont--Descuentos
-          article.Dashboard--Hotel--Descuentos
-            header.Dashboard--Hotel--Title
-              h4.Title.margen Descuentos
-            .Dashboard--Hotel--Descuentos--Listas
-              ul.Descuentos--Listas
-                li.Dashboard--Hotel--Descuentos
-                  span.Hotel--Descuentos
-                    | Con descuentos
-                  .Hotel--Descuentos--Cantidad
-                    span.Title--Cantidad
-                      | %20
+  
       article.Dashboard_Center
         article.Dashboard_Welcome
           form(class='sendHotel', id="formHotel")
             figure.Dashboard_Map.fijo.margen
-              img(src='http://www.hoteles-silken.com/content/imgsxml/es/galerias/panel_restaurants_list/1/hoteles-puertamalaga-restaurante-restaurante-panoramica.jpg', alt='')
+              img(src='../../uploads/services/#{coverHotel}', alt='')
             .Dashboard_Post
               textarea.Post_Home.noBorder(name='', id='textData', cols='', rows='', placeholder='Escribelo a @#{nombreHotel}')
           .Dashboard_Post_Send

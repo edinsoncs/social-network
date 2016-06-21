@@ -653,7 +653,7 @@ router.get('/ultimate/3xa04c/', function(req, res, next) {
 });
 
 router.get('/miservicios', function(req, res, next) {
-	console.log('estoy aqui');
+	
     res.render('miservicios', {
         web: req.user.name + " " + "Mi Servicios - Viainti tu libro viajero",
         nombre: req.user.name,
@@ -661,8 +661,11 @@ router.get('/miservicios', function(req, res, next) {
         id: req.user._id,
         notificaciones: req.user.Notificaciones,
         permisoServicios: req.user.permisoServicios,
-        activeService: req.user.activeService
+        activeService: req.user.activeService,
+        category: req.user.miServicio
     });
+
+   
 });
 
 router.post('/solicitud', function(req, res, next){

@@ -73,3 +73,30 @@
 		}
 	}
 }
+
+.serviceSuccess {
+	margin: 2em auto;
+	background-color: white;
+	padding: 1em;
+	.serviceSuccess__Figure img {
+		width: 120px;
+		padding: 0.2em;
+		border: 1px solid #dedede;
+	}
+	.serviceSuccess__Header {
+		.title {
+			font-weight: 400;
+			font-size: 1.2em;
+			.showNameService {
+				color: #0085CA;
+			}
+		}
+		.link {
+			color: #0085CA;
+			display: block;
+			text-decoration: none;
+			width: 120px;
+			
+		}
+	}
+}

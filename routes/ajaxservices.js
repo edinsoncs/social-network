@@ -103,4 +103,89 @@ router.post('/', dataForm, function(req, res, next){
 });
 
 
+router.post('/restaurantes', dataForm, function(req, res, next){
+	var db = req.db;
+
+	var fileOne = req.files.imagenRest;
+	var fileTwo = req.files.coverRest;
+	console.log(req.body);
+
+	var titulo = req.body.tituloHotel;
+	var descript = req.body.textRest;
+	var ubicacion = req.body.ubicacionRest;
+	var direccion = req.body.direccionRest;
+	var pais = req.body.paisesRest;
+	var tel = req.body.telRest;
+	var lat = req.body.latitud;
+	var lon = req.body.longitud;
+
+
+	var collection = db.get('restaurantes');
+
+	var itemFileOne = shortid.generate() + fileOne.name;
+	var itemFileTwo = shortid.generate() + fileTwo.name;
+
+	var saveDirectory = path.join(__dirname, '..', 'public/uploads/', 'services/' + itemFileOne);
+	var saveDirectory2 = path.join(__dirname, '..', 'public/uploads/', 'services/' + itemFileTwo);
+
+	fs.readFile(fileOne.path, function(err, data){
+		if(err){
+			throw err;
+		}
+		else {
+			
+			fs.writeFile(saveDirectory, data, function(err){
+				if(err){
+					throw err;
+				}
+			});
+		}
+	});
+
+	setTimeout(function(){
+		fs.readFile(fileTwo.path, function(err, data){
+			if(err){
+				throw err;
+			} 
+			else {
+				fs.writeFile(saveDirectory2, data, function(err){
+					if(err) {
+						throw err;
+					}
+				})
+			}
+		});
+
+	}, 1000);
+
+
+	collection.insert({
+		'Nombre': titulo,
+		'Descripccion': descript,
+		'Imagen': itemFileOne,
+		'Cover': itemFileTwo,
+		'Ubicacion': ubicacion,
+		'Direccion': direccion,
+		'Pais': pais,
+		'Tel': tel,
+		'Latitud': lat,
+		'Longitud': lon,
+		'Post': Array
+	}).success(function(doc){
+		res.render('acceptservice', {
+			web: req.user.name + " " + "Mi Libro - Viainti tu libro viajero",
+            nombre: req.user.name,
+            avatar: req.user.photo,
+            id: req.user._id,
+            notificaciones: req.user.Notificaciones,
+			data: doc
+		});
+	}).error(function(err){
+		console.log(err);
+	});
+
+
+});
+
+
 module.exports = router;

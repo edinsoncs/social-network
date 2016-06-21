@@ -60,7 +60,7 @@
 	              "</div>"+
 	            "</aside>"+
 	          "</article>";
-        	$(".Locals--Show").append(template);
+        	//$(".Locals--Show").append(template);
         	
         	$(".Aside--BtnMap").click(function(){
 

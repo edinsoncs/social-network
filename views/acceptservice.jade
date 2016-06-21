@@ -1,0 +1,57 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='Viainti')
+    title #{web}
+    
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+
+    link(rel='stylesheet', href='//kendo.cdn.telerik.com/2015.2.902/styles/kendo.common-material.min.css')
+    link(rel='stylesheet', href='//kendo.cdn.telerik.com/2015.2.902/styles/kendo.material.min.css')
+
+    script(src='https://code.jquery.com/jquery-1.11.2.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.js')
+
+    script(src='//kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js')
+    
+    script(src="/socket.io/socket.io.js")
+    
+    script(src='../javascripts/viaintifrontend.js')
+    
+    script(src='../../javascripts/app-via.js')
+
+    script(src='../../javascripts/app-secondary.js')
+    
+    
+
+  body
+
+    header.menuViainti.bgHeader(data-role='header')
+      include header-principal.jade
+      nav.linkMenu
+        ul.contMenu
+          li.liMenu
+            a.aLinkMenu(href='#') Inicio
+          li.liMenu.jsHot
+            a.aLinkMenu(href='../hoteles/') Hoteles
+          li.liMenu.jsRest
+            a.aLinkMenu(href='../restaurantes/') Restaurantes
+          li.liMenu
+            a.aLinkMenu(href='../vuelos/') Viajes
+    main
+     section.contenidoPrincipal.serviceSuccess
+      figure.serviceSuccess__Figure
+       img(src="../uploads/services/#{data.Imagen}")
+      header.serviceSuccess__Header
+       h2.title
+        | Se agrego correctamente su restaurante 
+        span.showNameService #{data.Nombre}
+       - var name = data.Nombre
+       - var encode = encodeURIComponent(name)
+       - var letter = encode.toLowerCase()
+       - var replace = letter.replace('%20', '-')
+       a.link(href="../restaurantes/show/#{replace}=?id=#{data._id}")
+        | Ver Publicación

@@ -227,7 +227,7 @@ $(document).ready(function(){
         
     });
 
-    $(".Form--BackendRestaurantes").submit(function(e){
+    /*$(".Form--BackendRestaurantes").submit(function(e){
         e.preventDefault();
         var nameRest = $("input[name='tituloHotel']").val();
         var desRest = $("input[name='textRest']").val();
@@ -268,7 +268,7 @@ $(document).ready(function(){
         });
 
 
-    });
+    });*/
      
     
 });
