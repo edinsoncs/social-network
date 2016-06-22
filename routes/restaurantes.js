@@ -71,27 +71,27 @@ router.get('/show/:namehotel', function(req, res, next){
   var collection = db.get('restaurantes');
 
   collection.findOne({'_id': idRest(toUrl.id)}, function(err, doc){
-      var inPostHotel;
+      var inPostRest;
       if(err){
         console.log(err);
       }
       else {
-        inPostHotel = doc.Post;
+        inPostRest = doc.Post;
         res.render('restaurantesProfile', { layout: 'layout',
             web: 'Restaurantes - Viainti tu libro viajero',
             nombre: req.user.name,
             avatar: req.user.photo,
-            nombreHotel: doc.Nombre,
-            fotoHotel: doc.Imagen,
-            coverHotel: doc.Cover,
-            destHotel: doc.Descripccion,
-            ubiHotel: doc.Ubicacion,
-            direHotel: doc.Direccion,
-            latHotel: doc.Latitud,
-            lonHotel: doc.Longitud,
+            nombreRest: doc.Nombre,
+            fotoRest: doc.Imagen,
+            coverRest: doc.Cover,
+            destRest: doc.Descripccion,
+            ubiRest: doc.Ubicacion,
+            direRest: doc.Direccion,
+            latRest: doc.Latitud,
+            lonRest: doc.Longitud,
             id: req.user._id,
             notificaciones: req.user.Notificaciones,
-            posts: inPostHotel
+            posts: inPostRest
         });
       }
   });
