@@ -151,7 +151,29 @@ html(lang='es')
                             .Like.enLinea
                               if post.likes.length >= 1
                                 span.Like--Num(data-likesShow='yes')
-                                  | #{post.likes.length} 
+                                  | #{post.likes.length}
+                                section.ShowUser--Likes
+                                  div.ShowUser--LikesBG
+                                  div.ShowUser--Container
+                                    header.ShowUser--ContainerHeader
+                                      h2.title
+                                        | Total:
+                                        span.titleCant
+                                          |  #{post.likes.length}
+                                      div.close
+                                        span.closeIcon
+                                         | &#215
+                                    div.ShowUser--ContainerData
+                                      each likeadoUsers in post.likes
+                                        article.ContainerData--User
+                                          figure.figure--User.margen
+                                            img(class="userShowImg", src="#{likeadoUsers.usuariophoto}")
+                                          div.container--Name
+                                            a.title--Name(href="u/#{likeadoUsers.idusuario}")
+                                              | #{likeadoUsers.usuarioname}
+
+
+
                                 //span.Likes--Users
                                   | Personas
                            else
@@ -214,6 +236,25 @@ html(lang='es')
                               if post.likes.length >= 1
                                 span.Like--Num
                                   | #{post.likes.length}
+                                section.ShowUser--Likes
+                                  div.ShowUser--LikesBG
+                                  div.ShowUser--Container
+                                    header.ShowUser--ContainerHeader
+                                      h2.title
+                                        | Total:
+                                        span.titleCant
+                                          |  #{post.likes.length}
+                                      div.close
+                                        span.closeIcon
+                                         | &#215
+                                    div.ShowUser--ContainerData
+                                      each likeadoUsers in post.likes
+                                        article.ContainerData--User
+                                          figure.figure--User.margen
+                                            img(class="userShowImg", src="#{likeadoUsers.usuariophoto}")
+                                          div.container--Name
+                                            a.title--Name(href="u/#{likeadoUsers.idusuario}")
+                                              | #{likeadoUsers.usuarioname}
                                 //span.Likes--Users
                                   | Personas
 

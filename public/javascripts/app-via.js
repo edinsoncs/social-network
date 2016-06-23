@@ -303,7 +303,7 @@ $(document).ready(function(){
 				var isID_TWO = $(isID_ONE).find('.textareComments').attr('data-idpost');
 				//alert($(isID).attr());
 				
-				alert(isID_TWO);
+				
 
 				$.ajax({
 					url: '../u/likecoments/',
@@ -738,6 +738,28 @@ $(document).ready(function(){
 		 ultimateServices();	
 		 
 	//END/////////////FINALIZESERVICES///////////////
+
+
+
+
+
+	/**
+	 * 
+	 */
+	fnLikesShow($(".Like span"), $(".ShowUser--Likes"), $(".ShowUser--ContainerHeader .close"))
+	
+	function fnLikesShow(i,e,x) {
+		$(i).on('click', function(){
+			$(this).siblings(".ShowUser--Likes").css('display','block');
+			
+		});
+		$(x).on('click', function(){
+			console.log($(this).parent().parent().parent().css('display','none'));
+			
+		});
+	}
+
+
 
 
 

@@ -4281,14 +4281,103 @@ select {
 		margin: 0 0 0 0.2em;
     border-radius: 50%;
 		text-align: center;
-		.Like--Num {
+		
+    .Like--Num {
 			line-height: 35px;
 			font-size: .8em;
       cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
 		}
+
     .Likes--Users {
       font-size: 0.8em;
     }
+
+    .ShowUser--Likes {
+      position: absolute;
+      display: none;
+      .ShowUser--LikesBG {
+        background-color: rgba(0, 0, 0, 0.32);
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 2999;
+      }
+      .ShowUser--Container {
+        position: fixed;
+        width: 450px;
+        top: 50%;
+        left: 50%;
+        margin-left: -17em;
+        margin-top: -10em;
+        background-color: $white;
+        z-index: 3000;
+        padding: 0 1em;
+        border-radius: 3px;
+        box-shadow: 0 0 1px black;
+        .ShowUser--ContainerHeader {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+        .ShowUser--ContainerHeader .title {
+          text-align: left;
+          font-weight: 400;
+          font-size: 1em;
+          color: rgb(32, 141, 206);
+          font-size: 0.8rem;
+          padding: 0.5em 0;
+          .titleCant {
+            font-weight: 700;
+            border-radius: 50%;
+          }
+        }
+        .ShowUser--ContainerHeader {
+          .close {
+            font-size: 25px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            .closeIcon {
+              color: $black;
+              font-size: 2rem;
+              cursor: pointer;
+
+            }
+          }
+        }
+        .ShowUser--ContainerData {
+          .ContainerData--User {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #dedede;
+            padding:1em 0;
+            .figure--User {
+              margin: 0 1em 0 0;
+              img.userShowImg {
+                width: 40px;
+              }
+            }
+            .container--Name {
+              font-size: 10px;
+              .title--Name {
+                color: #1d2129;
+                font-size: 0.85rem;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
 	}
 	i {
 		color: $color_carnation_approx;

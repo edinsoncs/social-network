@@ -278,7 +278,7 @@ router.post('/u/dashboardpost/', function(req, res, next) {
 
 router.post('/u/likecoments/', function(req, res, next) {
 
-    console.log('estoy aqui edinson si');
+
 
     var idPost = req.body.id;
     var idUsuarioFind = req.body.idUsuario;
