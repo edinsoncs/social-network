@@ -300,7 +300,8 @@ router.post('/u/likecoments/', function(req, res, next) {
             $push: {
                 'posts.$.likes': {
                     'cantidad': like,
-                    'idusuario': idUsuarioFind,
+                    'id': idUsuarioFind,
+                    'idusuario': req.user._id,
                     'idpost': idPost,
                     'usuarioname': req.user.name,
                     'usuariophoto': req.user.photo,
@@ -325,8 +326,9 @@ router.post('/u/likecoments/', function(req, res, next) {
         update: {
             $push: {
                 'likes': {
-                    'cantidad': like,
-                    'idusuario': idUsuarioFind,
+                   'cantidad': like,
+                    'id': idUsuarioFind,
+                    'idusuario': req.user._id,
                     'idpost': idPost,
                     'usuarioname': req.user.name,
                     'usuariophoto': req.user.photo,
