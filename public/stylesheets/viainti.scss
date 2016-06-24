@@ -2420,6 +2420,7 @@ body {
 		.Dashboard_Center {
 			width: 62%;
 			margin: 0 .25em;
+      position: relative;
 			.Dashboard_Post {
 				margin: .5em 0 0 0;
 				.Post_Home {
@@ -2458,6 +2459,52 @@ body {
         max-height: 312px;
         display: block;
 			}
+      .DashboardUtils {
+        background-color: rgba(0, 0, 0, 0.43);
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 2889;
+        display: none;
+        .DashboardUtils--Phone {
+          position: absolute;
+          top: 50;
+          left: 50%;
+          margin-top: 10em;
+          margin-left: -14em;
+          width: 450px;
+          background-color: $white;
+          .DashboardUtils--Phone--Header {
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2em;
+            .title {
+              font-weight: 400;
+            }
+            .close {
+              cursor: pointer;
+            }
+          }
+          .DashboardUtils--Phone--Show {
+            padding: 0 2em;
+            text-align: center;
+            .Show {
+              font-weight: 400;
+              font-size: 2em;
+              margin: 1em 0;
+              background-color: #e6e6e6;
+              padding: 0.5em 0;
+              i {
+                margin: 0 0.5em 0 0;
+              }
+            }
+          }
+        }
+      }
 		}
 		.Dashboard_Post--User {
 			margin: 1em 0;

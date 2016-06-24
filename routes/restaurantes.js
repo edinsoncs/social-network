@@ -90,6 +90,7 @@ router.get('/show/:namehotel', function(req, res, next){
             latRest: doc.Latitud,
             lonRest: doc.Longitud,
             id: req.user._id,
+            tel: doc.Tel,
             notificaciones: req.user.Notificaciones,
             posts: inPostRest
         });

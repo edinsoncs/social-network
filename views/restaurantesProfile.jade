@@ -10,7 +10,7 @@ head
   script(src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js")
 
   script(src='https://code.jquery.com/jquery-1.11.2.min.js')
-  script(src='../../javascripts/restaurantesv1.js')
+  script(src='../../javascripts/restaurantes.js')
   script(src='../../javascripts/viaintifrontend.js')
 
   
@@ -50,7 +50,19 @@ main
             figure.Mapa.margen#map(data-latitud="#{latRest}", data-longitud="#{lonRest}")
   
       article.Dashboard_Center
+        div.DashboardUtils
+            .DashboardUtils--Phone
+              header.DashboardUtils--Phone--Header
+                h2.title
+                  | Llamalo
+                div.close.jsCloseUtils
+                  | &#215
+              div.DashboardUtils--Phone--Show
+                h2.Show
+                  i.fa.fa-phone-square
+                  | #{tel}
         article.Dashboard_Welcome
+
           form(class='sendHotel', id="formHotel")
             figure.Dashboard_Map.fijo.margen
               img(src='../../uploads/services/#{coverRest}', alt='')
@@ -101,12 +113,16 @@ main
           ul.Dashboard_Right_Menu
             li.list-Right--Menu
               a.link-Right--Menu(href='#')
-                i.fa.fa-phone
-                | 									Nuestros Platos
+                i.fa.fa-cutlery
+                |  Nuestros Platos
+            li.list-Right--Menu.jsRestPhone
+              a.link-Right--Menu(href='#')
+                i.fa.fa-phone-square
+                |  Teléfono
             li.list-Right--Menu
               a.link-Right--Menu(href='#')
-                i.fa.fa-home
-                | 									reservar ahora
+                i.fa.fa-inbox
+                |  reservar ahora
        
 
 script(src='../../javascripts/maps.js')
