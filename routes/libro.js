@@ -19,6 +19,9 @@ var router = express.Router();
 
 var shortid = require('shortid');
 
+var nuevoplan = require('../moduls/nuevoplan');
+
+
 /*Geolocation*/
 
 
@@ -692,6 +695,11 @@ router.post('/solicitud', function(req, res, next){
 		res.redirect('./miservicios');
 	});
 
+});
+
+
+router.get('/nuevo/plan', function(req, res, next){
+    nuevoplan(req, res, next);
 });
 
 

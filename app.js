@@ -63,7 +63,7 @@ var addCruceros= require('./routes/addcruceros.js');
 
 /*Restaurantes y Hoteles*/
 var addHotel = require('./routes/add/hoteles');
-var addRestaurantes = require('./routes/add/restaurantes');
+var addRestaurantes = require('./routes/add/Restaurantes');
 
 
 /*Posts Users send invitation*/

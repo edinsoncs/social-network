@@ -2087,10 +2087,15 @@ body {
 .bgProfileUser {
 	background: $white;
 }
+//This header plaftorm
 .menuViainti {
-	width: 100%;
-	height: auto;
-	position: relative;
+  height: auto;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 4555;
 	.header {
 		width: 1200px;
 		margin: 0 auto;
@@ -2249,7 +2254,7 @@ body {
 .contenidoPrincipal {
 	width: 1200px;
 	margin: 0 auto;
-	padding: 1em 0;
+	padding: 7em 0;
 	.cont_Principal {
 		background: $white;
 		border: 1px solid $color_silver_sand_approx;
