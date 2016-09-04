@@ -52,11 +52,11 @@ var nameToVideo = '';
     var collection = db.get('usuarios');
 
     collection.findOne({"Nickname": c}, function(err, doc) {
-    	res.render('libro', {
-    		nick: doc.Nickname,
-    		web: "hola"
+        res.render('libro', {
+            nick: doc.Nickname,
+            web: "hola"
 
-    	});
+        });
     });
 });
 */
@@ -137,13 +137,13 @@ router.post('/u/postprofile/', function(req, res, next) {
 
     }).success(function(doc) {
         /*res.json({
-        			userData: {
-        				name: doc.userName,
-        				photo: doc.userPhoto
-        			},
-        			userPost: doc.userComment,
+                    userData: {
+                        name: doc.userName,
+                        photo: doc.userPhoto
+                    },
+                    userPost: doc.userComment,
                     date: doc.userTime,
-        			state: true
+                    state: true
         });*/
         console.log('funciono');
         res.json({ inserted: true });
@@ -193,34 +193,34 @@ router.post('/u/postprofilenotificaciones/', function(req, res, next) {
 
 
     /*if(idUsuarioFind !== req.user._id) {
-    	notificaciones.findAndModify({
-    		 query: { '_id': idUsuarioFind},
-    		 update: {
-    		 		$push: {
-    		 			'Notificaciones': {
-    		 				'userId': req.user._id,
-    		 				'userComment': mensaje,
-    		 				'userName': req.user.name,
-    		 				'userPhoto': req.user.photo,
-    		 				'userTime': new Date()
-    		 			}
-    		 		}
-    		 },
-    		 new: true
+        notificaciones.findAndModify({
+             query: { '_id': idUsuarioFind},
+             update: {
+                    $push: {
+                        'Notificaciones': {
+                            'userId': req.user._id,
+                            'userComment': mensaje,
+                            'userName': req.user.name,
+                            'userPhoto': req.user.photo,
+                            'userTime': new Date()
+                        }
+                    }
+             },
+             new: true
 
-    	}).success(function(doc){
-    		console.log('se agrego notificacion');
+        }).success(function(doc){
+            console.log('se agrego notificacion');
 
-    		res.json({inserted: true});
-    		
-    	}).error(function(err){
-    		if(err){
-    			console.log(err);
-    		}
-    	});
+            res.json({inserted: true});
+            
+        }).error(function(err){
+            if(err){
+                console.log(err);
+            }
+        });
     }
     else {
-    	console.log('bla');
+        console.log('bla');
     }
 
     */
@@ -329,7 +329,7 @@ router.post('/u/likecoments/', function(req, res, next) {
         update: {
             $push: {
                 'likes': {
-                   'cantidad': like,
+                    'cantidad': like,
                     'id': idUsuarioFind,
                     'idusuario': req.user._id,
                     'idpost': idPost,
@@ -390,7 +390,7 @@ router.post('/u/post', multipartMiddleware, function(req, res, next) {
                         new: true
                     }).success(function(doc) {
                         /*res.json({
-                        	'nameResult': 'Se Actualizo Correctamente',
+                            'nameResult': 'Se Actualizo Correctamente',
                         });*/
                         console.log(idRefresh);
                         res.redirect(idRefresh);
@@ -429,13 +429,19 @@ router.get('/', function(req, res, next) {
     //req.app.locals.functions = functions; //lifeline
     res.locals.functions = functions;
 
+    var usuarios = db.get('users');
+
+    var usersall = [];
+
+
+    usuarios.find({}, function(err, data) {
+        usersall.push(data);
+    });
+
     dashboard.find({}, function(err, items) {
         if (err) {
             console.log(err)
         } else {
-
-
-
             var post = items.reverse();
             res.render('libro', {
                 web: req.user.name + " " + "Mi Libro - Viainti tu libro viajero",
@@ -444,59 +450,64 @@ router.get('/', function(req, res, next) {
                 imagenpost: 'hola',
                 id: req.user._id,
                 notificaciones: req.user.Notificaciones,
-                posts: post
+                posts: post,
+                usuarios: usersall
+            });
+            console.log(usersall);
+
+        }
+    });
+
+
+
+
+    /*users.find({}, function(err, items){
+        if(err){
+            return err;
+        }
+        else {
+            
+
+            res.render('libro', {
+                web: req.user.name +" " + "Mi Libro - Viainti tu libro viajero",
+                nombre: req.user.name,
+                avatar: req.user.photo,
+                imagenpost: 'hola',
+                id: req.user._id,
+                posts: it
             });
 
         }
     });
 
-    /*users.find({}, function(err, items){
-    	if(err){
-    		return err;
-    	}
-    	else {
-    		
-
-    		res.render('libro', {
-    			web: req.user.name +" " + "Mi Libro - Viainti tu libro viajero",
-    			nombre: req.user.name,
-    			avatar: req.user.photo,
-    			imagenpost: 'hola',
-    			id: req.user._id,
-    			posts: it
-    		});
-
-    	}
-    });
-
     /*users.find({}, {posts: true})
-    	.success(function(data){
-    		for(var i = 0; i < data.length; i++) {
-    			console.log(data[i].posts);
+        .success(function(data){
+            for(var i = 0; i < data.length; i++) {
+                console.log(data[i].posts);
 
-    			res.render('libro', {
-    				web: req.user.name +" " + "Mi Libro - Viainti tu libro viajero",
-    				nombre: req.user.name,
-    				avatar: req.user.photo,
-    				imagenpost: 'hola',
-    				id: req.user._id,
-    				posts: data[i].posts
-    			});
+                res.render('libro', {
+                    web: req.user.name +" " + "Mi Libro - Viainti tu libro viajero",
+                    nombre: req.user.name,
+                    avatar: req.user.photo,
+                    imagenpost: 'hola',
+                    id: req.user._id,
+                    posts: data[i].posts
+                });
 
-    		}
-    	});
+            }
+        });
     */
 
     /*ads.find({}, function(err, result){
-    	console.log('hola edinson');
-    	if(err){
-    		return err;
-    	}
-    	else {
-    		res.render('libro-ads', {
-    			nameAds: 'hola'
-    		});
-    	}
+        console.log('hola edinson');
+        if(err){
+            return err;
+        }
+        else {
+            res.render('libro-ads', {
+                nameAds: 'hola'
+            });
+        }
     });*/
 
 
@@ -658,7 +669,7 @@ router.get('/ultimate/3xa04c/', function(req, res, next) {
 });
 
 router.get('/miservicios', function(req, res, next) {
-	
+
     res.render('miservicios', {
         web: req.user.name + " " + "Mi Servicios - Viainti tu libro viajero",
         nombre: req.user.name,
@@ -670,30 +681,30 @@ router.get('/miservicios', function(req, res, next) {
         category: req.user.miServicio
     });
 
-   
+
 });
 
-router.post('/solicitud', function(req, res, next){
-	var db = req.db;
-	var user = db.get('users');
+router.post('/solicitud', function(req, res, next) {
+    var db = req.db;
+    var user = db.get('users');
 
-	var serviciosolicitado = req.body.miservicioresponse;
+    var serviciosolicitado = req.body.miservicioresponse;
 
-	user.findAndModify({
-		query: {
-			'_id': req.user._id
-		},
-		update: {
-			$set: {
-				'permisoServicios': true,
-				'miServicio': serviciosolicitado,
-				'activeService': false
-			}
-		},
-		new: true
-	}).success(function(resultado){
-		res.redirect('./miservicios');
-	});
+    user.findAndModify({
+        query: {
+            '_id': req.user._id
+        },
+        update: {
+            $set: {
+                'permisoServicios': true,
+                'miServicio': serviciosolicitado,
+                'activeService': false
+            }
+        },
+        new: true
+    }).success(function(resultado) {
+        res.redirect('./miservicios');
+    });
 
 });
 
