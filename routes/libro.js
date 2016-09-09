@@ -443,6 +443,7 @@ router.get('/', function(req, res, next) {
             console.log(err)
         } else {
             var post = items.reverse();
+
             res.render('libro', {
                 web: req.user.name + " " + "Mi Libro - Viainti tu libro viajero",
                 nombre: req.user.name,
@@ -451,12 +452,20 @@ router.get('/', function(req, res, next) {
                 id: req.user._id,
                 notificaciones: req.user.Notificaciones,
                 posts: post,
-                usuarios: usersall[0]
+                usuarios: newTravelers(usersall[0])
             });
             console.log(usersall);
 
         }
     });
+
+    function newTravelers(data){
+        for(var i = 0; i < 8; i++){
+            var _data = data[i];
+            var reverse = _data;
+            return reverse;
+        }
+    }
 
 
 
