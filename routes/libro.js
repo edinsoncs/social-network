@@ -451,7 +451,7 @@ router.get('/', function(req, res, next) {
                 id: req.user._id,
                 notificaciones: req.user.Notificaciones,
                 posts: post,
-                usuarios: usersall
+                usuarios: usersall[0]
             });
             console.log(usersall);
 

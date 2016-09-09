@@ -297,11 +297,11 @@ html(lang='es')
               each user in usuarios
                article.Dashboard_User
                 figure.userActividity.margen.flotaLeft
-                  img.user_Img(src='../images/avatar.png', alt='Edinson Carranza')
+                  img.user_Img(src='#{user.photo}', alt='Edinson Carranza')
                 article.user_Details.flotaLeft
                   figcaption.userName.cAzulClaroUser
                     | #{user.name}
-                  p.userInfo.margen
+                  //p.userInfo.margen
                     | ceno en 
                     span.userInfo_Category
                       | Rest
