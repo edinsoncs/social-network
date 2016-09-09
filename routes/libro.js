@@ -461,9 +461,8 @@ router.get('/', function(req, res, next) {
 
     function newTravelers(data){
         for(var i = 0; i < 8; i++){
-            var _data = data[i];
-            var reverse = _data;
-            return reverse;
+            var _data = data.reverse();
+            return _data;
         }
     }
 
