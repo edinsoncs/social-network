@@ -1,0 +1,62 @@
+.view {
+    width: 50%;
+    margin: 5em auto 3em auto;
+    background-color: white;
+    padding: 1em;
+    .description__Container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .description:first-child {
+            width: 80%;
+            font-size: 14px;
+            line-height: 1.38;
+            border-left: 3px solid #7a8796;
+            padding-left: 1em;
+        }
+        .description:last-child {
+            color: #dedede;
+            font-size: 10px;
+        }
+    }
+    .view__Posts--Visited {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .description__Container {
+            width: 100%;
+            display: block;
+        }
+    }
+    .view__Posts--Visited--Figure {
+        margin: 0;
+        width: 350px;
+        border: 1px solid #dedede;
+        padding: 0.5em;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    .view__Posts--Visited--Shared {
+        .linkShared.facebook {
+            background: #3b5999;
+            padding: 0.8em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
+            margin-bottom: 1em;
+        }
+        .linkShared.twitter {
+            background: #60a9de;
+            padding: 0.8em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+    }
+}

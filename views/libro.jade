@@ -187,10 +187,10 @@ html(lang='es')
                             .Comment.enLinea
                               span.Comment--Num
                                 | #{post.comentarios.length}
-                        //.Post--User-Shared
+                        .Post--User-Shared(id-post="#{post.id}")
                           .User--Shared
                             i.fa.fa-share
-                            .Shared.enLinea
+                            //.Shared.enLinea
                               span.Shared--Num
                                 | 0
                     article.Post--User--CommentsViews
@@ -270,10 +270,10 @@ html(lang='es')
                             .Comment.enLinea
                               span.Comment--Num
                                 | 0
-                        //.Post--User-Shared
+                        .Post--User-Shared(id-post="#{post.id}")
                           .User--Shared
                             i.fa.fa-share
-                            .Shared.enLinea
+                            //.Shared.enLinea
                               span.Shared--Num
                                 | 0
                     article.Post--User--CommentsViews

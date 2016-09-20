@@ -47,6 +47,7 @@ var registrando = require('./routes/registrando');
 
 /*mildwares plataforma*/
 var libro = require('./routes/libro');
+var viewpost = require('./routes/viewpost');
 
 /*Vistas al frontend */
 var hoteles = require('./routes/hoteles.js');
@@ -207,6 +208,8 @@ app.use('/addrestaurantes', addRestaurantes);
 app.use('/addinvitate', invitacionFriend);
 app.use('/otherfriend', otherfriend);
 
+/*view posts*/
+app.use('/libroposts', viewpost);
 
 /*Others Routes*/
 app.use('/gracias', gracias);

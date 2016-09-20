@@ -3070,8 +3070,9 @@ body {
 	@extend %extend_2;
 }
 .Post--User--Coment {
-	margin: 0 1em;
-	.User--Coment {
+	//margin: 0 1em;
+	margin: 0 1em 0 0;
+  .User--Coment {
 		$colorComment: #1aa5d0;
     cursor: pointer;
     .Comment {
@@ -4454,6 +4455,8 @@ select {
 	}
 	i {
 		color: $color_christi_approx;
+    margin: 0.5em 0;
+    cursor: pointer;
 	}
 }
 .Post--User--Comments {
@@ -5032,4 +5035,5 @@ select {
 /*Gracias*/
 @import "gracias";
 @import "miservicios";
+@import "viewpost";
 

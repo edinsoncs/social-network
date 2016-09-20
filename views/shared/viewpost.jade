@@ -1,0 +1,46 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='#{view[0].content}')
+    title #{view[0].usuarioName}
+    
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    
+    link(rel='stylesheet', href='../stylesheets/viainti.css')
+
+
+    script(src='https://code.jquery.com/jquery-1.11.2.min.js')
+    
+    script(src='../javascripts/viaintifrontend.js')
+    
+    script(src='../javascripts/viaintifrontendbackend.js')
+    
+    script(src='../../javascripts/app-via.js')
+
+    script(src='../../javascripts/app-secondary.js')
+
+
+  body
+
+    header.menuViainti.bgHeader(data-role='header')
+      include header-visits.jade
+      
+    main.view
+     if view[0].content != ''
+      div.description__Container
+       p.description
+         |  #{view[0].content}  
+       p.description
+         | #{functions.elapsedTime(view[0].date)}
+     section.view__Posts--Visited
+      figure.view__Posts--Visited--Figure
+       if view[0].usuarioFoto != ''
+        img(src="../uploads/usuarios/#{view[0].imagen}")
+       if view[0].videon != ''
+        //video
+      div.view__Posts--Visited--Shared
+       a.linkShared.facebook(href="#")
+        | Compartir con facebook
+       a.linkShared.twitter(href="#")
+        | Compartir con twitter

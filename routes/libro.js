@@ -19,6 +19,8 @@ var router = express.Router();
 
 var shortid = require('shortid');
 
+var _ = require('underscore-node');
+
 //var nuevoplan = require('../moduls/nuevoplan');
 
 
@@ -287,71 +289,192 @@ router.post('/u/likecoments/', function(req, res, next) {
     var idUsuarioFind = req.body.idUsuario;
     var like = req.body.like;
 
+    var usuarioLike = req.user._id;
+
     var db = req.db;
     var user = db.get('users');
     var dashboard = db.get('dashboard');
 
 
-    user.findAndModify({
-        query: {
-            '_id': idUsuarioFind,
-            posts: {
-                $elemMatch: { 'id': idPost }
-            }
-        },
-        update: {
-            $push: {
-                'posts.$.likes': {
-                    'cantidad': like,
-                    'id': idUsuarioFind,
-                    'idusuario': req.user._id,
-                    'idpost': idPost,
-                    'usuarioname': req.user.name,
-                    'usuariophoto': req.user.photo,
-                    'time': new Date()
-                }
-            }
-        },
-        new: true
+    user.find({}, function(err, doc) {
 
-    }).success(function(doc) {
-        //console.log('funcionoo');
-        res.json({ inserted: true })
+        _.filter(doc, function(thisArr, indice, array) {
+            if (thisArr._id == idUsuarioFind) {
+                userData(thisArr);
+            }
+        });
 
-    }).error(function(err) {
-        if (err) {
-            console.log(err);
-        }
     });
 
-    dashboard.findAndModify({
-        query: { 'id': idPost },
-        update: {
-            $push: {
-                'likes': {
-                    'cantidad': like,
-                    'id': idUsuarioFind,
-                    'idusuario': req.user._id,
-                    'idpost': idPost,
-                    'usuarioname': req.user.name,
-                    'usuariophoto': req.user.photo,
-                    'time': new Date()
+    function userData(data) {
+        _.filter(data.posts, function(thisArr, indice, array) {
+            if (thisArr.id == idPost) {
+                userLikes(thisArr);
+            }
+        });
+    }
+
+    function userLikes(data) {
+        if (data.likes) {
+            _.filter(data.likes, function(thisArr, indice, array) {
+                findUser(array);
+            });
+ 
+        } else {
+            newLikes();
+        }
+    }
+
+    function findUser(data){
+        
+        _.find(data, function(item, index){
+           var _t = item.idusuario.toString() === req.user._id.toString();
+            fnView(_t);
+        });
+         
+        /* _.find(data, function(item, key){
+            console.log(item.idusuario);
+         });*/    
+    }
+
+    function fnView(state){
+        console.log(state);
+    }
+
+
+    /* user.find({}, function(err, doc) {
+
+         for (var i = 0; i < doc.length; i++) {
+
+             var _usuarioFind = doc[i]._id;
+
+             if (_usuarioFind == idUsuarioFind) {
+
+                 fnUser(doc[i]);
+             }
+         }
+
+     }); */
+
+
+    /*function fnUser(data) {
+
+        if (data.posts.length) {
+            for (var i = 0; i < data.posts.length; i++) {
+                var _usuarioPost = data.posts[i].id;
+                if (_usuarioPost == idPost) {
+                    fnUserApply(data.posts[i]);
                 }
             }
-        },
-        new: true
-
-    }).success(function(doc) {
-        //console.log('funcionoo');
-
-    }).error(function(err) {
-        if (err) {
-            console.log(err);
         }
-    });
+    }
+
+
+    function fnUserApply(data) {
+
+        if (data.likes) {
+
+            data.likes.filter(function(thisArr, indice, arr) {
+
+                verification(thisArr, indice, arr);
+
+            });
+
+
+        } else {
+            //Insertamos likes
+            newLikes();
+
+        }
+    }
 
 
 
+
+    function verification(is, i, arr) {
+       
+
+        
+        _.filter(arr, function(thisArr, completArr, Arr) {
+            //return thisArr.idusuario.toString() === req.user._id.toString()
+            
+            var _find = _.where(arr, {id: req.user._id.toString()});
+            
+            if(_find.length){
+                return false;
+            } else {
+               newLikes();
+            }
+
+        });
+
+
+
+
+
+
+
+    }
+  */
+
+
+    function newLikes() {
+
+        user.findAndModify({
+            query: {
+                '_id': idUsuarioFind,
+                posts: {
+                    $elemMatch: { 'id': idPost }
+                }
+            },
+            update: {
+                $push: {
+                    'posts.$.likes': {
+                        'cantidad': like,
+                        'id': idUsuarioFind,
+                        'idusuario': req.user._id,
+                        'idpost': idPost,
+                        'usuarioname': req.user.name,
+                        'usuariophoto': req.user.photo,
+                        'time': new Date()
+                    }
+                }
+            },
+            new: true
+
+        }).success(function(doc) {
+            //console.log('funcionoo');
+            res.json({ inserted: true })
+
+        }).error(function(err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+
+        dashboard.findAndModify({
+            query: { 'id': idPost },
+            update: {
+                $push: {
+                    'likes': {
+                        'cantidad': like,
+                        'id': idUsuarioFind,
+                        'idusuario': req.user._id,
+                        'idpost': idPost,
+                        'usuarioname': req.user.name,
+                        'usuariophoto': req.user.photo,
+                        'time': new Date()
+                    }
+                }
+            },
+            new: true
+
+        }).success(function(doc) {
+            //console.log('funcionoo');
+
+        });
+
+    }
 
 });
 
@@ -459,8 +582,8 @@ router.get('/', function(req, res, next) {
         }
     });
 
-    function newTravelers(data){
-        for(var i = 0; i < 8; i++){
+    function newTravelers(data) {
+        for (var i = 0; i < 8; i++) {
             var _data = data.reverse();
             return _data;
         }
