@@ -6583,7 +6583,7 @@ fieldset {
 }
 
 .view {
-  width: 50%;
+  width: 60%;
   margin: 5em auto 3em auto;
   background-color: white;
   padding: 1em;
@@ -6634,7 +6634,7 @@ fieldset {
 
 .view .view__Posts--Visited--Figure {
   margin: 0;
-  width: 350px;
+  width: 500px;
   border: 1px solid #dedede;
   padding: 0.5em;
 }
