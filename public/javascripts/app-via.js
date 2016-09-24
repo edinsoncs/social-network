@@ -767,7 +767,18 @@ $(document).ready(function() {
     }
 
 
-
+    /**
+     * 
+     */
+    
+    fnShared($(".User--Shared i"));
+    function fnShared(element) {
+        $(element).click(function(){
+            var _id_post = $(this).parent().parent();
+            var _show_id = $(_id_post).attr('id-post');
+            window.location.href = '../libroposts/'+ _show_id;
+        });
+    }
 
 
 
