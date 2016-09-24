@@ -6589,6 +6589,19 @@ fieldset {
   padding: 1em;
 }
 
+.view .description__Header .figure {
+  margin: 0;
+}
+
+.view .description__Header .figure img {
+  width: 50px;
+}
+
+.view .description__Header .figcaption {
+  font-size: 0.8em;
+  color: #767575;
+}
+
 .view .description__Container {
   display: flex;
   justify-content: space-between;
@@ -6604,7 +6617,7 @@ fieldset {
 }
 
 .view .description__Container .description:last-child {
-  color: #dedede;
+  color: #8a8a8a;
   font-size: 10px;
 }
 
@@ -6631,6 +6644,10 @@ fieldset {
   width: 100%;
 }
 
+.view .view__Posts--Visited--Shared .linkShared i {
+  margin-right: 5px;
+}
+
 .view .view__Posts--Visited--Shared .linkShared.facebook {
   background: #3b5999;
   padding: 0.8em 1em;
@@ -6642,6 +6659,10 @@ fieldset {
   margin-bottom: 1em;
 }
 
+.view .view__Posts--Visited--Shared .linkShared.facebook:active {
+  background-color: #2c4478;
+}
+
 .view .view__Posts--Visited--Shared .linkShared.twitter {
   background: #60a9de;
   padding: 0.8em 1em;
@@ -6650,4 +6671,8 @@ fieldset {
   text-decoration: none;
   color: white;
   display: block;
+}
+
+.view .view__Posts--Visited--Shared .linkShared.twitter:active {
+  background-color: #4a8bb9;
 }

@@ -22,7 +22,13 @@ router.get('/:idpost', function(req, res, next){
 
 	function renderShow(data){
 		if (req.isAuthenticated()) {
-			return next();
+			console.log('estoy logeado');
+			res.render('shared/viewpostuser', {
+				view: data,
+				nombre: req.user.nombre,
+				avatar: req.user.photo
+			});
+			
 		} else {
 			res.render('shared/viewpost', {
 				view: data
