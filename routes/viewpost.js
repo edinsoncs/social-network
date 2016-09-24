@@ -29,8 +29,8 @@ router.get('/:idpost', function(req, res, next) {
                 nombre: req.user.name,
                 avatar: req.user.photo,
                 id: req.user._id,
-                notificaciones: req.user.Notificaciones,
-                posts: post
+                notificaciones: req.user.Notificaciones
+
             });
 
         } else {
