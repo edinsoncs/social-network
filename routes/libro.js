@@ -93,6 +93,7 @@ router.get('/u/:id', function(req, res, next) {
                 userid: idUser,
                 useridReq: req.user._id,
                 invitacionID: req.user.InvitacionesEnviadas,
+                notificaciones: req.user.Notificaciones,
                 cover: post.cover,
                 posts: postUser,
                 amigos: post.Amigos,
@@ -319,25 +320,25 @@ router.post('/u/likecoments/', function(req, res, next) {
             _.filter(data.likes, function(thisArr, indice, array) {
                 findUser(array);
             });
- 
+
         } else {
             newLikes();
         }
     }
 
-    function findUser(data){
-        
-        _.find(data, function(item, index){
-           var _t = item.idusuario.toString() === req.user._id.toString();
+    function findUser(data) {
+
+        _.find(data, function(item, index) {
+            var _t = item.idusuario.toString() === req.user._id.toString();
             fnView(_t);
         });
-         
+
         /* _.find(data, function(item, key){
             console.log(item.idusuario);
-         });*/    
+         });*/
     }
 
-    function fnView(state){
+    function fnView(state) {
         console.log(state);
     }
 
@@ -571,7 +572,6 @@ router.get('/', function(req, res, next) {
                 web: req.user.name + " " + "Mi Libro - Viainti tu libro viajero",
                 nombre: req.user.name,
                 avatar: req.user.photo,
-                imagenpost: 'hola',
                 id: req.user._id,
                 notificaciones: req.user.Notificaciones,
                 posts: post,
