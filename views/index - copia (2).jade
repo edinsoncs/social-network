@@ -1,0 +1,295 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    title #{web}
+    link(rel='stylesheet', href='stylesheets/normalize.css')
+    link(rel='stylesheet', href='stylesheets/viaintihome.css')
+    link(rel='stylesheet', href='stylesheets/animate.min.css')
+    script(src='javascripts/jquery-1.11.2.min.js')
+    // Prefix free
+    script(src='javascripts/prefixfree.min.js')
+    // animattion wowjs
+    script(src='javascripts/wow.min.js')
+    script(src='javascripts/viaintifrontend.js')
+    script(src='javascripts/apphome.js')
+    //if IE
+      script(src='https://html5shiv.googlecode.com/svn/trunk/html5.js')
+  body
+    header.menuHome.bgPrimary(data-role='header')
+      .menuHome_div
+        figure.menuHome_logo.margen.linea.float
+          a(href='index.html')
+            img(src='images/logo.png')
+        .menuHome_div_title.linea
+          h1.menuHome_title.margen.colorPrimary
+            | Tu libro viajero
+        div.menuHome_Access.floatD
+          div.menuHome_Access--Facebook.float
+            a.Facebook--Btn(href="auth/facebook")
+              i.el-icon-facebook
+              | Ingresar Con Facebook
+          div.menuHome_Access--Twitter.floatD
+            a.Twitter--Btn(href="auth/twitter")
+              i.el-icon-twitter
+              | Ingresar Con Twitter
+
+    .slideHome
+      figure.slideHome_cont.margen
+        img(src='images/slide-libro.jpg', alt='')
+        .slideHome_titleHome
+          h1.slideHome_viajero.colorBlanco.margen.wow.zoomIn
+            | Viaja por el MUNDO sin limites, 
+            br
+          h2.slideHome_viajero.colorBlanco.margen
+            | con información exacta,
+            br
+            span.colorNegro ESTES DONDE ESTES
+        .slideHome_btnHome
+          button.homeBTNTo.btnLinkPrimary
+            a.linkBlanco(href='#')
+              | 0 kmh
+              .iconAnimateTo.linea
+                i.el-icon-info-sign
+              .iconAnimateTo--Hover
+                span.iconAnimateTo--Hover--Title
+                 | Argentina
+          button.homeBTN.btnLinkSecondary
+            a.linkBlanco(href='#')
+              | Empezar
+              .iconAnimateOne.linea
+                i.el-icon-chevron-right
+        .slideHome_video
+          p.slideHome_link
+            a#viaintivideo.aClass.linkBlanco(href='#viaintivideo')
+              i.el-icon-video
+              |           Ver como ayudamos a los viajeros
+      .menuHome_lineabg
+    article.videoViainti
+      aside.videoViaintiTo
+        iframe(width='854', height='510', src='https://www.youtube.com/embed/4MFOW8dhPvE', frameborder='0', allowfullscreen='')
+    main
+      section#conosca-nuestros-paquetes.contenidoHome
+        header.contenidoHome_header
+          h2.contenidoHome_title.margen.colorSemiNegro
+            | Paquetes para nuestros viajeros
+        .contenidoHome_Cont
+          a.contenidoHome_Servicios_Link.hotelTab.linkNegro(href='#conosca-nuestros-paquetes')
+            article.contenidoHome_servicios.linea
+              figure.contenidoHome_figure.margen
+                img.imgServ(src='images/home/hotel.png', alt='')
+              figcaption.titleServ
+                | Hoteles
+              .contenidoHome_selected_hotel.wow.zoomIn
+                i.el-icon-chevron-up
+          a.contenidoHome_Servicios_Link.restauranteTab.linkNegro(href='#conosca-nuestros-paquetes')
+            article.contenidoHome_servicios.linea
+              figure.contenidoHome_figure.margen
+                img.imgServ(src='images/home/restaurante.png', alt='')
+              figcaption.titleServ
+                | Restaurantes
+              .contenidoHome_selected_restaurante.wow.zoomIn
+                i.el-icon-chevron-up
+          a.contenidoHome_Servicios_Link.vuelosTab.linkNegro(href='#conosca-nuestros-paquetes')
+            article.contenidoHome_servicios.linea
+              figure.contenidoHome_figure.margen
+                img.imgServ(src='images/home/vuelos.png', alt='')
+              figcaption.titleServ
+                | Vuelos
+              .contenidoHome_selected_vuelos.wow.zoomIn
+                i.el-icon-chevron-up
+          a.contenidoHome_Servicios_Link.musicaTab.linkNegro(href='#conosca-nuestros-paquetes')
+            article.contenidoHome_servicios.linea
+              figure.contenidoHome_figure.margen
+                img.imgServ(src='images/home/musica.png', alt='')
+              figcaption.titleServ
+                | Musica
+              .contenidoHome_selected_musica.wow.zoomIn
+                i.el-icon-chevron-up
+          a.contenidoHome_Servicios_Link.noticiasTab.linkNegro(href='#conosca-nuestros-paquetes')
+            article.contenidoHome_servicios.linea
+              figure.contenidoHome_figure.margen
+                img.imgServ(src='images/home/noticia.png', alt='')
+              figpcation.titleServ
+                | Noticias
+              .contenidoHome_selected_noticias.wow.zoomIn
+                i.el-icon-chevron-up
+          a.contenidoHome_Servicios_Link.juegosTab.linkNegro(href='#conosca-nuestros-paquetes')
+            article.contenidoHome_servicios.linea
+              figure.contenidoHome_figure.margen
+                img.imgServ(src='images/home/juego.png', alt='')
+              figcaption.titleServ
+                | Entrenimiento
+              .contenidoHome_selected_juegos.wow.zoomIn
+                i.el-icon-chevron-up
+        section.contenidoHome_Tab
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | AHORRE DINERO Y
+                  br
+                  |  TIEMPO
+              p.contenidoHome_title_informacion.colorMarron
+                | Coloque su viaje en su presupuesto y pasar su tiempo sabiamente. Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir. Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar, ahorrar tiempo y dinero mientras se mueve.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | OPTIMIZAR SU RUTA
+                  br
+                  |  Y GUÍA
+              p.contenidoHome_title_informacion.colorMarron
+                | Encuentra las mejores alternativas para ir entre los lugares que desea visitar. Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+        section.contenidoHome_Tab_Hotel
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | RESERVE SU HOTEL
+                  br
+                  |  CERCANO
+              p.contenidoHome_title_informacion.colorMarron
+                | Variedad de hoteles cercanos, recomendados y seguros, olvidese de buscar, nosotros le brindamos variedad de hoteles, aplique desde nuestra plataforma y obtenga descuentos por hospedaje
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | SERVICIOS HOTELEROS
+                  br
+                  |  AFILIADOS
+              p.contenidoHome_title_informacion.colorMarron
+                | Por cada kilometro obtenido, tienes descuentos en nuestros hoteles afiliados en cualquier lugar que te encuentres, reserva ahora es simple y confiable
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+        section.contenidoHome_Tab_Restaurante
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | RESTAURANTES
+                  br
+                  |  VARIEDADES
+              p.contenidoHome_title_informacion.colorMarron
+                | La mas grande lista de restaurantes cercanos, olvidese de buscar, nosotros le brindamos toda la información necesaria para compartir momentos agradables con amigos, familiares y en pareja, elija el plato que degusta y obtenga un descuento
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | SELECCIÓN DE
+                  br
+                  |  LISTAS DE RESTAURANTES
+              p.contenidoHome_title_informacion.colorMarron
+                | Encuentra de todas las categorias de restaurantes y variedades de comida, nuestra simplicidad hace llevar la magia de la cocina al paladar donde te cuentres, elije que vas a comer el día de hoy y nosotros te lo enviamos sin ningun recargo extra
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+        section.contenidoHome_Tab_Vuelos
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | VUELOS
+                  br
+                  |  ECONOMICOS
+              p.contenidoHome_title_informacion.colorMarron
+                | Busque su vuelo de forma rapida y segura, contamos con un servicio y soporte profesional, vuela hoy con la seguridad y confianza que te mereces
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | PAQUETES
+                  br
+                  |  Y PLANES
+              p.contenidoHome_title_informacion.colorMarron
+                | Encuentra el paquete turistico ideal y vive las vacaciones tan merecidas, paquetes turisticos a los distintos paises de latinoamerica, europa y asia
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+        section.contenidoHome_Tab_Musica
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | MUSICA EN
+                  br
+                  | TIEMPO REAL
+              p.contenidoHome_title_informacion.colorMarron
+                | Su entrenimiento esta asegurado, la mejor musica y generos en un solo lugar, disfruta tus viajes escuchando o cantando el tema musical acorde a tus viajes, comparte tus momentos con la musica
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | ARTISTAS
+                  br
+                  |  EN TU UBICACIÓN
+              p.contenidoHome_title_informacion.colorMarron
+                | Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+        section.contenidoHome_Tab_Noticias
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | NOTICIAS
+                  br
+                  |  TIEMPO
+              p.contenidoHome_title_informacion.colorMarron
+                | Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | OPTIMIZAR SU RUTA
+                  br
+                  |  Y GUÍA
+              p.contenidoHome_title_informacion.colorMarron
+                | Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+        section.contenidoHome_Tab_Juegos
+          article.contenidoHome_mejoras
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | JUEGOS
+                  br
+                  |  TIEMPO
+              p.contenidoHome_title_informacion.colorMarron
+                | Coloque su viaje en su presupuesto y pasar su tiempo sabiamente . Encontrar la manera más rápida y barata entre dónde se encuentra y los lugares que quieres ir . Además de los mejores alojamientos rentables cercanas a los lugares que desea visitar , ahorrar tiempo y dinero mientras se mueve.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+          article.contenidoHome_mejoras_dos
+            article.contenidoHome_info
+              header.contenidoHome_title_info
+                h2.title_header
+                  | CINE SU RUTA
+                  br
+                  |  Y GUÍA
+              p.contenidoHome_title_informacion.colorMarron
+                | Encuentra las mejores alternativas para ir entre los lugares que desea visitar . Combine el transporte más relevantes y obtener el mejor conjunto de rutas para minimizar el costo de su viaje.
+              button.btnUnete.btnLinkHomeInfo
+                a.linkAzul(href='#') Únete Ahora
+    footer.footer_DerechosHome(data-role='footer')
+      ul.footer_DerechosHome_gen
+        .footer_DerechosHome_cont
+          .footer_DerechosHome_bloques.linea.float
+            span.footer_title.blanco.colorBlanco Viainti 2016
+            
+    script.
+      new WOW().init();
+    script.

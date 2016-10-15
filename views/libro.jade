@@ -66,26 +66,49 @@ html(lang='es')
         article.cont_Principal_Cover
           article.cover_Ads
             h2.ads_Title_Top.cBlanco.margen.fontA
-              | El valle
+              | Fin de
             h2.ads_Title_SubTop.cBlanco.margen.fontA
-              | Sheraton
+              | SEMANA
             button.btn_Cover_Ads
               a.linkBlanco(href='#') EXPLORAR
         section.cont_Principal_Dashboard
-          article.Dashboard_Left
-            figure.DashboardCity.margen
-              img.imgCity(src='../images/widget.jpg', alt='')
-              //div.iconCity
-               i(class="fa fa-file-image-o")
-            figpcation.DashboardCityDescription
-              | Agrega tu nota mas importante del día de hoy
-            .DashboardCityFunction
-              .grafArrow
-              .DashboardCityFunction--Cont
-                .icoCity.enLinea
-                  i.fa.fa-weixin.one--Ico
-                .icoCity.enLinea.jsWidget
-                  i.fa.fa-pencil-square-o.two--Ico
+          
+          aside.Dashboard_Right
+            .Activity_Friend
+              header.Dashboard_Right_Title
+                h4.titleRight.margen.cBlancoSidebarTitle
+                  | Nuevos viajeros
+              
+              each user in usuarios
+               article.Dashboard_User
+                figure.userActividity.margen.flotaLeft
+                  img.user_Img(src='#{user.photo}', alt='Edinson Carranza')
+                article.user_Details.flotaLeft
+                  figcaption.userName.cAzulClaroUser
+                    | #{user.name}
+                  //p.userInfo.margen
+                    | ceno en 
+                    span.userInfo_Category
+                      | Rest
+                    |                   joya
+            
+            //.Dashboard_Right_Menu
+              header.Dashboard_Right_Title
+                h4.cBlancoSidebarTitle.margen
+                  | Que hacer
+              div.Dashboard_Show--City
+                .Show--City--Info
+                  header.City--Info--Header
+                    h2.title.jsTxtCityDashboard
+                      | Buenos Aires
+                  div.City--Info--Btn
+                    a.Btn--Continue(href="#")
+                      | Descubrir
+
+            //.Activity_Friend
+              header.Dashboard_Right_Title.jsAfter
+                h4.titleRight.margen.cBlancoSidebarTitle
+                  | Ultimos Servicios
           article.Dashboard_Center
             article.Dashboard_Welcome
               figure.Dashboard_Map.margen
@@ -106,7 +129,7 @@ html(lang='es')
                         .descriptionIcon
                          span.descriptionIcon--Title
                           | Ubicación
-                      label.Send_Ico_Movi.enLinea(for="video")
+                      //label.Send_Ico_Movi.enLinea(for="video")
                         i.fa.fa-film
                         .descriptionIcon
                          span.descriptionIcon--Title
@@ -138,7 +161,7 @@ html(lang='es')
                       figure.Post--Figure--Img.margen(style='text-align:center')
                         if post.imagen!==''
                           img.Post--Img(src='../../uploads/usuarios/#{post.imagen}', alt='nombre de la foto')
-                        if post.videon!==''
+                        //if post.videon!==''
                           video(width="700", height="364" id="my-video" , controls class="video-js uCenterVideo", data-setup="{}")
                             source(src='../../uploads/videos/#{post.videon}', type='video/mp4')
                             |   Your browser does not support HTML5 video.
@@ -222,7 +245,7 @@ html(lang='es')
                       figure.Post--Figure--Img.margen(style='text-align:center')
                         if post.imagen!==''
                           img.Post--Img(src='../../uploads/usuarios/#{post.imagen}', alt='nombre de la foto')
-                        if post.videon!==''
+                        //if post.videon!==''
                           video(width="700", height="364" id="my-video" , controls class="video-js uCenterVideo", data-setup="{}")
                             source(src='../../../uploads/videos/#{post.videon}', type='video/mp4')
                             |   Your browser does not support HTML5 video.
@@ -286,54 +309,21 @@ html(lang='es')
                           form.postComments--Dashboard
                             input.textareComments.textareaVal(type="text", placeholder="Escriba su comentario", data-idpost="#{post.id}")
                             input(type="submit", class="uHidden")
-                        
+          //article.Dashboard_Left
+            figure.DashboardCity.margen
+              img.imgCity(src='../images/widget.jpg', alt='')
+              //div.iconCity
+               i(class="fa fa-file-image-o")
+            figpcation.DashboardCityDescription
+              | Agrega tu nota mas importante del día de hoy
+            .DashboardCityFunction
+              .grafArrow
+              .DashboardCityFunction--Cont
+                .icoCity.enLinea
+                  i.fa.fa-weixin.one--Ico
+                .icoCity.enLinea.jsWidget
+                  i.fa.fa-pencil-square-o.two--Ico              
       
-          aside.Dashboard_Right
-            .Activity_Friend
-              header.Dashboard_Right_Title
-                h4.titleRight.margen.cBlancoSidebarTitle
-                  | Nuevos viajeros
-              
-              each user in usuarios
-               article.Dashboard_User
-                figure.userActividity.margen.flotaLeft
-                  img.user_Img(src='#{user.photo}', alt='Edinson Carranza')
-                article.user_Details.flotaLeft
-                  figcaption.userName.cAzulClaroUser
-                    | #{user.name}
-                  //p.userInfo.margen
-                    | ceno en 
-                    span.userInfo_Category
-                      | Rest
-                    |                   joya
-                
-            
-            .Dashboard_Right_Menu.jsRemove
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Mi libro viajero
-              ul.Dashboard_Right_Menu
-                li.list-Right--Menu
-                  a.link-Right--Menu(href='nuevo/plan')
-                    i.fa.fa-folder
-                    |  crear plan
-            //.Dashboard_Right_Menu
-              header.Dashboard_Right_Title
-                h4.cBlancoSidebarTitle.margen
-                  | Que hacer
-              div.Dashboard_Show--City
-                .Show--City--Info
-                  header.City--Info--Header
-                    h2.title.jsTxtCityDashboard
-                      | Buenos Aires
-                  div.City--Info--Btn
-                    a.Btn--Continue(href="#")
-                      | Descubrir
-
-            //.Activity_Friend
-              header.Dashboard_Right_Title.jsAfter
-                h4.titleRight.margen.cBlancoSidebarTitle
-                  | Ultimos Servicios
               
              
 

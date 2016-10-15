@@ -2256,6 +2256,7 @@ body {
 	margin: 0 auto;
 	padding: 7em 0;
 	.cont_Principal {
+    display: none!important;
 		background: $white;
 		border: 1px solid $color_silver_sand_approx;
 		overflow: hidden;
@@ -2423,13 +2424,13 @@ body {
 			}
 		}
 		.Dashboard_Center {
-			width: 62%;
+			width: 70%;
 			margin: 0 .25em;
       position: relative;
 			.Dashboard_Post {
 				margin: .5em 0 0 0;
 				.Post_Home {
-					width: 716px;
+					width: 812px;
 					height: 40px;
 					padding: 1.2em 1em 0 1em;
 					outline: medium none;
@@ -2580,7 +2581,7 @@ body {
 			}
 		}
 		.Dashboard_Right {
-			width: 20%;
+			width: 24%;
 			.Activity_Friend {
 				.Dashboard_Right_Title {
 					padding: .6em 0;
@@ -2870,7 +2871,7 @@ body {
 
 .contenidoBackendAdmin {
 	width: 1200px;
-	margin: 0 auto;
+	margin: 7em auto 0 auto;
 	padding: 1em 0 0;
 }
 .contenidoBackendABM {
@@ -3068,6 +3069,12 @@ body {
 }
 .Send_Ico_Photo {
 	@extend %extend_2;
+}
+.Send_Ico_Photo {
+  cursor: pointer;
+  &:active {
+    background-color: #324252;
+  }
 }
 .Post--User--Coment {
 	//margin: 0 1em;
