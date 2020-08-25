@@ -20,7 +20,7 @@
     "jade": "~1.11.0",
     "mercadopago": "^0.5.0",
     "mongodb": "^1.4.40",
-    "mongoose": "^4.1.8",
+    "mongoose": "^5.10.0",
     "mongoose-auto-increment": "^5.0.1",
     "monk": "^1.0.1",
     "morgan": "~1.6.1",
