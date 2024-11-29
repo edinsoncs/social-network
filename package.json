@@ -23,7 +23,7 @@
     "mongoose": "^4.1.8",
     "mongoose-auto-increment": "^5.0.1",
     "monk": "^1.0.1",
-    "morgan": "~1.6.1",
+    "morgan": "~1.10.0",
     "multer": "^1.0.3",
     "nodemailer": "^2.4.2",
     "nodemailer-smtp-transport": "^2.5.0",
